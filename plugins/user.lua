@@ -19,13 +19,24 @@ return {
       }
     end,
   },
+
   {
     "kylechui/nvim-surround",
     -- Use for stability; omit to use `main` branch for the latest features
     -- version = "*",
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup {}
-    end
+    config = function() require("nvim-surround").setup {} end,
+  },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+    },
+    event = "VeryLazy",
+    config = function() require("neogit").setup {} end,
   },
 }
