@@ -2,20 +2,14 @@ return {
   -- You can also add new plugins here as well.
   -- For example:
 
-  -- "andweeb/presence.nvim",
-
-  -- {
-  --   "Shatur/neovim-ayu",
-  --   name = "ayu",
-  --   config = function()
-  --     require("ayu").setup {
-  --       mirage = true,
-  --     }
-  --   end,
-  -- },
-
   -- set the color theme
   "nyoom-engineering/oxocarbon.nvim",
+
+  {
+    "Shatur/neovim-ayu",
+    name = "ayu",
+    config = function() require("ayu").setup { mirage = true } end,
+  },
 
   -- add other plugins
   {
