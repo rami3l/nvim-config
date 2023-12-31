@@ -1,24 +1,20 @@
 return {
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
+
   -- "andweeb/presence.nvim",
+
   -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
+  --   "Shatur/neovim-ayu",
+  --   name = "ayu",
   --   config = function()
-  --     require("lsp_signature").setup()
+  --     require("ayu").setup {
+  --       mirage = true,
+  --     }
   --   end,
   -- },
 
-  {
-    "Shatur/neovim-ayu",
-    name = "ayu",
-    config = function()
-      require("ayu").setup {
-        mirage = true,
-      }
-    end,
-  },
+  "nyoom-engineering/oxocarbon.nvim",
 
   {
     "Julian/lean.nvim",
