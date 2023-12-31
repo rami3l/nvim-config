@@ -19,4 +19,11 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.scrolling.mini-animate" },
+
+  {
+    "linux-cultist/venv-selector.nvim",
+    opts = {
+      name = { "venv", ".venv" },
+    },
+  },
 }
