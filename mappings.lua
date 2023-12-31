@@ -10,6 +10,9 @@ return {
   n = {
     -- second key is the lefthand side of the map
 
+    -- show code actions
+    ["ga"] = { vim.lsp.buf.code_action, desc = "LSP code action" },
+
     -- navigate buffer tabs with `H` and `L`
     -- L = {
     --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
@@ -22,11 +25,7 @@ return {
 
     -- mappings seen under group name "Buffer"
     ["<Leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
-      end,
+      function() require("astronvim.utils.status").heirline.buffer_picker(require("astronvim.utils.buffer").close) end,
       desc = "Pick to close",
     },
     -- tables with the `name` key will be registered with which-key if it's installed
@@ -37,17 +36,12 @@ return {
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
     -- open file picker even more quickly
-    ["<Leader>`"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
-
-    -- show code actions
-    ["ga"] = { vim.lsp.buf.code_action, desc = "LSP code action" },
+    ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
 
     -- show neogit
-    ["<Leader>gm"] = {
-      function() require("neogit").open() end,
-      desc = "Neogit dispatch",
-    },
+    ["<Leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
   },
+
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
