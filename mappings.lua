@@ -32,13 +32,17 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     -- ["<leader>b"] = { name = "Buffers" },
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
     -- open file picker even more quickly
     ["<Leader>`"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
 
-    -- Neogit
+    -- show code actions
+    ["ga"] = { vim.lsp.buf.code_action, desc = "LSP code action" },
+
+    -- show neogit
     ["<Leader>gm"] = {
       function() require("neogit").open() end,
       desc = "Neogit dispatch",
