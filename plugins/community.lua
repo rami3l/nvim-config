@@ -5,6 +5,7 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
   { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  { import = "astrocommunity.motion.nvim-spider" },
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }

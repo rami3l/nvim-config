@@ -25,7 +25,7 @@ return {
     -- Use for stability; omit to use `main` branch for the latest features
     -- version = "*",
     event = "VeryLazy",
-    config = function() require("nvim-surround").setup {} end,
+    config = function() require("nvim-surround").setup() end,
   },
 
   {
@@ -37,6 +37,12 @@ return {
       "ibhagwan/fzf-lua", -- optional
     },
     event = "VeryLazy",
-    config = function() require("neogit").setup {} end,
+    config = function()
+      require("neogit").setup {
+        integrations = {
+          diffview = true,
+        },
+      }
+    end,
   },
 }
