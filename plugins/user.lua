@@ -1,6 +1,6 @@
 return {
-  -- You can also add new plugins here as well:
-  -- Add plugins, the lazy syntax
+  -- You can also add new plugins here as well.
+  -- For example:
 
   -- "andweeb/presence.nvim",
 
@@ -14,8 +14,10 @@ return {
   --   end,
   -- },
 
+  -- set the color theme
   "nyoom-engineering/oxocarbon.nvim",
 
+  -- add other plugins
   {
     "Julian/lean.nvim",
     event = { "BufReadPre *.lean", "BufNewFile *.lean" },
