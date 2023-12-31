@@ -10,6 +10,7 @@ return {
   { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.pack.go" },
@@ -25,5 +26,14 @@ return {
     opts = {
       name = { "venv", ".venv" },
     },
+  },
+
+  {
+    "toppair/peek.nvim",
+    config = function()
+      require("peek").setup { app = "browser" }
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
   },
 }
