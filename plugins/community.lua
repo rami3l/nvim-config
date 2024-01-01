@@ -18,6 +18,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.scrolling.mini-animate" },
 
