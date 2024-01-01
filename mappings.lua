@@ -3,43 +3,47 @@
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
---
+
+-- Partially borrowed from <https://github.com/ThePrimeagen/init.lua/blob/97c039bb88d8bbbcc9b1e3d0dc716a2ba202c6d2/lua/theprimeagen/remap.lua>.
 -- See <https://github.com/AstroNvim/AstroNvim/blob/main/lua/astronvim/mappings.lua> for the default settings.
+
 return {
   -- first key is the mode
   n = {
     -- second key is the lefthand side of the map
 
-    -- show code actions
-    ["ga"] = { vim.lsp.buf.code_action, desc = "LSP code action" },
+    -- Remappings for common operations.
+    Q = "<nop>",
+    ["<LocalLeader>c"] = [["_c]],
+    ["<LocalLeader>cc"] = [["_cc]],
+    ["<LocalLeader>C"] = [["_C]],
+    ["<LocalLeader>d"] = [["_d]],
+    ["<LocalLeader>dd"] = [["_dd]],
+    ["<LocalLeader>D"] = [["_D]],
+    ["<LocalLeader>y"] = [["+y]],
+    ["<LocalLeader>yy"] = [["+yy]],
+    ["<LocalLeader>Y"] = [["+Y]],
 
-    -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    -- Extra mappings.
+    ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
 
-    -- mappings seen under group name "Buffer"
-    ["<Leader>bD"] = {
-      function() require("astronvim.utils.status").heirline.buffer_picker(require("astronvim.utils.buffer").close) end,
-      desc = "Pick to close",
-    },
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
-    -- ["<leader>b"] = { name = "Buffers" },
-
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-
-    -- open file picker even more quickly
+    -- `which-key` mappings.
     ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
-
-    -- show neogit
     ["<Leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
+  },
+
+  v = {
+    ["<LocalLeader>c"] = [["_c]],
+    ["<LocalLeader>d"] = [["_d]],
+    ["<LocalLeader>y"] = [["+y]],
+  },
+
+  x = {
+    ["<LocalLeader>p"] = [["_dP]],
+  },
+
+  i = {
+    ["<C-c>"] = "<Esc>",
   },
 
   t = {
