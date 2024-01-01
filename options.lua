@@ -8,6 +8,7 @@ return {
     signcolumn = "auto",
     wrap = true,
     termguicolors = true, -- enable rich text
+    clipboard = "", -- set to "unnamedplus" to link to the system clipboard
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
