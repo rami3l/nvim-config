@@ -15,17 +15,15 @@ return {
     -- Remappings for common operations.
     Q = "<nop>",
     ["<LocalLeader>c"] = [["_c]],
-    ["<LocalLeader>cc"] = [["_cc]],
     ["<LocalLeader>C"] = [["_C]],
     ["<LocalLeader>d"] = [["_d]],
-    ["<LocalLeader>dd"] = [["_dd]],
     ["<LocalLeader>D"] = [["_D]],
     ["<LocalLeader>y"] = [["+y]],
-    ["<LocalLeader>yy"] = [["+yy]],
     ["<LocalLeader>Y"] = [["+Y]],
 
     -- Extra mappings.
     ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+    gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
 
     -- `which-key` mappings.
     ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
