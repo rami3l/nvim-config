@@ -1,11 +1,22 @@
 return {
-  -- https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/pack/rust/README.md
+  -- https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/generated_config.adoc
   settings = {
-    -- Add clippy lints for Rust.
-    checkOnSave = {
-      allFeatures = true,
-      command = "clippy",
-      extraArgs = { "--no-deps" },
+    ["rust-analyzer"] = {
+      completion = {
+        callable = { snippets = "add_parentheses" },
+      },
+      check = { command = "clippy" },
+      imports = {
+        granularity = { enforce = true },
+        prefix = "self",
+      },
+      inlayHints = {
+        closureReturnTypeHints = { enable = "with_block" },
+        lifetimeElisionHints = { enable = "skip_trivial", useParameterNames = true },
+        typeHints = { hideClosureInitialization = true },
+      },
+      procMacro = { enable = true },
+      rustfmt = { extraArgs = { "+nightly" } },
     },
   },
 }
