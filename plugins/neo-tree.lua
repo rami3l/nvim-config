@@ -2,9 +2,9 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
     filesystem = {
-      filtered_items = {
-        visible = true,
-      },
+      filtered_items = { visible = true },
+      group_empty_dirs = true,
+      scan_mode = "deep",
     },
   },
 }
