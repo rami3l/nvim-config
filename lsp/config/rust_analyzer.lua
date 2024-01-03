@@ -5,6 +5,7 @@ return {
       completion = {
         callable = { snippets = "add_parentheses" },
       },
+      cargo = { features = "all" },
       check = { command = "clippy" },
       imports = {
         granularity = { enforce = true },
