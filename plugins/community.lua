@@ -20,6 +20,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.typst" },
+  { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.scrolling.mini-animate" },
 
   {
