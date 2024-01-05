@@ -24,13 +24,7 @@ return {
   { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.scrolling.mini-animate" },
 
-  {
-    "linux-cultist/venv-selector.nvim",
-    opts = {
-      name = { "venv", ".venv" },
-    },
-  },
-
+  -- astrocommunity.markdown-and-latex.peek-nvim
   {
     "toppair/peek.nvim",
     config = function()
@@ -38,5 +32,13 @@ return {
       vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
       vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
     end,
+  },
+
+  -- astrocommunity.pack.python
+  {
+    "linux-cultist/venv-selector.nvim",
+    opts = {
+      name = { "venv", ".venv" },
+    },
   },
 }
