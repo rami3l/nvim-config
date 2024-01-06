@@ -8,10 +8,10 @@
 -- See <https://github.com/AstroNvim/AstroNvim/blob/main/lua/astronvim/mappings.lua> for the default settings.
 
 return {
-  -- first key is the mode
-  n = {
-    -- second key is the lefthand side of the map
+  -- The first key is the mode, the second key is the lefthand side of the map.
+  -- See <https://neovim.io/doc/user/map.html#%3Amap-modes> for all possible modes.
 
+  n = {
     -- Remappings for common operations.
     Q = "<nop>",
     ["<LocalLeader>c"] = [["_c]],
@@ -27,6 +27,7 @@ return {
 
     -- `which-key` mappings.
     ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
+    ["<Leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
     ["<Leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
   },
 
@@ -42,6 +43,11 @@ return {
 
   i = {
     ["<C-c>"] = "<Esc>",
+  },
+
+  c = {
+    ["<C-j>"] = "<C-n>",
+    ["<C-k>"] = "<C-p>",
   },
 
   t = {
