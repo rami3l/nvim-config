@@ -26,8 +26,8 @@ return {
     gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
 
     -- `which-key` mappings.
-    ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
     ["<Leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
+    ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
     ["<Leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
   },
 

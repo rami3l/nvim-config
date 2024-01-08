@@ -2,9 +2,9 @@ return {
   "folke/which-key.nvim",
   opts = {
     icons = {
-      breadcrumb = "»",
-      separator = "➜",
-      group = "+",
+      breadcrumb = ">",
+      separator = "",
+      group = "+ ",
     },
   },
 }
