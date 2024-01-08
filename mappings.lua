@@ -25,8 +25,10 @@ return {
     ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
     gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
 
-    -- `which-key` mappings.
+    -- `which-key` remappings.
     ["<Leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
+
+    -- `which-key` mappings.
     ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
     ["<Leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
   },
