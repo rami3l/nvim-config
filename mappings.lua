@@ -11,36 +11,36 @@ return {
   -- The first key is the mode, the second key is the lefthand side of the map.
   -- See <https://neovim.io/doc/user/map.html#%3Amap-modes> for all possible modes.
 
+  -- NOTE: `leader` and `localleader` should be lowercase to clash with the builtin keybinding.
+
   n = {
     -- Remappings for common operations.
     Q = "<nop>",
-    ["<LocalLeader>c"] = [["_c]],
-    ["<LocalLeader>C"] = [["_C]],
-    ["<LocalLeader>d"] = [["_d]],
-    ["<LocalLeader>D"] = [["_D]],
-    ["<LocalLeader>y"] = [["+y]],
-    ["<LocalLeader>Y"] = [["+Y]],
+    ["<localleader>c"] = [["_c]],
+    ["<localleader>C"] = [["_C]],
+    ["<localleader>d"] = [["_d]],
+    ["<localleader>D"] = [["_D]],
+    ["<localleader>y"] = [["+y]],
+    ["<localleader>Y"] = [["+Y]],
 
     -- Extra mappings.
     ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
     gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
 
-    -- `which-key` remappings.
-    ["<Leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
-
-    -- `which-key` mappings.
-    ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
-    ["<Leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
+    -- `which-key` (re)mappings.
+    ["<leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
+    ["<leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
+    ["<leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
   },
 
   v = {
-    ["<LocalLeader>c"] = [["_c]],
-    ["<LocalLeader>d"] = [["_d]],
-    ["<LocalLeader>y"] = [["+y]],
+    ["<localleader>c"] = [["_c]],
+    ["<localleader>d"] = [["_d]],
+    ["<localleader>y"] = [["+y]],
   },
 
   x = {
-    ["<LocalLeader>p"] = [["_dP]],
+    ["<localleader>p"] = [["_dP]],
   },
 
   i = {
