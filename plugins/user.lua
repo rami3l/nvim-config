@@ -3,28 +3,8 @@ return {
   -- For example:
 
   -- set the color theme
+  "Shatur/neovim-ayu",
   "nyoom-engineering/oxocarbon.nvim",
-
-  {
-    "Shatur/neovim-ayu",
-    name = "ayu",
-    config = function()
-      local ayu = require("ayu")
-      local colors = require("ayu.colors")
-
-      local mirage = true
-      colors.generate(mirage)
-
-      ayu.setup {
-        mirage = mirage,
-        overrides = {
-          TreesitterContext = {
-            bg = colors.selection_inactive,
-          },
-        },
-      }
-    end,
-  },
 
   -- add other plugins
   {
