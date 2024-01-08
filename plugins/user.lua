@@ -13,6 +13,14 @@ return {
 
   -- add other plugins
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "User Astrofile",
+    opts = {
+      max_lines = 2,
+    },
+  },
+
+  {
     "Julian/lean.nvim",
     event = { "BufReadPre *.lean", "BufNewFile *.lean" },
     dependencies = {
