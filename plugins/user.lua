@@ -8,7 +8,22 @@ return {
   {
     "Shatur/neovim-ayu",
     name = "ayu",
-    config = function() require("ayu").setup { mirage = true } end,
+    config = function()
+      local ayu = require("ayu")
+      local colors = require("ayu.colors")
+
+      local mirage = true
+      colors.generate(mirage)
+
+      ayu.setup {
+        mirage = mirage,
+        overrides = {
+          TreesitterContext = {
+            bg = colors.selection_inactive,
+          },
+        },
+      }
+    end,
   },
 
   -- add other plugins
