@@ -30,8 +30,8 @@ return {
     -- `which-key` (re)mappings.
     ["<leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
     ["<leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
-    ["<leader>?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find TODOs" },
-    ["<leader>fT"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find TODOs" },
+    ["<leader>?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find Todos" },
+    ["<leader>fT"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find Todos" },
     ["<leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
   },
 
