@@ -8,7 +8,7 @@ return {
     wrap = true,
     termguicolors = true, -- enable rich text
     clipboard = "", -- set to "unnamedplus" to link to the system clipboard
-    spell = true,
+    spell = false,
     spelllang = "en,fr,cjk", -- enable spell checker
     spelloptions = "camel",
   },
