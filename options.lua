@@ -4,11 +4,13 @@ return {
     -- set to true or false etc.
     relativenumber = true,
     number = true,
-    spell = false,
     signcolumn = "auto",
     wrap = true,
     termguicolors = true, -- enable rich text
     clipboard = "", -- set to "unnamedplus" to link to the system clipboard
+    spell = true,
+    spelllang = "en,fr,cjk", -- enable spell checker
+    spelloptions = "camel",
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
