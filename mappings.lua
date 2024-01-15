@@ -39,6 +39,8 @@ return {
     ["<localleader>c"] = [["_c]],
     ["<localleader>d"] = [["_d]],
     ["<localleader>y"] = [["+y]],
+
+    ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
   },
 
   x = {
