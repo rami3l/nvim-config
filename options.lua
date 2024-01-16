@@ -4,7 +4,7 @@ return {
     -- set to true or false etc.
     relativenumber = true,
     number = true,
-    signcolumn = "auto",
+    signcolumn = "yes", -- set to "auto" to save space when no info is shown on the right of line numbers
     wrap = true,
     termguicolors = true, -- enable rich text
     clipboard = "", -- set to "unnamedplus" to link to the system clipboard
@@ -13,7 +13,7 @@ return {
     spelloptions = "camel",
   },
   g = {
-    mapleader = " ", -- sets vim.g.mapleader
+    mapleader = " ",
     autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
     cmp_enabled = true, -- enable completion at start
     diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
