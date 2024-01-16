@@ -28,6 +28,7 @@ return {
     gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
 
     -- `which-key` (re)mappings.
+    ["<leader>W"] = { ":noautocmd w<CR>", desc = "Save without formatting" },
     ["<leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
     ["<leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
     ["<leader>?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find Todos" },
