@@ -19,6 +19,14 @@ return {
       },
       procMacro = { enable = true },
       rustfmt = { extraArgs = { "+nightly" } },
+      workspace = {
+        symbol = {
+          search = {
+            kind = "all_symbols",
+            limit = 512,
+          },
+        },
+      },
     },
   },
 }
