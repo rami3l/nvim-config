@@ -20,14 +20,6 @@ return {
   },
 
   {
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "User Astrofile",
-    opts = {
-      max_lines = 2,
-    },
-  },
-
-  {
     "Julian/lean.nvim",
     ft = "lean",
     opts = {
@@ -35,4 +27,12 @@ return {
       mappings = true,
     },
   },
+
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-context",
+  --   event = "User Astrofile",
+  --   opts = {
+  --     max_lines = 2,
+  --   },
+  -- },
 }
