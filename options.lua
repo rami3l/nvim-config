@@ -18,7 +18,7 @@ return {
     cmp_enabled = true, -- enable completion at start
     diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     -- icons_enabled = false, -- disable icons in the UI (disable if no nerd font is available, requires restart after changing)
-    autopairs_enabled = false, -- enable autopairs at start
+    autopairs_enabled = true, -- enable autopairs at start
     inlay_hints_enabled = true, -- enable or disable LSP inlay hints on startup (Neovim v0.10 only)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
