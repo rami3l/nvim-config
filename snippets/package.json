@@ -1,0 +1,26 @@
+{
+  "name": "user snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "haskell",
+        "path": "./haskell.json"
+      },
+      {
+        "language": "lean",
+        "path": "./lean.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
+      },
+      {
+        "language": "rust",
+        "path": "./rust.json"
+      }
+    ]
+  }
+}

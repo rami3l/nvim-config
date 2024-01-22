@@ -1,0 +1,14 @@
+{
+  "GHC Pragma": {
+    "prefix": "pragma",
+    "body": [
+      "{-# $1 #-}"
+    ]
+  },
+  "Quasiquote": {
+    "prefix": "qq",
+    "body": [
+      "[$1|$2|]"
+    ]
+  }
+}
