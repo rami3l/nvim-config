@@ -13,22 +13,24 @@ return {
 
   -- NOTE: `leader` and `localleader` should be lowercase to clash with the default keybinding.
 
-  n = {
-    -- Remappings for common operations.
-    Q = "<nop>",
+  [""] = {
+    ["<F1>"] = "<nop>",
+
     ["<localleader>c"] = [["_c]],
-    ["<localleader>C"] = [["_C]],
     ["<localleader>d"] = [["_d]],
-    ["<localleader>D"] = [["_D]],
     ["<localleader>y"] = [["+y]],
+  },
+
+  n = {
+    Q = "<nop>",
+    ["<localleader>C"] = [["_C]],
+    ["<localleader>D"] = [["_D]],
     ["<localleader>Y"] = [["+Y]],
 
-    -- Extra mappings.
     ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
     gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
     ["g?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Search todos" },
 
-    -- `which-key` (re)mappings.
     ["<leader>W"] = { ":noautocmd w<CR>", desc = "Save w/o formatting" },
     ["<leader>/"] = {
       require("telescope.builtin").current_buffer_fuzzy_find,
@@ -41,10 +43,6 @@ return {
   },
 
   v = {
-    ["<localleader>c"] = [["_c]],
-    ["<localleader>d"] = [["_d]],
-    ["<localleader>y"] = [["+y]],
-
     ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
   },
 
