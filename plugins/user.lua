@@ -2,9 +2,19 @@ return {
   -- You can also add new plugins here as well.
   -- For example:
 
-  -- set the color theme
+  -- add themes
   "Shatur/neovim-ayu",
   "nyoom-engineering/oxocarbon.nvim",
+
+  -- configure default light/dark themes
+  {
+    "f-person/auto-dark-mode.nvim",
+    event = "VeryLazy",
+    config = {
+      set_light_mode = function() vim.cmd("colorscheme ayu-light") end,
+      set_dark_mode = function() vim.cmd("colorscheme ayu-mirage") end,
+    },
+  },
 
   -- add other plugins
   {
