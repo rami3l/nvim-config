@@ -5,13 +5,14 @@ return {
   -- add themes
   "Shatur/neovim-ayu",
   "nyoom-engineering/oxocarbon.nvim",
+  "kepano/flexoki-neovim",
 
   -- configure default light/dark themes
   {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
     config = {
-      set_light_mode = function() vim.cmd("colorscheme ayu-light") end,
+      set_light_mode = function() vim.cmd("colorscheme flexoki-light") end,
       set_dark_mode = function() vim.cmd("colorscheme ayu-mirage") end,
     },
   },
