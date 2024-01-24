@@ -26,13 +26,17 @@ return {
     -- Extra mappings.
     ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
     gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
+    ["g?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Search todos" },
 
     -- `which-key` (re)mappings.
-    ["<leader>W"] = { ":noautocmd w<CR>", desc = "Save without formatting" },
-    ["<leader>/"] = { require("telescope.builtin").live_grep, desc = "Find words" },
+    ["<leader>W"] = { ":noautocmd w<CR>", desc = "Save w/o formatting" },
+    ["<leader>/"] = {
+      require("telescope.builtin").current_buffer_fuzzy_find,
+      desc = "Find words in buffer",
+    },
+    ["<leader>?"] = { require("telescope.builtin").live_grep, desc = "Find words" },
     ["<leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
-    ["<leader>?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find Todos" },
-    ["<leader>fT"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find Todos" },
+    ["<leader>fT"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find todos" },
     ["<leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
   },
 
