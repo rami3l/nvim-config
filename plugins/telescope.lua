@@ -6,9 +6,8 @@ return {
       file_ignore_patterns = { ".git/" },
     },
     pickers = {
-      find_files = {
-        hidden = true,
-      },
+      diagnostics = { sort_by = "severity" },
+      find_files = { hidden = true },
     },
   },
 }
