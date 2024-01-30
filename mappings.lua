@@ -40,6 +40,23 @@ return {
     ["<leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
     ["<leader>fT"] = { require("telescope").extensions["todo-comments"].todo, desc = "Find todos" },
     ["<leader>gm"] = { require("neogit").open, desc = "Neogit dispatch" },
+
+    -- Neotest-specific mappings
+    ["<leader>T"] = { desc = (vim.g.icons_enabled and "󰙨 " or "") .. "Test" },
+    ["<leader>Ts"] = { require("neotest").summary.toggle, desc = "Toggle summary" },
+    ["<leader>To"] = {
+      function() require("neotest").output.open { enter = true } end,
+      desc = "Show output",
+    },
+    ["<leader>Tn"] = { require("neotest").run.run, desc = "Run nearest" },
+    ["<leader>T%"] = {
+      function() require("neotest").run.run(vim.fn.expand("%")) end,
+      desc = "Run current file",
+    },
+    ["<leader>Td"] = {
+      function() require("neotest").run.run { suite = false, strategy = "dap" } end,
+      desc = "Debug nearest",
+    },
   },
 
   v = {
