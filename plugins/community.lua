@@ -12,22 +12,8 @@ return {
   { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
-  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
-  { import = "astrocommunity.motion.leap-nvim" },
-  { import = "astrocommunity.motion.nvim-spider" },
-  { import = "astrocommunity.motion.nvim-surround" },
-  { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.pack.java" },
-  { import = "astrocommunity.pack.json" },
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.swift" },
-  { import = "astrocommunity.pack.typst" },
-  { import = "astrocommunity.project.nvim-spectre" },
-  { import = "astrocommunity.test.neotest" },
 
-  -- astrocommunity.markdown-and-latex.peek-nvim
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   {
     "toppair/peek.nvim",
     config = function()
@@ -37,7 +23,9 @@ return {
     end,
   },
 
-  -- astrocommunity.motion.nvim-spider
+  { import = "astrocommunity.motion.leap-nvim" },
+
+  { import = "astrocommunity.motion.nvim-spider" },
   {
     "chrisgrieser/nvim-spider",
     opts = {
@@ -45,11 +33,23 @@ return {
     },
   },
 
-  -- astrocommunity.pack.python
+  { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.lua" },
+
+  { import = "astrocommunity.pack.python" },
   {
     "linux-cultist/venv-selector.nvim",
     opts = {
       name = { "venv", ".venv" },
     },
   },
+
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.swift" },
+  { import = "astrocommunity.pack.typst" },
+  { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.test.neotest" },
 }
