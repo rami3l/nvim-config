@@ -17,6 +17,9 @@ return {
     },
   },
 
+  -- install neovim API helper
+  "folke/neodev.nvim",
+
   -- add other plugins
   {
     "keaising/im-select.nvim",

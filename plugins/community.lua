@@ -25,6 +25,7 @@ return {
   { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.test.neotest" },
 
   -- astrocommunity.markdown-and-latex.peek-nvim
   {
