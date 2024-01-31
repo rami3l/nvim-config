@@ -61,6 +61,9 @@ return {
 
   v = {
     ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+
+    ["<leader>sz"] = { [[:sort i<CR>]], desc = "Sort lines" },
+    ["<leader>sZ"] = { [[:sort! i<CR>]], desc = "Sort lines (rev)" },
   },
 
   x = {
