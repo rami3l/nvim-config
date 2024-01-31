@@ -51,5 +51,12 @@ return {
   { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.project.nvim-spectre" },
+
   { import = "astrocommunity.test.neotest" },
+  {
+    "nvim-neotest/neotest",
+    opts = function(_, opts)
+      opts.adapters["neotest-rust"] = require("neotest-rust") { args = { "--all-features" } }
+    end,
+  },
 }
