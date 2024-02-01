@@ -37,23 +37,23 @@ return {
     keys = {
       -- https://github.com/AstroNvim/astrocommunity/blob/8157924d02308c24754fb4f71e165700f989043f/lua/astrocommunity/project/nvim-spectre/init.lua#L14-L23
       {
-        "<leader>Ts",
+        "<Leader>Ts",
         function() require("neotest").summary.toggle() end,
         desc = "Toggle summary",
       },
       {
-        "<leader>To",
+        "<Leader>To",
         function() require("neotest").output.open { enter = true } end,
         desc = "Show output",
       },
-      { "<leader>Tn", function() require("neotest").run.run() end, desc = "Run nearest" },
+      { "<Leader>Tn", function() require("neotest").run.run() end, desc = "Run nearest" },
       {
-        "<leader>T%",
+        "<Leader>T%",
         function() require("neotest").run.run(vim.fn.expand("%")) end,
         desc = "Run current file",
       },
       {
-        "<leader>Td",
+        "<Leader>Td",
         function() require("neotest").run.run { suite = false, strategy = "dap" } end,
         desc = "Debug nearest",
       },

@@ -1,41 +1,74 @@
-if true then return {} end -- REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings set up as well as which-key menu titles
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    -- Partially borrowed from <https://github.com/ThePrimeagen/init.lua/blob/97c039bb88d8bbbcc9b1e3d0dc716a2ba202c6d2/lua/theprimeagen/remap.lua>.
+    -- See <https://github.com/AstroNvim/AstroNvim/blob/main/lua/astronvim/mappings.lua> for the default settings.
+
     mappings = {
-      -- first key is the mode
-      n = {
-        -- second key is the lefthand side of the map
+      -- The first key is the mode, the second key is the lefthand side of the map.
+      -- See <https://neovim.io/doc/user/map.html#%3Amap-modes> for all possible modes.
 
-        -- navigate buffer tabs with `H` and `L`
-        -- L = {
-        --   function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-        --   desc = "Next buffer",
-        -- },
-        -- H = {
-        --   function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-        --   desc = "Previous buffer",
-        -- },
+      -- NOTE: `leader` and `localleader` should be lowercase to clash with the default keybinding.
 
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bD"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Pick to close",
-        },
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      [""] = {
+        ["<F1>"] = "<nop>",
+
+        ["<LocalLeader>c"] = [["_c]],
+        ["<LocalLeader>d"] = [["_d]],
+        ["<LocalLeader>y"] = [["+y]],
       },
+
+      n = {
+        Q = "<nop>",
+        ["<LocalLeader>C"] = [["_C]],
+        ["<LocalLeader>D"] = [["_D]],
+        ["<LocalLeader>Y"] = [["+Y]],
+
+        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+        gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
+        ["g?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Search todos" },
+
+        ["<Leader>W"] = { ":noautocmd w<CR>", desc = "Save w/o formatting" },
+        ["<Leader>/"] = {
+          require("telescope.builtin").current_buffer_fuzzy_find,
+          desc = "Find words in buffer",
+        },
+        ["<Leader>?"] = { require("telescope.builtin").live_grep, desc = "Find words" },
+        ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
+        ["<Leader>fT"] = {
+          require("telescope").extensions["todo-comments"].todo,
+          desc = "Find todos",
+        },
+
+        -- Prettify menu descriptions
+        ["<Leader>gn"] = { desc = "Neogit" },
+        ["<Leader>s"] = { desc = (vim.g.icons_enabled and "󰛔 " or "") .. "Search/Replace" },
+        ["<Leader>T"] = { desc = (vim.g.icons_enabled and "󰙨 " or "") .. "Test" },
+      },
+
+      v = {
+        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+
+        ["<Leader>sz"] = { [[:sort i<CR>]], desc = "Sort lines" },
+        ["<Leader>sZ"] = { [[:sort! i<CR>]], desc = "Sort lines (rev)" },
+      },
+
+      x = {
+        ["<LocalLeader>p"] = [["_dP]],
+      },
+
+      i = {
+        ["<C-c>"] = "<Esc>",
+      },
+
+      c = {
+        ["<C-j>"] = "<C-n>",
+        ["<C-k>"] = "<C-p>",
+      },
+
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,

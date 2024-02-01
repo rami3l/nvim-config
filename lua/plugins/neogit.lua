@@ -1,7 +1,7 @@
 return {
   "NeogitOrg/neogit",
   keys = {
-    { "<leader>gm", function() require("neogit").open() end, desc = "Neogit dispatch" },
+    { "<Leader>gm", function() require("neogit").open() end, desc = "Neogit dispatch" },
   },
   opts = {
     signs = {
