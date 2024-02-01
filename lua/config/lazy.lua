@@ -23,7 +23,28 @@ lazy.setup({
   -- AstroCommunity modules
   -- TODO: Remove branch v4 on release
   { "AstroNvim/astrocommunity", branch = "v4" },
+  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  { import = "astrocommunity.git.diffview-nvim" },
+  { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
+  { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.motion.nvim-spider" },
+  { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.swift" },
+  { import = "astrocommunity.pack.typst" },
+  { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.test.neotest" },
 
   -- import/override with your plugins
   { import = "plugins" },

@@ -38,7 +38,7 @@ return {
     "Julian/lean.nvim",
     ft = "lean",
     opts = {
-      lsp = { on_attach = function() require("astronvim.utils.lsp").on_attach() end },
+      lsp = { on_attach = require("astrolsp").on_attach },
       mappings = true,
     },
   },
