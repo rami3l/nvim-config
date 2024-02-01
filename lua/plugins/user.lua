@@ -13,8 +13,8 @@ return {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
     opts = {
-      set_light_mode = function() vim.cmd "colorscheme flexoki-light" end,
-      set_dark_mode = function() vim.cmd "colorscheme ayu-mirage" end,
+      set_light_mode = function() vim.cmd("colorscheme flexoki-light") end,
+      set_dark_mode = function() vim.cmd("colorscheme ayu-mirage") end,
     },
   },
 
@@ -26,7 +26,7 @@ return {
     "keaising/im-select.nvim",
     event = "User Astrofile",
     config = function(_, opts)
-      if vim.fn.has "macunix" == 1 then
+      if vim.fn.has("macunix") == 1 then
         opts.default_im_select = "com.apple.keylayout.US"
         opts.default_command = "macism"
       end
