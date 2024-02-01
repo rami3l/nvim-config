@@ -46,7 +46,8 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      gopls = require("plugins.lsp.gopls"),
+      rust_analyzer = require("plugins.lsp.rust_analyzer"),
     },
     -- customize how language servers are attached
     setup_handlers = {

@@ -3,7 +3,8 @@
 return {
   "nvimtools/none-ls.nvim",
   dependencies = {
-    "davidmh/cspell.nvim",
+    -- TODO: Reenable cspell.
+    -- "davidmh/cspell.nvim",
   },
   opts = function(_, opts)
     -- config variable is the default configuration table for the setup function call
@@ -15,13 +16,13 @@ return {
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     opts.sources = {
-      require("cspell").code_actions,
-      require("cspell").diagnostics.with {
-        -- https://github.com/davidmh/cspell.nvim/issues/13
-        diagnostics_postprocess = function(diagnostic)
-          diagnostic.severity = vim.diagnostic.severity["INFO"]
-        end,
-      },
+      -- require("cspell").code_actions,
+      -- require("cspell").diagnostics.with {
+      --   -- https://github.com/davidmh/cspell.nvim/issues/13
+      --   diagnostics_postprocess = function(diagnostic)
+      --     diagnostic.severity = vim.diagnostic.severity["INFO"]
+      --   end,
+      -- },
       nls.builtins.formatting.clang_format.with {
         disabled_filetypes = { "java" },
       },
