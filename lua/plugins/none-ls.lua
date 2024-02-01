@@ -1,21 +1,33 @@
-if true then return {} end -- REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Example customization of Null-LS sources
 ---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",
-  opts = function(_, config)
+  dependencies = {
+    "davidmh/cspell.nvim",
+  },
+  opts = function(_, opts)
     -- config variable is the default configuration table for the setup function call
-    -- local null_ls = require "null-ls"
+    local nls = require("null-ls")
+
+    opts.on_attach = require("astrolsp").on_attach
 
     -- Check supported formatters and linters
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-    config.sources = {
-      -- Set a formatter
-      -- null_ls.builtins.formatting.stylua,
-      -- null_ls.builtins.formatting.prettier,
+    opts.sources = {
+      require("cspell").code_actions,
+      require("cspell").diagnostics.with {
+        -- https://github.com/davidmh/cspell.nvim/issues/13
+        diagnostics_postprocess = function(diagnostic)
+          diagnostic.severity = vim.diagnostic.severity["INFO"]
+        end,
+      },
+      nls.builtins.formatting.clang_format.with {
+        disabled_filetypes = { "java" },
+      },
+      nls.builtins.formatting.swift_format,
+      nls.builtins.formatting.swiftlint,
     }
-    return config -- return final config table
+    return opts
   end,
 }

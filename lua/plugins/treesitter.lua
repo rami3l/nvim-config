@@ -1,5 +1,3 @@
-if true then return {} end -- REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Example customization of Treesitter
 ---@type LazySpec
 return {

@@ -51,16 +51,10 @@ lazy.setup({
 } --[[@as LazySpec]], {
   -- https://github.com/folke/lazy.nvim#%EF%B8%8F-configuration
   install = { colorscheme = { "astrodark", "habamax" } },
-  -- performance = {
-  --   rtp = {
-  --     -- disable some rtp plugins, add more to your liking
-  --     disabled_plugins = {
-  --       "gzip",
-  --       "netrwPlugin",
-  --       "tarPlugin",
-  --       "tohtml",
-  --       "zipPlugin",
-  --     },
-  --   },
-  -- },
+  performance = {
+    rtp = {
+      -- customize default disabled vim plugins
+      disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
+    },
+  },
 } --[[@as LazyConfig]])
