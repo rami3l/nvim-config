@@ -21,13 +21,13 @@ return {
     opts = {
       skipInsignificantPunctuation = false,
     },
+  },
 
-    -- astrocommunity.pack.python
-    {
-      "linux-cultist/venv-selector.nvim",
-      opts = {
-        name = { "venv", ".venv" },
-      },
+  -- astrocommunity.pack.python
+  {
+    "linux-cultist/venv-selector.nvim",
+    opts = {
+      name = { "venv", ".venv" },
     },
   },
 
