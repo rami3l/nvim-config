@@ -24,7 +24,6 @@ local options = {
     autopairs_enabled = true, -- enable autopairs at start
     inlay_hints_enabled = true, -- enable or disable LSP inlay hints on startup (Neovim v0.10 only)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
-    resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
   },
 }
 

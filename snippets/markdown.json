@@ -1,0 +1,10 @@
+{
+	"Foldable section": {
+		"prefix": "foldable",
+		"body": [
+			"<details><summary>$1</summary>",
+			"$2",
+			"</details>"
+		]
+	}
+}

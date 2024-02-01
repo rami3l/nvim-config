@@ -1,0 +1,30 @@
+{
+  "Macro rules declaration": {
+    "prefix": "macro_rules",
+    "body": [
+      "macro_rules! vec {",
+      "    () => {",
+      "        $1",
+      "    };",
+      "    ( \\$elem:expr; \\$n:expr ) => {",
+      "        $2",
+      "    };",
+      "    ( \\$( \\$x:expr ),+ \\$(,)? ) => {",
+      "        $3",
+      "    };",
+      "}"
+    ]
+  },
+  "Unit test module declaration": {
+    "prefix": "mod_tests",
+    "body": [
+      "#[cfg(test)] mod tests {",
+      "    use super::*;",
+      "",
+      "    #[test] fn it_works() {",
+      "        assert_eq!(4, dbg!(2 + 2));$1",
+      "    }",
+      "}"
+    ]
+  }
+}
