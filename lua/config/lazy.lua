@@ -16,26 +16,30 @@ end
 
 ---@type LazyConfig
 lazy.setup({
+  -- AstroNvim base
   -- TODO: change `branch="v4"` to `version="^4"` on release
   { "AstroNvim/AstroNvim", branch = "v4", import = "astronvim.plugins" },
-  -- AstroCommunity: import any community modules here
+
+  -- AstroCommunity modules
   -- TODO: Remove branch v4 on release
-  -- { "AstroNvim/astrocommunity", branch = "v4" },
-  -- { import = "astrocommunity.pack.lua" },
+  { "AstroNvim/astrocommunity", branch = "v4" },
+  { import = "astrocommunity.pack.lua" },
+
   -- import/override with your plugins
   { import = "plugins" },
 } --[[@as LazySpec]], {
+  -- https://github.com/folke/lazy.nvim#%EF%B8%8F-configuration
   install = { colorscheme = { "astrodark", "habamax" } },
-  performance = {
-    rtp = {
-      -- disable some rtp plugins, add more to your liking
-      disabled_plugins = {
-        "gzip",
-        "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "zipPlugin",
-      },
-    },
-  },
+  -- performance = {
+  --   rtp = {
+  --     -- disable some rtp plugins, add more to your liking
+  --     disabled_plugins = {
+  --       "gzip",
+  --       "netrwPlugin",
+  --       "tarPlugin",
+  --       "tohtml",
+  --       "zipPlugin",
+  --     },
+  --   },
+  -- },
 } --[[@as LazyConfig]])
