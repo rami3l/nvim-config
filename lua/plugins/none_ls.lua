@@ -10,9 +10,6 @@ return {
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     opts.sources = {
-      nls.builtins.formatting.clang_format.with {
-        disabled_filetypes = { "java" },
-      },
       nls.builtins.formatting.swift_format,
       nls.builtins.formatting.swiftlint,
     }
