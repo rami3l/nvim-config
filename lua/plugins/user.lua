@@ -13,7 +13,7 @@ return {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
     opts = {
-      set_light_mode = function() vim.cmd("colorscheme flexoki-light") end,
+      set_light_mode = function() vim.cmd("colorscheme astrolight") end,
       set_dark_mode = function() vim.cmd("colorscheme ayu-mirage") end,
     },
   },
