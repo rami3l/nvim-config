@@ -11,8 +11,6 @@ return {
       -- The first key is the mode, the second key is the lefthand side of the map.
       -- See <https://neovim.io/doc/user/map.html#%3Amap-modes> for all possible modes.
 
-      -- NOTE: `leader` and `localleader` should be lowercase to clash with the default keybinding.
-
       [""] = {
         ["<F1>"] = "<nop>",
 
