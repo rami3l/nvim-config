@@ -25,21 +25,7 @@ return {
         ["<LocalLeader>D"] = [["_D]],
         ["<LocalLeader>Y"] = [["+Y]],
 
-        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
-        gL = { require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
-        ["g?"] = { require("telescope").extensions["todo-comments"].todo, desc = "Search todos" },
-
         ["<Leader>W"] = { ":noautocmd w<CR>", desc = "Save w/o formatting" },
-        ["<Leader>/"] = {
-          require("telescope.builtin").current_buffer_fuzzy_find,
-          desc = "Find words in buffer",
-        },
-        ["<Leader>?"] = { require("telescope.builtin").live_grep, desc = "Find words" },
-        ["<Leader>`"] = { require("telescope.builtin").find_files, desc = "Find files" },
-        ["<Leader>fT"] = {
-          require("telescope").extensions["todo-comments"].todo,
-          desc = "Find todos",
-        },
 
         -- Prettify menu descriptions
         ["<Leader>gn"] = { desc = "Neogit" },
@@ -48,8 +34,6 @@ return {
       },
 
       v = {
-        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
-
         ["<Leader>sz"] = { [[:sort i<CR>]], desc = "Sort lines" },
         ["<Leader>sZ"] = { [[:sort! i<CR>]], desc = "Sort lines (rev)" },
       },

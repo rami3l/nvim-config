@@ -61,7 +61,8 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
-        -- gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
+        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,
@@ -73,6 +74,10 @@ return {
         --   desc = "Toggle LSP semantic highlight (buffer)",
         --   cond = function(client) return client.server_capabilities.semanticTokensProvider and vim.lsp.semantic_tokens end,
         -- },
+      },
+
+      v = {
+        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
       },
     },
   },

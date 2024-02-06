@@ -10,4 +10,14 @@ return {
       find_files = { hidden = true },
     },
   },
+  keys = {
+    { "gL", require("telescope.builtin").diagnostics, desc = "Search diagnostics" },
+    {
+      "<Leader>/",
+      require("telescope.builtin").current_buffer_fuzzy_find,
+      desc = "Find words in buffer",
+    },
+    { "<Leader>?", require("telescope.builtin").live_grep, desc = "Find words" },
+    { "<Leader>`", require("telescope.builtin").find_files, desc = "Find files" },
+  },
 }
