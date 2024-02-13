@@ -43,11 +43,11 @@ return {
     },
   },
 
-  -- {
-  --   "nvim-treesitter/nvim-treesitter-context",
-  --   event = "User Astrofile",
-  --   opts = {
-  --     max_lines = 2,
-  --   },
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "User Astrofile",
+    opts = {
+      max_lines = 2,
+    },
+  },
 }
