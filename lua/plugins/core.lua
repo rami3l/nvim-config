@@ -39,5 +39,7 @@ return {
         ui_notifications_enabled = true, -- disable notifications when toggling UI elements
       },
     },
+
+    mappings = require("plugins.core.mappings"),
   },
 }
