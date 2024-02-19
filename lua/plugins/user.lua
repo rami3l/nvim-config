@@ -1,14 +1,14 @@
 ---@type LazySpec
 return {
-  -- You can also add new plugins here as well.
-  -- For example:
+  -- Disable bundled plugins.
+  { "max397574/better-escape.nvim", enabled = false },
 
-  -- add themes
+  -- Add new user plugins.
+
+  -- Themes
   "Shatur/neovim-ayu",
   "nyoom-engineering/oxocarbon.nvim",
   "kepano/flexoki-neovim",
-
-  -- configure default light/dark themes
   {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
@@ -18,10 +18,10 @@ return {
     },
   },
 
-  -- install neovim API helper
+  -- Neovim API helper
   "folke/neodev.nvim",
 
-  -- add other plugins
+  -- Misc
   {
     "keaising/im-select.nvim",
     event = "User Astrofile",

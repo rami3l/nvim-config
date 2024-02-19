@@ -25,7 +25,7 @@ return {
         ["<LocalLeader>D"] = [["_D]],
         ["<LocalLeader>Y"] = [["+Y]],
 
-        ["<Leader>W"] = { ":noautocmd w<CR>", desc = "Save w/o formatting" },
+        ["<Leader>W"] = { "<CMD>noautocmd w<CR>", desc = "Save w/o formatting" },
 
         -- Prettify menu descriptions
         ["<Leader>gn"] = { desc = "Neogit" },
