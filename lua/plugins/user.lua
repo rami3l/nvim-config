@@ -42,13 +42,13 @@ return {
       {
         "williamboman/mason-lspconfig.nvim",
         opts = function(_, opts)
-          opts.ensure_installed = list_insert_unique(opts.ensure_installed, "fsautocomplete")
+          opts.ensure_installed = list_insert_unique(opts.ensure_installed, {"fsautocomplete"})
         end,
       },
       {
         "jay-babu/mason-null-ls.nvim",
         opts = function(_, opts)
-          opts.ensure_installed = list_insert_unique(opts.ensure_installed, "fantomas")
+          opts.ensure_installed = list_insert_unique(opts.ensure_installed, {"fantomas"})
         end,
       },
     },
