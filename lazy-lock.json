@@ -1,5 +1,5 @@
 {
-  "AstroNvim": { "branch": "v4", "commit": "6ec433fd588969d6ade4b1578a99d1d76987f0bf" },
+  "AstroNvim": { "branch": "v4", "commit": "76a6a8280c7187aa007d5a3eb996c0d1b6b31e17" },
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "Ionide-Nvim": { "branch": "main", "commit": "5b0d6a06a282c44a311ed06f6444277229241c2e" },
   "LuaSnip": { "branch": "master", "commit": "a7a4b4682c4b3e2ba82b82a4e6e5f5a0e79dec32" },
@@ -60,7 +60,7 @@
   "nvim-dap-ui": { "branch": "master", "commit": "9720eb5fa2f41988e8770f973cd11b76dd568a5d" },
   "nvim-jdtls": { "branch": "master", "commit": "8eb5f0dbe6e126b392ddcaf45893358619893e45" },
   "nvim-lsp-file-operations": { "branch": "master", "commit": "223aca86b737dc66e9c51ebcda8788a8d9cc6cf2" },
-  "nvim-lspconfig": { "branch": "master", "commit": "16295b79410f131c4fa7870c663b4ace6a761fb2" },
+  "nvim-lspconfig": { "branch": "master", "commit": "b0749f99a788e64f5d9d4fcf8baad966a726b079" },
   "nvim-notify": { "branch": "master", "commit": "5371f4bfc1f6d3adf4fe9d62cd3a9d44356bfd15" },
   "nvim-spectre": { "branch": "master", "commit": "3712ff0cdf4f9f877d9ca708d835a877d9a0abaf" },
   "nvim-spider": { "branch": "main", "commit": "b369f24ac107b903cd73f9f0f5f326d8629bde28" },
