@@ -1,5 +1,3 @@
-local list_insert_unique = require("astrocore").list_insert_unique
-
 ---@type LazySpec
 return {
   -- Add community imports to the `lua/config/lazy.lua` file in your Neovim configuration folder (typically ~/.config/nvim)
@@ -34,8 +32,9 @@ return {
       -- https://github.com/chrisgrieser/nvim-spider?tab=readme-ov-file#utf-8-support
       -- {
       --   "vhyrro/luarocks.nvim",
-      --   branch = "more-fixes",
-      --   opts = function(_, opts) opts.rocks = list_insert_unique(opts.rocks, { "luautf8" }) end,
+      --   opts = function(_, opts)
+      --     opts.rocks = require("astrocore").list_insert_unique(opts.rocks, { "luautf8" })
+      --   end,
       -- },
     },
     opts = {
