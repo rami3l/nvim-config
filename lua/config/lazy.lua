@@ -24,6 +24,8 @@ lazy.setup({
   -- TODO: Remove branch v4 on release
   { "AstroNvim/astrocommunity", branch = "v4" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+  { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
