@@ -36,12 +36,18 @@ return {
     },
 
     mappings = {
+      i = {
+        ["<F2>"] = { vim.lsp.buf.rename, desc = "Rename current symbol" },
+      },
+
       n = {
         ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+        ["<F2>"] = { vim.lsp.buf.rename, desc = "Rename current symbol" },
       },
 
       v = {
         ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+        ["<F2>"] = { vim.lsp.buf.rename, desc = "Rename current symbol" },
       },
     },
   },
