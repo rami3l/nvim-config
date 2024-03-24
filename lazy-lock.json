@@ -36,6 +36,7 @@
   "lsp-inlayhints.nvim": { "branch": "main", "commit": "d981f65c9ae0b6062176f0accb9c151daeda6f16" },
   "lsp_signature.nvim": { "branch": "master", "commit": "c6aeb2f1d2538bbdfdaab1664d9d4c3c75aa9db8" },
   "lspkind.nvim": { "branch": "master", "commit": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf" },
+  "luarocks.nvim": { "branch": "main", "commit": "bbd7707a7ecbdb2db7da35004cd1ebb6a1ed7a5e" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "9dfcf2036c223920826140f0151d929a43f9eceb" },
   "mason-null-ls.nvim": { "branch": "main", "commit": "e270134d83ba59425edc53356c6fd337b61bb8dd" },
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "67210c0e775adec55de9826b038e8b62de554afc" },

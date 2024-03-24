@@ -28,14 +28,15 @@ return {
   {
     "chrisgrieser/nvim-spider",
     dependencies = {
-      -- TODO: Fixer la répartition des mots.
+      -- Fixer la détection des mots non-ASCII.
       -- https://github.com/chrisgrieser/nvim-spider?tab=readme-ov-file#utf-8-support
-      -- {
-      --   "vhyrro/luarocks.nvim",
-      --   opts = function(_, opts)
-      --     opts.rocks = require("astrocore").list_insert_unique(opts.rocks, { "luautf8" })
-      --   end,
-      -- },
+      {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        opts = function(_, opts)
+          opts.rocks = require("astrocore").list_insert_unique(opts.rocks, { "luautf8" })
+        end,
+      },
     },
     opts = {
       skipInsignificantPunctuation = false,
