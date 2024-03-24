@@ -8,17 +8,9 @@ return {
       autoformat = true,
       codelens = true,
 
-      -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = off)
-      diagnostics_mode = 3,
-
       inlay_hints = false,
       lsp_handlers = true,
       semantic_tokens = true,
-    },
-
-    diagnostics = {
-      virtual_text = true,
-      underline = true,
     },
 
     formatting = {
