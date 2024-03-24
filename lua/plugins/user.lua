@@ -23,19 +23,7 @@ return {
   -- Neovim API helper
   "folke/neodev.nvim",
 
-  -- Misc
-  {
-    "keaising/im-select.nvim",
-    event = "User Astrofile",
-    config = function(_, opts)
-      if vim.fn.has("macunix") == 1 then
-        opts.default_im_select = "com.apple.keylayout.US"
-        opts.default_command = "macism"
-      end
-      require("im_select").setup(opts)
-    end,
-  },
-
+  -- Language support
   {
     "WillEhrendreich/Ionide-Nvim",
     dependencies = {
@@ -61,6 +49,19 @@ return {
       lsp = { on_attach = require("astrolsp").on_attach },
       mappings = true,
     },
+  },
+
+  -- UI enhancements
+  {
+    "keaising/im-select.nvim",
+    event = "User Astrofile",
+    config = function(_, opts)
+      if vim.fn.has("macunix") == 1 then
+        opts.default_im_select = "com.apple.keylayout.US"
+        opts.default_command = "macism"
+      end
+      require("im_select").setup(opts)
+    end,
   },
 
   {
