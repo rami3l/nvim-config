@@ -63,9 +63,6 @@ return {
   -- astrocommunity.test.neotest
   {
     "nvim-neotest/neotest",
-    opts = function(_, opts)
-      opts.adapters["neotest-rust"] = require("neotest-rust") { args = { "--all-features" } }
-    end,
     keys = {
       -- https://github.com/AstroNvim/astrocommunity/blob/8157924d02308c24754fb4f71e165700f989043f/lua/astrocommunity/project/nvim-spectre/init.lua#L14-L23
       {
