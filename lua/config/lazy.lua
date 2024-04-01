@@ -17,12 +17,10 @@ end
 ---@type LazyConfig
 lazy.setup({
   -- AstroNvim base
-  -- TODO: change `branch="v4"` to `version="^4"` on release
-  { "AstroNvim/AstroNvim", branch = "v4", import = "astronvim.plugins" },
+  { "AstroNvim/AstroNvim", import = "astronvim.plugins" },
 
   -- AstroCommunity modules
-  -- TODO: Remove branch v4 on release
-  { "AstroNvim/astrocommunity", branch = "v4" },
+  { "AstroNvim/astrocommunity" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
