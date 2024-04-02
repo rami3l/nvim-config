@@ -7,16 +7,23 @@ return {
 
   -- Add new user plugins.
 
-  -- Themes
+  -- Theming
   "Shatur/neovim-ayu",
   "nyoom-engineering/oxocarbon.nvim",
   "kepano/flexoki-neovim",
+
   {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
     opts = {
-      set_light_mode = function() vim.cmd("colorscheme astrolight") end,
-      set_dark_mode = function() vim.cmd("colorscheme ayu-mirage") end,
+      set_light_mode = function()
+        vim.opt.background = "light"
+        vim.cmd("colorscheme astrolight")
+      end,
+      set_dark_mode = function()
+        vim.opt.background = "dark"
+        vim.cmd("colorscheme ayu-mirage")
+      end,
     },
   },
 
