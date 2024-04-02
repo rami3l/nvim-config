@@ -4,6 +4,9 @@ return {
     ["rust-analyzer"] = {
       cargo = { features = "all" },
       check = { command = "clippy" },
+      completion = {
+        postfix = { enable = true },
+      },
       imports = {
         granularity = { enforce = true },
         prefix = "self",

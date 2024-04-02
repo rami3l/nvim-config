@@ -1,5 +1,5 @@
 {
-  "AstroNvim": { "branch": "main", "commit": "55e6f2503c028d9031182ed93eb811af261d674f" },
+  "AstroNvim": { "branch": "main", "commit": "7aa58a758eb6f662f5ca4fc1a94152e29e0bc758" },
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "Ionide-Nvim": { "branch": "main", "commit": "5b0d6a06a282c44a311ed06f6444277229241c2e" },
   "LuaSnip": { "branch": "master", "commit": "79cc25c39878401d4e8b6ec42fcf14639426bafc" },
