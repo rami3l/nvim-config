@@ -6,9 +6,7 @@ return {
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",
-    -- overrides `require("mason-lspconfig").setup(...)`
     opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = list_insert_unique(opts.ensure_installed, { "lua_ls" })
     end,
   },
@@ -18,11 +16,9 @@ return {
     dependencies = {
       { "davidmh/cspell.nvim", lazy = true },
     },
-    -- overrides `require("mason-null-ls").setup(...)`
     opts = function(_, opts)
       local nls = require("null-ls")
 
-      -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = list_insert_unique(opts.ensure_installed, { "cspell" })
 
       local cspell_cfg = { config_file_preferred_name = ".cspell.json" }
@@ -52,10 +48,8 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
-      -- opts.ensure_installed = list_insert_unique(opts.ensure_installed, {})
-    end,
+    -- opts = function(_, opts)
+    -- opts.ensure_installed = list_insert_unique(opts.ensure_installed, {})
+    -- end,
   },
 }
