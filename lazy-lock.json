@@ -1,7 +1,6 @@
 {
   "AstroNvim": { "branch": "main", "commit": "9626e38f38df46ed29afaa0d5b2a8cbdf619c003" },
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
-  "Ionide-Nvim": { "branch": "main", "commit": "5b0d6a06a282c44a311ed06f6444277229241c2e" },
   "LuaSnip": { "branch": "master", "commit": "be7be2ca7f55bb881a7ffc16b2efa5af034ab06b" },
   "SchemaStore.nvim": { "branch": "main", "commit": "80d701841487f72bf9d3fa56b25146b95e190502" },
   "aerial.nvim": { "branch": "master", "commit": "24ebacab5821107c50f628e8e7774f105c08fe9b" },

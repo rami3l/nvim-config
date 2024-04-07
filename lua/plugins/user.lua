@@ -1,5 +1,3 @@
-local list_insert_unique = require("astrocore").list_insert_unique
-
 ---@type LazySpec
 return {
   -- Disable bundled plugins.
@@ -31,24 +29,6 @@ return {
   "folke/neodev.nvim",
 
   -- Language support
-  {
-    "WillEhrendreich/Ionide-Nvim",
-    dependencies = {
-      {
-        "williamboman/mason-lspconfig.nvim",
-        opts = function(_, opts)
-          opts.ensure_installed = list_insert_unique(opts.ensure_installed, { "fsautocomplete" })
-        end,
-      },
-      {
-        "jay-babu/mason-null-ls.nvim",
-        opts = function(_, opts)
-          opts.ensure_installed = list_insert_unique(opts.ensure_installed, { "fantomas" })
-        end,
-      },
-    },
-  },
-
   {
     "Julian/lean.nvim",
     ft = "lean",
