@@ -58,4 +58,34 @@ return {
       max_lines = 2,
     },
   },
+
+  -- Misc
+  {
+    "davidmh/cspell.nvim",
+    dependencies = {
+      {
+        "jay-babu/mason-null-ls.nvim",
+
+        opts = function(_, opts)
+          opts.ensure_installed =
+            require("astrocore").list_insert_unique(opts.ensure_installed, { "cspell" })
+
+          local cspell_cfg = { config_file_preferred_name = ".cspell.json" }
+
+          opts.handlers.cspell = function()
+            require("null-ls").register {
+              require("cspell").code_actions.with { config = cspell_cfg },
+              require("cspell").diagnostics.with {
+                config = cspell_cfg,
+                -- https://github.com/davidmh/cspell.nvim/issues/13
+                diagnostics_postprocess = function(diagnostic)
+                  diagnostic.severity = vim.diagnostic.severity["INFO"]
+                end,
+              },
+            }
+          end
+        end,
+      },
+    },
+  },
 }
