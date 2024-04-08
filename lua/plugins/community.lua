@@ -79,29 +79,10 @@ return {
 
   -- astrocommunity.pack.typst
   {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      -- FIXME: Use `mason-lspconfig` to manage `tinymist`.
-      require("lspconfig").tinymist.setup {
-        cmd = { "tinymist" },
-        root_dir = function() return vim.fn.getcwd() end,
-        settings = {},
-      }
-    end,
-    opts = function(_, opts)
-      opts.ensure_installed = vim.tbl_filter(
-        function(it) return it ~= "typst_lsp" end,
-        opts.ensure_installed
-      )
-    end,
-  },
-  {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "typstfmt",
-        -- FIXME: Use `mason-lspconfig` to manage `tinymist`.
-        "tinymist",
       })
     end,
   },
