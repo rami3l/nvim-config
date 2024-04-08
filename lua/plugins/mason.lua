@@ -1,13 +1,12 @@
 -- Customization of mason plugins
-local list_insert_unique = require("astrocore").list_insert_unique
-
 ---@type LazySpec
 return {
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
-      opts.ensure_installed = list_insert_unique(opts.ensure_installed, { "lua_ls" })
+      opts.ensure_installed =
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "lua_ls" })
     end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
@@ -19,7 +18,8 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
 
-      opts.ensure_installed = list_insert_unique(opts.ensure_installed, { "cspell" })
+      opts.ensure_installed =
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "cspell" })
 
       local cspell_cfg = { config_file_preferred_name = ".cspell.json" }
 
