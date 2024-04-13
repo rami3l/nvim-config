@@ -6,9 +6,9 @@ return {
   -- Add new user plugins.
 
   -- Theming
-  "Shatur/neovim-ayu",
-  "nyoom-engineering/oxocarbon.nvim",
-  "kepano/flexoki-neovim",
+  { "Shatur/neovim-ayu", lazy = true },
+  { "nyoom-engineering/oxocarbon.nvim", lazy = true },
+  { "kepano/flexoki-neovim", lazy = true },
 
   {
     "f-person/auto-dark-mode.nvim",
@@ -26,7 +26,7 @@ return {
   },
 
   -- Neovim API helper
-  "folke/neodev.nvim",
+  { "folke/neodev.nvim", lazy = true },
 
   -- Language support
   {
@@ -62,6 +62,7 @@ return {
   -- Misc
   {
     "davidmh/cspell.nvim",
+    lazy = true,
     dependencies = {
       {
         "jay-babu/mason-null-ls.nvim",
