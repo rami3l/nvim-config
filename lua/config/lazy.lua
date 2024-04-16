@@ -46,6 +46,7 @@ lazy.setup({
   { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.test.neotest" },
 
   -- import/override with your plugins

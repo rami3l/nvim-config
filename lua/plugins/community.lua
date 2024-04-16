@@ -87,6 +87,23 @@ return {
     end,
   },
 
+  -- astrocommunity.project.nvim-spectre
+  {
+    "nvim-pack/nvim-spectre",
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          local menu = {
+            desc = require("astroui").get_icon("Spectre", 1, true) .. "Search/Replace",
+          }
+          opts.mappings.n["<Leader>s"] = menu
+          opts.mappings.x["<Leader>s"] = menu
+        end,
+      },
+    },
+  },
+
   -- astrocommunity.test.neotest
   {
     "nvim-neotest/neotest",
