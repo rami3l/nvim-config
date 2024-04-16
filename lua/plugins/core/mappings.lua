@@ -24,6 +24,7 @@ return {
 
     -- Prettify menu descriptions
     ["<Leader>gn"] = { desc = "Neogit" },
+    -- FIXME: Move icons over to AstroUI
     ["<Leader>s"] = { desc = (vim.g.icons_enabled and "󰛔 " or "") .. "Search/Replace" },
     ["<Leader>T"] = { desc = (vim.g.icons_enabled and "󰙨 " or "") .. "Test" },
   },
