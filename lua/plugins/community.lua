@@ -110,7 +110,7 @@ return {
     keys = {
       -- https://github.com/AstroNvim/astrocommunity/blob/8157924d02308c24754fb4f71e165700f989043f/lua/astrocommunity/project/nvim-spectre/init.lua#L14-L23
       {
-        "<Leader>Ts",
+        "<Leader>Te",
         function() require("neotest").summary.toggle() end,
         desc = "Toggle summary",
       },
