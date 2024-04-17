@@ -1,4 +1,6 @@
 -- https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/generated_config.adoc
+---@type lspconfig.options.rust_analyzer
+---@diagnostic disable: missing-fields
 return {
   settings = {
     ["rust-analyzer"] = {
