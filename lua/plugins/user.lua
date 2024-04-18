@@ -5,26 +5,6 @@ return {
 
   -- Add new user plugins.
 
-  -- Theming
-  { "Shatur/neovim-ayu", lazy = true },
-  { "nyoom-engineering/oxocarbon.nvim", lazy = true },
-  { "kepano/flexoki-neovim", lazy = true },
-
-  {
-    "f-person/auto-dark-mode.nvim",
-    event = "VeryLazy",
-    opts = {
-      set_light_mode = function()
-        vim.opt.background = "light"
-        vim.cmd("colorscheme astrolight")
-      end,
-      set_dark_mode = function()
-        vim.opt.background = "dark"
-        vim.cmd("colorscheme ayu-mirage")
-      end,
-    },
-  },
-
   -- Neovim API helper
   { "folke/neodev.nvim", lazy = true },
 
