@@ -16,7 +16,7 @@ end
 
 ---@type LazyConfig
 lazy.setup({
-  -- AstroNvim base
+  --AstroNvim base
   { "AstroNvim/AstroNvim", import = "astronvim.plugins" },
 
   -- AstroCommunity modules
@@ -28,6 +28,7 @@ lazy.setup({
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
+  { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },

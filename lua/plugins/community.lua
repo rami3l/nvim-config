@@ -14,6 +14,18 @@ return {
     },
   },
 
+  -- astrocommunity.git.git-blame-nvim
+  {
+    "f-person/git-blame.nvim",
+    opts = {
+      date_format = "%r",
+      message_template = "  <author> • <date> • <sha>",
+      message_when_not_committed = "",
+      gitblame_schedule_event = "CursorHold",
+      gitblame_clear_event = "CursorHoldI",
+    },
+  },
+
   -- astrocommunity.markdown-and-latex.peek-nvim
   {
     "toppair/peek.nvim",
