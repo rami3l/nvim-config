@@ -1,3 +1,4 @@
+---@type table<string, string>
 return {
   ActiveLSP = "LSP:",
   ArrowLeft = "<",

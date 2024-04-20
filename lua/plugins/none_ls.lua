@@ -1,4 +1,3 @@
--- Example customization of Null-LS sources
 ---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",

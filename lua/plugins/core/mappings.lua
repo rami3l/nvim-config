@@ -1,7 +1,7 @@
 -- Partially borrowed from <https://github.com/ThePrimeagen/init.lua/blob/97c039bb88d8bbbcc9b1e3d0dc716a2ba202c6d2/lua/theprimeagen/remap.lua>.
 -- See <https://github.com/AstroNvim/AstroNvim/blob/main/lua/astronvim/mappings.lua> for the default settings.
 
---@type AstroCoreMappings
+---@type AstroCoreMappings
 return {
   -- The first key is the mode, the second key is the lefthand side of the map.
   -- See <https://neovim.io/doc/user/map.html#%3Amap-modes> for all possible modes.

@@ -1,4 +1,5 @@
 -- For more examples, see: https://github.com/AstroNvim/template/blob/main/lua/plugins/lsp.lua
+
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
