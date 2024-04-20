@@ -9,6 +9,22 @@ return {
   { "folke/neodev.nvim", lazy = true },
 
   -- Language support
+  "beardedsakimonkey/nvim-antifennel",
+  {
+    "gpanders/nvim-parinfer",
+    dependencies = {
+      "AstroNvim/astrocore",
+      opts = {
+        options = {
+          g = {
+            parinfer_force_balance = true,
+            parinfer_comment_chars = ";;",
+          },
+        },
+      },
+    },
+  },
+
   {
     "Julian/lean.nvim",
     ft = "lean",
