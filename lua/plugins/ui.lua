@@ -21,11 +21,11 @@ return {
     opts = {
       set_light_mode = function()
         vim.opt.background = "light"
-        vim.cmd("colorscheme onedark")
+        vim.cmd.colorscheme("onedark")
       end,
       set_dark_mode = function()
         vim.opt.background = "dark"
-        vim.cmd("colorscheme ayu-mirage")
+        vim.cmd.colorscheme("ayu-mirage")
       end,
     },
   },
