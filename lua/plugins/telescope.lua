@@ -1,14 +1,16 @@
+-- https://github.com/nvim-telescope/telescope.nvim/blob/master/doc/telescope.txt
+
 ---@type LazySpec
 return {
   "nvim-telescope/telescope.nvim",
   opts = {
     defaults = {
-      hidden = true,
       file_ignore_patterns = { ".git/" },
     },
     pickers = {
       diagnostics = { sort_by = "severity" },
       find_files = { hidden = true },
+      live_grep = { additional_args = { "--hidden" } },
     },
   },
   keys = {
