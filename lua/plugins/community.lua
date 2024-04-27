@@ -55,6 +55,36 @@ return {
     },
   },
 
+  -- astrocommunity.motion.leap-nvim
+  {
+    "ggandor/leap.nvim",
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          mappings = {
+            n = {
+              ["s"] = { "<Plug>(leap-forward-to)", desc = "Leap forward to" },
+              ["S"] = { "<Plug>(leap-backward-to)", desc = "Leap backward to" },
+            },
+            x = {
+              ["s"] = { "<Plug>(leap-forward-to)", desc = "Leap forward to" },
+              ["S"] = { "<Plug>(leap-backward-to)", desc = "Leap backward to" },
+              ["x"] = { "<Plug>(leap-forward-till)", desc = "Leap forward till" },
+              ["X"] = { "<Plug>(leap-backward-till)", desc = "Leap backward till" },
+            },
+            o = {
+              ["s"] = { "<Plug>(leap-forward-to)", desc = "Leap forward to" },
+              ["S"] = { "<Plug>(leap-backward-to)", desc = "Leap backward to" },
+              ["x"] = { "<Plug>(leap-forward-till)", desc = "Leap forward till" },
+              ["X"] = { "<Plug>(leap-backward-till)", desc = "Leap backward till" },
+            },
+          },
+        },
+      },
+    },
+  },
+
   -- astrocommunity.pack.java
   {
     "jay-babu/mason-null-ls.nvim",
