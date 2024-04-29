@@ -19,9 +19,6 @@ return {
       timeout_ms = 1000,
     },
 
-    -- enable servers that you already have installed without mason
-    servers = {},
-
     ---@diagnostic disable: missing-fields
     config = {
       gopls = require("plugins.lsp.gopls"),
