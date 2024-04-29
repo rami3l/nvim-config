@@ -88,10 +88,8 @@ return {
   -- astrocommunity.pack.java
   {
     "jay-babu/mason-null-ls.nvim",
-
     opts = function(_, opts)
       local nls = require("null-ls")
-
       opts.handlers.clang_format = function()
         nls.register {
           nls.builtins.formatting.clang_format.with {
