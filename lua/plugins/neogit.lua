@@ -6,11 +6,9 @@ return {
   },
   opts = {
     graph_style = "unicode",
-    sections = { recent = { folded = false } },
-    signs = {
-      -- { CLOSED, OPENED }
-      item = { ">", "v" },
-      section = { ">", "v" },
+    sections = {
+      rebase = { folded = false },
+      recent = { folded = false },
     },
     mappings = {
       -- NOTE: `c-` should be lowercase to clash with the default keybinding.
