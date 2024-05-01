@@ -5,6 +5,18 @@ return {
 
   -- This is a good place to do further customize the options set by the community plugins/packs
 
+  -- astrocommunity.diagnostics.trouble-nvim
+  {
+    "folke/trouble.nvim",
+    branch = "dev",
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts) opts.mappings.n["<leader>xT"] = false end,
+      },
+    },
+  },
+
   -- astrocommunity.editing-support.todo-comments-nvim
   {
     "folke/todo-comments.nvim",
