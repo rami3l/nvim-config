@@ -73,26 +73,16 @@ return {
     dependencies = {
       {
         "AstroNvim/astrocore",
-        opts = {
-          mappings = {
-            n = {
-              ["s"] = { "<Plug>(leap-forward-to)", desc = "Leap forward to" },
-              ["S"] = { "<Plug>(leap-backward-to)", desc = "Leap backward to" },
-            },
-            x = {
-              ["s"] = { "<Plug>(leap-forward-to)", desc = "Leap forward to" },
-              ["S"] = { "<Plug>(leap-backward-to)", desc = "Leap backward to" },
-              ["x"] = { "<Plug>(leap-forward-till)", desc = "Leap forward till" },
-              ["X"] = { "<Plug>(leap-backward-till)", desc = "Leap backward till" },
-            },
-            o = {
-              ["s"] = { "<Plug>(leap-forward-to)", desc = "Leap forward to" },
-              ["S"] = { "<Plug>(leap-backward-to)", desc = "Leap backward to" },
-              ["x"] = { "<Plug>(leap-forward-till)", desc = "Leap forward till" },
-              ["X"] = { "<Plug>(leap-backward-till)", desc = "Leap backward till" },
-            },
-          },
-        },
+        opts = function(_, opts)
+          local m = opts.mappings
+          local forward = { "<Plug>(leap-forward)", desc = "Leap forward" }
+          local backward = { "<Plug>(leap-backward)", desc = "Leap backward" }
+          local from_window = { "<Plug>(leap-from-window)", desc = "Leap from window" }
+
+          m.n.s, m.x.x, m.o.x = forward, forward, forward
+          m.n.S, m.x.X, m.o.X = backward, backward, backward
+          m.n.gs, m.x.gs, m.o.gs = from_window, from_window, from_window
+        end,
       },
     },
   },
