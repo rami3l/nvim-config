@@ -89,9 +89,20 @@ return {
 
   -- astrocommunity.pack.java
   {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      settings = {
+        format = { enabled = false },
+      },
+    },
+  },
+  {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
       local nls = require("null-ls")
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+        "google-java-format",
+      })
       opts.handlers.clang_format = function()
         nls.register {
           nls.builtins.formatting.clang_format.with {
