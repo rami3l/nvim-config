@@ -1,16 +1,1 @@
-{
-  "version": "0.2",
-  "language": "en",
-  "minWordLength": 5,
-  "allowCompoundWords": true,
-  "words": [
-    "astro",
-    "astrocore",
-    "astrocommunity",
-    "lsp",
-    "lspconfig",
-    "nvim",
-    "vim"
-  ],
-  "flagWords": []
-}
+{"flagWords":[],"words":["astro","astrocore","astrocommunity","lsp","lspconfig","nvim","vim","catppuccin"],"language":"en","minWordLength":5,"allowCompoundWords":true,"version":"0.2"}
