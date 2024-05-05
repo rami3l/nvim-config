@@ -161,11 +161,13 @@ return {
       {
         "AstroNvim/astrocore",
         opts = function(_, opts)
+          local m = opts.mappings
           local menu = {
             desc = require("astroui").get_icon("Spectre", 1, true) .. "Search/Replace",
           }
-          opts.mappings.n["<Leader>s"] = menu
-          opts.mappings.x["<Leader>s"] = menu
+          m.n["<Leader>s"] = menu
+          m.n["<Leader>ss"] = { require("spectre").toggle, desc = "Spectre" }
+          m.x["<Leader>s"] = menu
         end,
       },
     },
