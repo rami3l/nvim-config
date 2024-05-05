@@ -91,7 +91,7 @@ return {
     "mfussenegger/nvim-jdtls",
     opts = {
       settings = {
-        format = { enabled = false },
+        java = { format = { enabled = false } },
       },
     },
   },
