@@ -8,7 +8,6 @@ return {
   -- astrocommunity.diagnostics.trouble-nvim
   {
     "folke/trouble.nvim",
-    branch = "dev",
     dependencies = {
       {
         "AstroNvim/astrocore",
