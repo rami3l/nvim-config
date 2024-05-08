@@ -1,11 +1,13 @@
 ---@type LazySpec
 return {
   "NeogitOrg/neogit",
+  branch = "nightly",
   keys = {
     { "<Leader>gm", function() require("neogit").open() end, desc = "Neogit dispatch" },
   },
   opts = {
     graph_style = "unicode",
+    disable_signs = true,
     sections = {
       rebase = { folded = false },
       recent = { folded = false },
@@ -16,6 +18,9 @@ return {
         ["<c-j>"] = "Next",
         ["<c-k>"] = "Previous",
       },
+    },
+    ignored_settings = {
+      "NeogitCommitPopup--reuse-message",
     },
   },
 }
