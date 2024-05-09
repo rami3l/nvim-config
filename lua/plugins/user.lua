@@ -18,7 +18,26 @@ return {
     },
   },
 
-  -- UI enhancements
+  -- UX enhancements
+  {
+    "mizlan/iswap.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<Leader>rx", "<CMD>ISwapWith<CR>", desc = "Exchange syntax node" },
+      { "<Leader>rX", "<CMD>IMoveWith<CR>", desc = "Shift syntax node" },
+    },
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          opts.mappings.n["<Leader>r"] =
+            { desc = require("astroui").get_icon("Refactoring", 1, true) .. "Refactor" }
+        end,
+      },
+      { "AstroNvim/astroui", opts = { icons = { Refactoring = "󰣪" } } },
+    },
+  },
+
   {
     "keaising/im-select.nvim",
     event = "User Astrofile",

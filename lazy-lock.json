@@ -30,6 +30,7 @@
   "heirline.nvim": { "branch": "master", "commit": "03cff30d7e7d3ba6fdc00925f015822f79cef908" },
   "im-select.nvim": { "branch": "master", "commit": "ca1aebb8f5c8a0342ae99a0fcc8ebc49b5f2201e" },
   "indent-blankline.nvim": { "branch": "master", "commit": "3d08501caef2329aba5121b753e903904088f7e6" },
+  "iswap.nvim": { "branch": "master", "commit": "dbc6c072a4bbdfe208455f70e2d1d7325b4327a3" },
   "lazy.nvim": { "branch": "main", "commit": "d3974346b6cef2116c8e7b08423256a834cb7cbc" },
   "lean.nvim": { "branch": "main", "commit": "2828898ad6f6ac6c1c9f404d72bd3d56546b0c72" },
   "leap.nvim": { "branch": "main", "commit": "f1f19fc268b406b00b50091f51f16d9634fbe449" },
