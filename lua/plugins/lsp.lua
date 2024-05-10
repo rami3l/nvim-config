@@ -9,7 +9,7 @@ return {
       autoformat = true,
       codelens = true,
 
-      inlay_hints = false,
+      inlay_hints = true,
       lsp_handlers = true,
       semantic_tokens = true,
     },
