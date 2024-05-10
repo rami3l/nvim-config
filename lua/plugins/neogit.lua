@@ -22,6 +22,10 @@ return {
       },
     },
     ignored_settings = {
+      "NeogitPushPopup--force-with-lease",
+      "NeogitPushPopup--force",
+      "NeogitPullPopup--rebase",
+      "NeogitCommitPopup--allow-empty",
       "NeogitCommitPopup--reuse-message",
     },
     integrations = {
