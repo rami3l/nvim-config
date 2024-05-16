@@ -4,7 +4,7 @@
 
 ---@type LazySpec
 return {
-  { "AstroNvim/astrocommunity", branch = "gopher" },
+  "AstroNvim/astrocommunity",
 
   -- AstroCommunity modules
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
