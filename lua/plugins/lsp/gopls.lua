@@ -1,5 +1,7 @@
+-- https://github.com/ray-x/go.nvim#nvim-lsp-setup
 return {
   settings = {
+    gofumpt = true,
     gopls = {
       hints = {
         rangeVariableTypes = true,
