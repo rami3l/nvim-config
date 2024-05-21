@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "NeogitOrg/neogit",
-  branch = "nightly",
   keys = {
     { "<Leader>gm", function() require("neogit").open() end, desc = "Neogit dispatch" },
   },
