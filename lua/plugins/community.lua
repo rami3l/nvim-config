@@ -88,6 +88,13 @@ return {
 
   -- astrocommunity.pack.go
   {
+    "williamboman/mason-lspconfig.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed =
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "golangci_lint_ls" })
+    end,
+  },
+  {
     "nvimtools/none-ls.nvim",
     opts = function(_, opts)
       if not opts.sources then opts.sources = {} end
@@ -95,7 +102,6 @@ return {
       opts.sources = vim.list_extend(opts.sources, {
         go_nls.gotest(),
         go_nls.gotest_action(),
-        go_nls.golangci_lint(),
       })
       return opts
     end,
@@ -142,6 +148,15 @@ return {
         opts = function(_, opts) opts.mappings.n["<Leader>lv"] = false end,
       },
     },
+  },
+
+  -- astrocommunity.pack.rust
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed =
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "rust_analyzer" })
+    end,
   },
 
   -- astrocommunity.pack.swift
