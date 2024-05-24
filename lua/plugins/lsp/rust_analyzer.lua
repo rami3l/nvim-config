@@ -15,7 +15,7 @@ return {
       },
       inlayHints = {
         closureReturnTypeHints = { enable = "with_block" },
-        expressionAdjustmentHints = { enable = "reborrow" },
+        expressionAdjustmentHints = { enable = "reborrow", hideOutsideUnsafe = true },
         lifetimeElisionHints = { enable = "skip_trivial", useParameterNames = true },
         typeHints = { hideClosureInitialization = true },
       },
