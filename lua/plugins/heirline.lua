@@ -54,7 +54,20 @@ return {
       },
       status.component.virtual_env(),
       status.component.treesitter(),
-      status.component.nav { percentage = false },
+      (function()
+        local nav = status.component.nav { percentage = false }
+        local children = nav[2]
+        local scrollbar = children[#children]
+
+        local spinner = { "⠁", "⠉", "⠋", "⠛", "⠟", "⠿", "⡿", "⣿" }
+        scrollbar.provider = function()
+          local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+          local lines = vim.api.nvim_buf_line_count(0)
+          local i = math.floor((curr_line - 1) / lines * #spinner) + 1
+          if spinner[i] then return status.utils.stylize(spinner[i], scrollbar.opts) end
+        end
+        return nav
+      end)(),
     }
     return opts
   end,
