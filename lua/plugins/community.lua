@@ -16,6 +16,12 @@ return {
     },
   },
 
+  -- astrocommunity.editing-support.nvim-treesitter-context
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = { max_lines = 2 },
+  },
+
   -- astrocommunity.editing-support.todo-comments-nvim
   {
     "folke/todo-comments.nvim",

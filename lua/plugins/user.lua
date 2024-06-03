@@ -3,10 +3,7 @@ return {
   -- Disable bundled plugins.
   { "max397574/better-escape.nvim", enabled = false },
 
-  -- Add new user plugins.
-
-  -- Neovim API helper
-  { "folke/neodev.nvim", lazy = true },
+  -- Add new user plugins below.
 
   -- UX enhancements
   {
@@ -37,11 +34,5 @@ return {
         opts.default_command = "macism"
       end
     end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "User Astrofile",
-    opts = { max_lines = 2 },
   },
 }
