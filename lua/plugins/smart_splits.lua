@@ -14,6 +14,9 @@ return {
         n["<A-h>"] = { smart_splits.resize_left, desc = "Resize split left" }
         n["<A-l>"] = { smart_splits.resize_right, desc = "Resize split right" }
 
+        -- By default, <C-w>(HJKL) will move the split to the far left, bottom, top or right respectively.
+        -- The following snippet also enables the split to swap places with a neighbor.
+
         ---@param direction "up"|"down"|"left"|"right"
         local function swap_split_entry(direction)
           return {
@@ -25,23 +28,16 @@ return {
           }
         end
 
-        local function hide_entry(entry)
-          return require("astrocore").extend_tbl(entry, { desc = "which_key_ignore" })
-        end
-
         local swap_split_up = swap_split_entry("up")
         local swap_split_down = swap_split_entry("down")
         local swap_split_left = swap_split_entry("left")
         local swap_split_right = swap_split_entry("right")
 
-        n["<CA-k>"], n["<C-w>K"], n["<C-w><CS-k>"] =
-          swap_split_up, swap_split_up, hide_entry(swap_split_up)
-        n["<CA-j>"], n["<C-w>J"], n["<C-w><CS-j>"] =
-          swap_split_down, swap_split_down, hide_entry(swap_split_down)
-        n["<CA-h>"], n["<C-w>H"], n["<C-w><CS-h>"] =
-          swap_split_left, swap_split_left, hide_entry(swap_split_left)
-        n["<CA-l>"], n["<C-w>L"], n["<C-w><CS-l>"] =
-          swap_split_right, swap_split_right, hide_entry(swap_split_right)
+        n["<C-w>S"] = { desc = "Swap split" }
+        n["<CA-k>"], n["<C-w>Sk"] = swap_split_up, swap_split_up
+        n["<CA-j>"], n["<C-w>Sj"] = swap_split_down, swap_split_down
+        n["<CA-h>"], n["<C-w>Sh"] = swap_split_left, swap_split_left
+        n["<CA-l>"], n["<C-w>Sl"] = swap_split_right, swap_split_right
       end,
     },
   },
