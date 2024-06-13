@@ -40,6 +40,7 @@ return {
   { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.test.neotest" },
 }
