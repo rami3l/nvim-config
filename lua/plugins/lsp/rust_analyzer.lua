@@ -7,7 +7,7 @@ return {
       cargo = { features = "all" },
       check = { command = "clippy" },
       completion = {
-        postfix = { enable = true },
+        postfix = { enable = false },
       },
       imports = {
         granularity = { enforce = true },
