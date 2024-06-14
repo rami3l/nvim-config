@@ -1,4 +1,4 @@
-local light_theme, dark_theme = "zenwritten", "catppuccin"
+local light_theme, dark_theme = "astrolight", "catppuccin"
 
 ---@type LazySpec
 return {
