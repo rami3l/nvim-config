@@ -152,14 +152,6 @@ return {
     end,
   },
 
-  -- astrocommunity.pack.lean"
-  {
-    "Julian/lean.nvim",
-    opts = {
-      abbreviations = { enable = false },
-    },
-  },
-
   -- astrocommunity.pack.python*
   {
     "linux-cultist/venv-selector.nvim",
