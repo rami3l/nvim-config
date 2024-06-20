@@ -21,7 +21,6 @@ return {
 
     ---@diagnostic disable: missing-fields
     config = {
-      gopls = require("plugins.lsp.gopls"),
       pyright = require("plugins.lsp.pyright"),
       rust_analyzer = require("plugins.lsp.rust_analyzer"),
     },
