@@ -113,18 +113,6 @@ return {
         require("astrocore").list_insert_unique(opts.ensure_installed, { "golangci_lint_ls" })
     end,
   },
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      if not opts.sources then opts.sources = {} end
-      local go_nls = require("go.null_ls")
-      opts.sources = vim.list_extend(opts.sources, {
-        go_nls.gotest(),
-        go_nls.gotest_action(),
-      })
-      return opts
-    end,
-  },
 
   -- astrocommunity.pack.java
   {
