@@ -211,9 +211,8 @@ return {
           local menu = {
             desc = require("astroui").get_icon("Spectre", 1, true) .. "Search/Replace",
           }
-          m.n["<Leader>s"] = menu
+          m.n["<Leader>s"], m.x["<Leader>s"] = menu, menu
           m.n["<Leader>ss"] = { require("spectre").toggle, desc = "Spectre" }
-          m.x["<Leader>s"] = menu
         end,
       },
     },

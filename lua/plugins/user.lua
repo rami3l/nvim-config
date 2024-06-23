@@ -26,6 +26,26 @@ return {
   },
 
   {
+    "cshuaimin/ssr.nvim",
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          local m = opts.mappings
+          local menu = {
+            desc = require("astroui").get_icon("Spectre", 1, true) .. "Search/Replace",
+          }
+          local ssr = { require("ssr").open, desc = "Structural search/replace" }
+
+          m.n["<Leader>s"], m.x["<Leader>s"] = menu, menu
+          m.n["<Leader>sr"], m.x["<Leader>sr"] = ssr, ssr
+        end,
+      },
+      { "AstroNvim/astroui", opts = { icons = { Spectre = "󰛔" } } },
+    },
+  },
+
+  {
     "keaising/im-select.nvim",
     event = "User Astrofile",
     opts = function(_, opts)
