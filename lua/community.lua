@@ -39,8 +39,8 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.typst" },
-  { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.recipes.vscode-icons" },
+  { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.test.neotest" },
 }

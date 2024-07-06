@@ -181,7 +181,7 @@ return {
     end,
   },
 
-  -- astrocommunity.project.nvim-spectre
+  -- astrocommunity.search.nvim-spectre
   {
     "nvim-pack/nvim-spectre",
     dependencies = {
