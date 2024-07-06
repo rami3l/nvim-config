@@ -17,6 +17,7 @@ return {
     diagnostics = {
       virtual_text = true,
       underline = true,
+      severity_sort = true,
     },
 
     -- Configure Neovim options
