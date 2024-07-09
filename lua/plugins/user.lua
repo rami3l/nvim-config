@@ -6,6 +6,8 @@ return {
   -- Add new user plugins below.
 
   -- UX enhancements
+  { "chrisgrieser/nvim-origami", event = "BufReadPost", opts = {} },
+
   {
     "mizlan/iswap.nvim",
     event = "VeryLazy",
