@@ -11,6 +11,7 @@ return {
         completeFunctionParens = true,
         diagnosticMode = "workspace",
         strictSetInference = true,
+        stubPath = "./typings",
         typeCheckingMode = "strict",
         useLibraryCodeForTypes = true,
 
