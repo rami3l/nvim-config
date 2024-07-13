@@ -5,17 +5,6 @@ return {
 
   -- This is a good place to do further customize the options set by the community plugins/packs
 
-  -- astrocommunity.diagnostics.trouble-nvim
-  {
-    "folke/trouble.nvim",
-    dependencies = {
-      {
-        "AstroNvim/astrocore",
-        opts = function(_, opts) opts.mappings.n["<leader>xT"] = false end,
-      },
-    },
-  },
-
   -- astrocommunity.editing-support.nvim-treesitter-context
   {
     "nvim-treesitter/nvim-treesitter-context",
