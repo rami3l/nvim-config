@@ -22,5 +22,10 @@ return {
     },
     { "<Leader>?", require("telescope.builtin").live_grep, desc = "Find words" },
     { "<Leader>`", require("telescope.builtin").find_files, desc = "Find files" },
+    {
+      "<Leader>~",
+      function() require("telescope.builtin").find_files { no_ignore = true } end,
+      desc = "Find all files",
+    },
   },
 }
