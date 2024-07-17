@@ -6,6 +6,13 @@
   "contributes": {
     "snippets": [
       {
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
+        "path": "./gitcommit.json"
+      },
+      {
         "language": "haskell",
         "path": "./haskell.json"
       },
