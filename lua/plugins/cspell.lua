@@ -39,9 +39,15 @@ return {
             vim.fn.resolve(vim.fn.stdpath("data") .. "/mason/packages/cspell/node_modules/cspell")
           for _, plugin in ipairs(plugins) do
             astrocore.notify("Installing cspell plugin `" .. plugin .. "`")
-            astrocore.cmd({ "npm", "--prefix", base_path, "install", plugin }, true)
-            local ext_path = base_path .. "/node_modules/" .. plugin .. "/cspell-ext.json"
-            astrocore.cmd({ "cspell", "link", "add", ext_path }, true)
+            vim.system({ "npm", "--prefix", base_path, "install", plugin }, nil, function(_)
+              astrocore.notify("Installed cspell plugin `" .. plugin .. "`")
+              local ext_path = base_path .. "/node_modules/" .. plugin .. "/cspell-ext.json"
+              vim.system(
+                { "cspell", "link", "add", ext_path },
+                nil,
+                function(_) astrocore.notify("Linked cspell plugin `" .. plugin .. "`") end
+              )
+            end)
           end
         end
       end)
