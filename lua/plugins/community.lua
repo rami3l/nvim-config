@@ -106,14 +106,6 @@ return {
 
   -- astrocommunity.pack.java
   {
-    "mfussenegger/nvim-jdtls",
-    opts = {
-      settings = {
-        java = { format = { enabled = false } },
-      },
-    },
-  },
-  {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
       local nls = require("null-ls")
