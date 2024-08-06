@@ -7,6 +7,12 @@ return {
 
   -- UX enhancements
   {
+    "chrisgrieser/nvim-various-textobjs",
+    event = "UIEnter",
+    opts = { useDefaultKeymaps = true },
+  },
+
+  {
     "mizlan/iswap.nvim",
     event = "VeryLazy",
     keys = {
