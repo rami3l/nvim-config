@@ -4,7 +4,6 @@
 return {
   settings = {
     ["rust-analyzer"] = {
-      cargo = { features = "all" },
       check = { command = "clippy" },
       completion = {
         postfix = { enable = false },
