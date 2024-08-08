@@ -141,6 +141,14 @@ return {
 
   -- astrocommunity.pack.rust
   {
+    "mrcjkb/rustaceanvim",
+    ---@module "rustaceanvim"
+    ---@type rustaceanvim.Opts
+    opts = {
+      server = { load_vscode_settings = true },
+    },
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
       opts.ensure_installed =
