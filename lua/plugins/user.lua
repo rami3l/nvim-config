@@ -8,7 +8,7 @@ return {
   -- UX enhancements
   {
     "chrisgrieser/nvim-various-textobjs",
-    event = "UIEnter",
+    event = "User Astrofile",
     opts = { useDefaultKeymaps = true },
   },
 
