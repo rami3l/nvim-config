@@ -9,18 +9,18 @@ return {
   [""] = {
     ["<F1>"] = "<nop>",
 
-    ["<LocalLeader>c"] = [["_c]],
-    ["<LocalLeader>d"] = [["_d]],
-    ["<LocalLeader>y"] = [["+y]],
+    ["<LocalLeader>c"] = { [["_c]], desc = "Change w/o cut" },
+    ["<LocalLeader>d"] = { [["_d]], desc = "Delete w/o cut" },
+    ["<LocalLeader>y"] = { [["+y]], desc = "Yank to clipboard" },
   },
 
   n = {
     Q = "<nop>",
-    ["<LocalLeader>C"] = [["_C]],
-    ["<LocalLeader>D"] = [["_D]],
-    ["<LocalLeader>Y"] = [["+Y]],
+    ["<LocalLeader>C"] = { [["_C]], desc = "Change till NL w/o cut" },
+    ["<LocalLeader>D"] = { [["_D]], desc = "Delete till NL w/o cut" },
+    ["<LocalLeader>Y"] = { [["+Y]], desc = "Yank line to clipboard" },
 
-    ["<Leader>W"] = { "<CMD>noautocmd w<CR>", desc = "Save w/o formatting" },
+    ["<Leader>W"] = { "<CMD>noautocmd w<CR>", desc = "Save w/o autocmds" },
   },
 
   v = {
@@ -29,10 +29,14 @@ return {
   },
 
   x = {
-    ["<LocalLeader>p"] = [["_dP]],
+    ["<LocalLeader>p"] = { [["_dP]], desc = "Paste w/o cut" },
+    ["<LocalLeader>D"] = { [["_D]], desc = "Delete line w/o cut" },
+    ["<LocalLeader>Y"] = { [["+Y]], desc = "Yank line to clipboard" },
   },
 
   i = {
+    ["<F1>"] = "<nop>",
+
     ["<C-c>"] = "<Esc>",
   },
 
