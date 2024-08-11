@@ -188,6 +188,18 @@ return {
       })
     end,
   },
+  {
+    "chomosuke/typst-preview.nvim",
+    opts = {
+      dependencies_bin = {
+        -- HACK: Currently `tinymist preview` is not updating the preview properly
+        -- due to unknown reasons, so `TypstPreviewUpdate` is required from time to time
+        -- to update the plugin-hosted `typst-preview`.
+        -- ["typst-preview"] = "tinymist",
+        websocat = "websocat",
+      },
+    },
+  },
 
   -- astrocommunity.search.nvim-spectre
   {
@@ -230,7 +242,6 @@ return {
   {
     "nvim-neotest/neotest",
     keys = {
-      -- https://github.com/AstroNvim/astrocommunity/blob/8157924d02308c24754fb4f71e165700f989043f/lua/astrocommunity/project/nvim-spectre/init.lua#L14-L23
       {
         "<Leader>Te",
         function() require("neotest").summary.toggle() end,
