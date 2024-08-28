@@ -52,6 +52,7 @@
   "neotest": { "branch": "master", "commit": "6d6ad113f56edc7c3f2a77a0836ea8c1b955ebea" },
   "neotest-go": { "branch": "main", "commit": "92950ad7be2ca02a41abca5c6600ff6ffaf5b5d6" },
   "neotest-python": { "branch": "master", "commit": "72603dfdbaad5695160268cb10531a14cc37236e" },
+  "neotest-zig": { "branch": "main", "commit": "db005bb679796655d375d25f404feffd00bee7f3" },
   "neovim-ayu": { "branch": "master", "commit": "6993189dd0ee38299879a1a0064718a8392e8713" },
   "none-ls.nvim": { "branch": "main", "commit": "203f5ebde4a1af48ba2eb146401b5be2e7866942" },
   "nui.nvim": { "branch": "main", "commit": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733" },
@@ -110,5 +111,6 @@
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
   "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" },
-  "zenbones.nvim": { "branch": "main", "commit": "006f15ad3437d85884ad50347bcbc60c9a377640" }
+  "zenbones.nvim": { "branch": "main", "commit": "006f15ad3437d85884ad50347bcbc60c9a377640" },
+  "zig-tools.nvim": { "branch": "master", "commit": "78a85278fe5d480da2f01df4db898757d7e953b5" }
 }
