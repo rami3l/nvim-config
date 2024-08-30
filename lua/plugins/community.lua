@@ -5,6 +5,15 @@ return {
 
   -- This is a good place to do further customize the options set by the community plugins/packs
 
+  -- astrocommunity.diagnostics.trouble-nvim"
+  {
+    "folke/trouble.nvim",
+    keys = {
+      { "<leader>xr", "<CMD>Trouble lsp toggle<CR>", desc = "Trouble LSP References" },
+      { "<leader>xs", "<CMD>Trouble symbols toggle<CR>", desc = "Trouble LSP Symbols" },
+    },
+  },
+
   -- astrocommunity.editing-support.nvim-treesitter-context
   {
     "nvim-treesitter/nvim-treesitter-context",
