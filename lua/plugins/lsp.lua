@@ -22,7 +22,6 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       basedpyright = require("plugins.lsp.basedpyright"),
-      jdtls = require("plugins.lsp.jdtls"),
       rust_analyzer = require("plugins.lsp.rust_analyzer"),
       zls = require("plugins.lsp.zls"),
     },
