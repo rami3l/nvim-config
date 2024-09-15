@@ -7,7 +7,6 @@ return {
   "rebelot/heirline.nvim",
   opts = function(_, opts)
     local status = require("astroui.status")
-    opts.statusline[3] = status.component.file_info { filetype = {}, filename = false }
 
     -- See <https://neovim.io/doc/user/cmdline.html#%3A%3As> for the modifier syntax.
     local path_func = status.provider.filename { modify = ":.:h", fallback = "" }
@@ -32,11 +31,36 @@ return {
       },
     }
 
+    local function toggleterm_status()
+      return {
+        provider = function() return "ToggleTerm [" .. vim.b.toggle_number .. "]" end,
+        condition = function()
+          return status.condition.buffer_matches { filetype = { "toggleterm" } }
+        end,
+      }
+    end
+
+    local function nav()
+      local res = status.component.nav { percentage = false }
+      local children = res[2]
+      local scrollbar = children[#children]
+
+      local spinner = { "⠁", "⠉", "⠋", "⠛", "⠟", "⠿", "⡿", "⣿" }
+      scrollbar.provider = function()
+        local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+        local lines = vim.api.nvim_buf_line_count(0)
+        local i = math.floor((curr_line - 1) / lines * #spinner) + 1
+        if spinner[i] then return status.utils.stylize(spinner[i], scrollbar.opts) end
+      end
+      return res
+    end
+
     opts.statusline = {
       hl = { fg = "fg", bg = "bg" },
       status.component.mode {
         mode_text = { padding = { left = 1, right = 1 } },
       },
+      toggleterm_status(),
       status.component.git_branch(),
       status.component.git_diff(),
       status.component.diagnostics(),
@@ -54,20 +78,7 @@ return {
       },
       status.component.virtual_env(),
       status.component.treesitter(),
-      (function()
-        local nav = status.component.nav { percentage = false }
-        local children = nav[2]
-        local scrollbar = children[#children]
-
-        local spinner = { "⠁", "⠉", "⠋", "⠛", "⠟", "⠿", "⡿", "⣿" }
-        scrollbar.provider = function()
-          local curr_line = vim.api.nvim_win_get_cursor(0)[1]
-          local lines = vim.api.nvim_buf_line_count(0)
-          local i = math.floor((curr_line - 1) / lines * #spinner) + 1
-          if spinner[i] then return status.utils.stylize(spinner[i], scrollbar.opts) end
-        end
-        return nav
-      end)(),
+      nav(),
     }
     return opts
   end,
