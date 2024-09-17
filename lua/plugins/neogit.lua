@@ -13,6 +13,9 @@ return {
       rebase = { folded = false },
       recent = { folded = false },
     },
+    commit_editor = {
+      spell_check = false,
+    },
     mappings = {
       -- NOTE: `c-` should be lowercase to clash with the default keybinding.
       finder = {
