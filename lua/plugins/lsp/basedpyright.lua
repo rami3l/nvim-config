@@ -1,6 +1,6 @@
 -- https://github.com/microsoft/pyright/blob/main/docs/settings.md
 -- https://github.com/microsoft/pyright/blob/main/docs/configuration.md
----@type lspconfig.options.pyright
+---@type lspconfig.options.basedpyright
 ---@diagnostic disable: missing-fields
 return {
   settings = {
