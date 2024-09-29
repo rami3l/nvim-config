@@ -85,6 +85,11 @@ return {
           m.n.s, m.x.x, m.o.x = forward, forward, forward
           m.n.S, m.x.X, m.o.X = backward, backward, backward
           m.n.gs, m.x.gs, m.o.gs = from_window, from_window, from_window
+
+          -- The following default keybindings conflict with `nvim-surround`,
+          -- so they have to be disabled:
+          m.x.s, m.o.s = false, false
+          m.x.S, m.o.S = false, false
         end,
       },
     },
