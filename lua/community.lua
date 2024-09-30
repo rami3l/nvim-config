@@ -41,6 +41,6 @@ return {
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.recipes.vscode-icons" },
-  { import = "astrocommunity.search.nvim-spectre" },
+  { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
 }

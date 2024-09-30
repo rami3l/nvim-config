@@ -206,43 +206,6 @@ return {
     end,
   },
 
-  -- astrocommunity.search.nvim-spectre
-  {
-    "nvim-pack/nvim-spectre",
-    dependencies = {
-      {
-        "AstroNvim/astrocore",
-        opts = function(_, opts)
-          local m = opts.mappings
-          local menu = {
-            desc = require("astroui").get_icon("Spectre", 1, true) .. "Search/Replace",
-          }
-          m.n["<Leader>s"], m.x["<Leader>s"] = menu, menu
-          m.n["<Leader>ss"] = { require("spectre").toggle, desc = "Spectre" }
-        end,
-      },
-    },
-    opts = function()
-      local prefix = "<Leader>s"
-      return {
-        mapping = {
-          -- Override defaults
-          select_template = { map = prefix .. "p" },
-          delete_line = { map = prefix .. "d" },
-
-          -- Override `astrocommunity` presets
-          send_to_qf = { map = prefix .. "q" },
-          replace_cmd = { map = prefix .. "c" },
-          show_option_menu = { map = prefix .. "o" },
-          run_current_replace = { map = prefix .. "C" },
-          run_replace = { map = prefix .. "R" },
-          change_view_mode = { map = prefix .. "v" },
-          resume_last_search = { map = prefix .. "l" },
-        },
-      }
-    end,
-  },
-
   -- astrocommunity.test.neotest
   {
     "nvim-neotest/neotest",

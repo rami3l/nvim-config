@@ -38,9 +38,8 @@ return {
         "AstroNvim/astrocore",
         opts = function(_, opts)
           local m = opts.mappings
-          local menu = {
-            desc = require("astroui").get_icon("Spectre", 1, true) .. "Search/Replace",
-          }
+          local menu = m.n["<Leader>s"]
+            or { desc = require("astroui").get_icon("Spectre", 1, true) .. "Search/Replace" }
           local ssr = { require("ssr").open, desc = "Structural search/replace" }
 
           m.n["<Leader>s"], m.x["<Leader>s"] = menu, menu
