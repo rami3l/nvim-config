@@ -5,7 +5,20 @@ return {
 
   -- This is a good place to do further customize the options set by the community plugins/packs
 
-  -- astrocommunity.diagnostics.trouble-nvim"
+  -- astrocommunity.completion.copilot-cmp
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      filetypes = {
+        yaml = true,
+        markdown = true,
+        gitcommit = true,
+        hgcommit = true,
+      },
+    },
+  },
+
+  -- astrocommunity.diagnostics.trouble-nvim
   {
     "folke/trouble.nvim",
     keys = {
