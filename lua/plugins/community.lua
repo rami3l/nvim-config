@@ -201,10 +201,7 @@ return {
     "chomosuke/typst-preview.nvim",
     opts = {
       dependencies_bin = {
-        -- HACK: Currently `tinymist preview` is not updating the preview properly
-        -- due to unknown reasons, so `TypstPreviewUpdate` is required from time to time
-        -- to update the plugin-hosted `typst-preview`.
-        -- ["typst-preview"] = "tinymist",
+        tinymist = "tinymist",
         websocat = "websocat",
       },
     },
