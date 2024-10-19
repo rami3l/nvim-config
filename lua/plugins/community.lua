@@ -108,32 +108,6 @@ return {
     },
   },
 
-  -- astrocommunity.pack.clojure
-  {
-    "Olical/conjure",
-    init = function() vim.g["conjure#log#wrap"] = true end,
-    dependencies = {
-      {
-        "PaterJason/cmp-conjure",
-        lazy = true,
-        config = function()
-          local cmp = require("cmp")
-          local config = cmp.get_config()
-          table.insert(config.sources, { name = "conjure" })
-          return cmp.setup(config)
-        end,
-      },
-    },
-  },
-  {
-    "jay-babu/mason-null-ls.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "zprint",
-      })
-    end,
-  },
-
   -- astrocommunity.pack.elixir
   {
     "nvimtools/none-ls.nvim",
