@@ -37,6 +37,7 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.swift" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
