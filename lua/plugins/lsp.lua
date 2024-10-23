@@ -26,5 +26,24 @@ return {
       tinymist = require("plugins.lsp.tinymist"),
       zls = require("plugins.lsp.zls"),
     },
+
+    mappings = {
+      i = {
+        ["<F2>"] = { vim.lsp.buf.rename, desc = "Rename current symbol" },
+      },
+
+      n = {
+        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+        ["<F2>"] = { vim.lsp.buf.rename, desc = "Rename current symbol" },
+
+        ["<Leader>lc"] = { vim.lsp.buf.outgoing_calls, desc = "Outgoing calls" },
+        ["<Leader>lC"] = { vim.lsp.buf.incoming_calls, desc = "Incoming calls" },
+      },
+
+      v = {
+        ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
+        ["<F2>"] = { vim.lsp.buf.rename, desc = "Rename current symbol" },
+      },
+    },
   },
 }
