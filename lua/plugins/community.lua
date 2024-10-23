@@ -181,15 +181,6 @@ return {
 
   -- astrocommunity.pack.typst
   {
-    "williamboman/mason-lspconfig.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed =
-        require("utils").list_remove_all(opts.ensure_installed, { "typst_lsp" })
-      opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "tinymist" })
-    end,
-  },
-  {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
@@ -201,7 +192,6 @@ return {
     "chomosuke/typst-preview.nvim",
     opts = {
       dependencies_bin = {
-        tinymist = "tinymist",
         websocat = "websocat",
       },
     },
