@@ -24,11 +24,13 @@ return {
       },
     },
     ignored_settings = {
-      "NeogitPushPopup--force-with-lease",
-      "NeogitPushPopup--force",
-      "NeogitPullPopup--rebase",
       "NeogitCommitPopup--allow-empty",
       "NeogitCommitPopup--reuse-message",
+      "NeogitPullPopup--rebase",
+      "NeogitPushPopup--force",
+      "NeogitPushPopup--force-with-lease",
+      "NeogitRebasePopup--committer-date-is-author-date",
+      "NeogitRebasePopup--ignore-date",
     },
     integrations = {
       telescope = require("astrocore").is_available("telescope.nvim"),
