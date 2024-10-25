@@ -50,8 +50,6 @@ return {
     },
   },
 
-  { "akinsho/git-conflict.nvim", event = "User Astrofile", config = true },
-
   {
     "keaising/im-select.nvim",
     event = "User Astrofile",
