@@ -21,6 +21,15 @@ return {
     ["<LocalLeader>Y"] = { [["+Y]], desc = "Yank line to clipboard" },
 
     ["<Leader>W"] = { "<CMD>noautocmd w<CR>", desc = "Save w/o autocmds" },
+
+    ["<Leader><Tab>"] = { desc = "󰌒 " .. "Tabs" },
+    ["<Leader><Tab><Tab>"] = { "<CMD>tabnew<CR>", desc = "New tab" },
+    ["<Leader><Tab>["] = { "<CMD>tabprevious<CR>", desc = "Previous tab" },
+    ["<Leader><Tab>]"] = { "<CMD>tabnext<CR>", desc = "Next tab" },
+    ["<Leader><Tab>c"] = { "<CMD>tabclose<CR>", desc = "Close tab" },
+    ["<Leader><Tab>f"] = { "<CMD>tabfirst<CR>", desc = "First tab" },
+    ["<Leader><Tab>l"] = { "<CMD>tablast<CR>", desc = "Last tab" },
+    ["<Leader><Tab>o"] = { "<CMD>tabonly<CR>", desc = "Close other tabs" },
   },
 
   v = {
