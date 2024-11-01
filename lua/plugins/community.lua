@@ -173,7 +173,6 @@ return {
       if not opts.sources then opts.sources = {} end
       opts.sources = vim.list_extend(opts.sources, {
         nls.builtins.formatting.swift_format,
-        nls.builtins.formatting.swiftlint,
       })
       return opts
     end,
@@ -181,9 +180,7 @@ return {
   {
     "stevearc/conform.nvim",
     optional = true,
-    opts = { formatters_by_ft = {
-      swift = { "swift_format", "swiftlint" },
-    } },
+    opts = { formatters_by_ft = { swift = { "swift_format" } } },
   },
 
   -- astrocommunity.pack.typst
