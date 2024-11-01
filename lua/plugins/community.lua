@@ -178,6 +178,13 @@ return {
       return opts
     end,
   },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = { formatters_by_ft = {
+      swift = { "swift_format", "swiftlint" },
+    } },
+  },
 
   -- astrocommunity.pack.typst
   {
@@ -187,6 +194,11 @@ return {
         "typstfmt",
       })
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = { formatters_by_ft = { typst = { "typstfmt" } } },
   },
   {
     "chomosuke/typst-preview.nvim",
