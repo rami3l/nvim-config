@@ -22,6 +22,7 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       basedpyright = require("plugins.lsp.basedpyright"),
+      harper_ls = require("plugins.lsp.harper_ls"),
       rust_analyzer = require("plugins.lsp.rust_analyzer"),
       tinymist = require("plugins.lsp.tinymist"),
       zls = require("plugins.lsp.zls"),

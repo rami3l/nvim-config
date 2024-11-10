@@ -33,6 +33,7 @@ return {
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.harper" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.lean" },
   { import = "astrocommunity.pack.lua" },
