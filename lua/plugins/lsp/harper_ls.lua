@@ -8,7 +8,7 @@ return {
         linking_verbs = true,
         sentence_capitalization = false,
         spell_check = false,
-        spelled_numbers = true,
+        spelled_numbers = false,
       },
     },
   },
