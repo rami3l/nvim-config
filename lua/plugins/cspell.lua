@@ -16,7 +16,7 @@ return {
               config = cspell_cfg,
               -- https://github.com/davidmh/cspell.nvim/issues/13
               diagnostics_postprocess = function(diagnostic)
-                diagnostic.severity = vim.diagnostic.severity["INFO"]
+                diagnostic.severity = vim.diagnostic.severity.HINT
               end,
             },
           }
