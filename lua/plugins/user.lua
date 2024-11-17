@@ -56,7 +56,7 @@ return {
     opts = function(_, opts)
       if vim.fn.has("macunix") == 1 then
         opts.default_im_select = "com.apple.keylayout.US"
-        opts.default_command = "macism"
+        if vim.fn.executable("macism") == 1 then opts.default_command = "macism" end
       end
     end,
   },
