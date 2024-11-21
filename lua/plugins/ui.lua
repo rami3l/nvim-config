@@ -41,4 +41,19 @@ return {
       end,
     },
   },
+
+  {
+    "mcauley-penney/visual-whitespace.nvim",
+    event = "User AstroFile",
+    dependencies = {
+      {
+        "AstroNvim/astroui",
+        ---@type AstroUIOpts
+        opts = { highlights = { init = {
+          VisualNonText = { global_link = "Visual" },
+        } } },
+      },
+    },
+    config = true,
+  },
 }
