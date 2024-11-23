@@ -165,24 +165,6 @@ return {
     end,
   },
 
-  -- astrocommunity.pack.swift
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      if not opts.sources then opts.sources = {} end
-      opts.sources = vim.list_extend(opts.sources, {
-        nls.builtins.formatting.swift_format,
-      })
-      return opts
-    end,
-  },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = { formatters_by_ft = { swift = { "swift_format" } } },
-  },
-
   -- astrocommunity.pack.typst
   {
     "jay-babu/mason-null-ls.nvim",
