@@ -9,7 +9,7 @@ return {
   {
     "chrisgrieser/nvim-various-textobjs",
     event = "User Astrofile",
-    opts = { useDefaultKeymaps = true },
+    opts = { keymaps = { useDefaults = true } },
   },
 
   {
