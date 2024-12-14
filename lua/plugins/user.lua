@@ -60,4 +60,14 @@ return {
       end
     end,
   },
+
+  -- Additional language support
+  {
+    "susliko/tla.nvim",
+    config = function() require("tla").setup() end,
+    keys = {
+      { "<Leader>lt", "<CMD>TlaTranslate<CR>", desc = "Translate PlusCal", ft = "tla" },
+      { "<Leader>lT", "<CMD>TlaCheck<CR>", desc = "Check TLA+", ft = "tla" },
+    },
+  },
 }
