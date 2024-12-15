@@ -1,4 +1,4 @@
-local light_theme, dark_theme = "astrolight", "catppuccin"
+local light_theme, dark_theme = "astrojupiter", "onenord"
 
 ---@type LazySpec
 return {
@@ -15,9 +15,8 @@ return {
   -- Theming
   { "Shatur/neovim-ayu", lazy = true },
   { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
-  { "navarasu/onedark.nvim", lazy = true },
+  { "rmehri01/onenord.nvim", lazy = true },
   { "nyoom-engineering/oxocarbon.nvim", lazy = true },
-
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -49,9 +48,13 @@ return {
       {
         "AstroNvim/astroui",
         ---@type AstroUIOpts
-        opts = { highlights = { init = {
-          VisualNonText = { global_link = "Visual" },
-        } } },
+        opts = {
+          highlights = {
+            init = {
+              VisualNonText = { global_link = "Visual" },
+            },
+          },
+        },
       },
     },
     config = true,
