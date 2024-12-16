@@ -177,17 +177,13 @@ return {
 
   -- astrocommunity.pack.typst
   {
-    "jay-babu/mason-null-ls.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "typstfmt",
-      })
-    end,
-  },
-  {
     "stevearc/conform.nvim",
     optional = true,
-    opts = { formatters_by_ft = { typst = { "typstfmt" } } },
+    opts = {
+      formatters_by_ft = {
+        typst = { "typstyle", lsp_format = "prefer" },
+      },
+    },
   },
   {
     "chomosuke/typst-preview.nvim",
