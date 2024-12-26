@@ -108,7 +108,61 @@ return {
     },
   },
 
-  -- astrocommunity.pack.elixir
+  -- astrocommunity.pack.clojure
+  {
+    "Olical/conjure",
+    dependencies = {
+      {
+        "PaterJason/cmp-conjure",
+        lazy = true,
+        config = function()
+          local cmp = require("cmp")
+          local config = cmp.get_config()
+          table.insert(config.sources, { name = "conjure" })
+          return cmp.setup(config)
+        end,
+      },
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          options = {
+            g = {
+              ["conjure#log#wrap"] = true,
+              ["conjure#mapping#doc_word"] = false,
+              ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = true,
+              ["conjure#client#clojure#nrepl#connection#auto_repl#hidden"] = true,
+              ["conjure#client#clojure#nrepl#connection#auto_repl#cmd"] = "lein repl",
+            },
+          },
+        },
+      },
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          local m = opts.mappings
+          m.n["<LocalLeader>c"] = { desc = "Conjure connect" }
+          m.n["<LocalLeader>e"] = { desc = "Conjure eval" }
+          m.n["<LocalLeader>g"] = { desc = "Conjure goto" }
+          m.n["<LocalLeader>l"] = { desc = "Conjure log" }
+          m.n["<LocalLeader>r"] = { desc = "Conjure reset" }
+          m.n["<LocalLeader>s"] = { desc = "Conjure session" }
+          m.n["<LocalLeader>t"] = { desc = "Conjure test" }
+          m.n["<LocalLeader>v"] = { desc = "Conjure view" }
+          m.n["<LocalLeader>x"] = { desc = "Conjure expand" }
+        end,
+      },
+    },
+  },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+        "zprint",
+      })
+    end,
+  },
+
+  -- astrocommunity.pack.elixir*
   {
     "nvimtools/none-ls.nvim",
     opts = function(_, opts)
