@@ -9,6 +9,7 @@ return {
   -- AstroCommunity modules
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.comment.ts-comments-nvim" },
   { import = "astrocommunity.completion.copilot-cmp" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
