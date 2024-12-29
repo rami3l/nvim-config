@@ -228,6 +228,10 @@ return {
     },
   },
   {
+    "Olical/conjure",
+    ft = function(_, ft) return require("../utils").list_remove_all(ft, { "rust" }) end,
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
       opts.ensure_installed =
