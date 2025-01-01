@@ -241,6 +241,16 @@ return {
 
   -- astrocommunity.pack.typescript-all-in-one
   {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        javascript = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
+        typescript = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
+      },
+    },
+  },
+  {
     "jay-babu/mason-nvim-dap.nvim",
     optional = true,
     opts = function(_, opts)
@@ -264,6 +274,17 @@ return {
     opts = {
       dependencies_bin = {
         websocat = "websocat",
+      },
+    },
+  },
+
+  -- astrocommunity.pack.vue
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        vue = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
       },
     },
   },
