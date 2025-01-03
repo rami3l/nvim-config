@@ -239,7 +239,7 @@ return {
     end,
   },
 
-  -- astrocommunity.pack.typescript-all-in-one
+  -- astrocommunity.pack.typescript*
   {
     "stevearc/conform.nvim",
     optional = true,
@@ -257,6 +257,11 @@ return {
       opts.ensure_installed =
         require("astrocore").list_insert_unique(opts.ensure_installed, { "js" })
     end,
+  },
+  -- HACK: Works around https://github.com/vuki656/package-info.nvim/issues/164.
+  {
+    "vuki656/package-info.nvim",
+    enabled = false,
   },
 
   -- astrocommunity.pack.typst
