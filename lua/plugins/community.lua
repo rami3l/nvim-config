@@ -173,9 +173,19 @@ return {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "zprint",
+        "joker",
       })
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        clojure = { "joker", stop_after_first = true, lsp_format = "fallback" },
+        clojurescript = { "joker", stop_after_first = true, lsp_format = "fallback" },
+      },
+    },
   },
 
   -- astrocommunity.pack.elixir*
