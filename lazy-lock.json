@@ -87,7 +87,7 @@
   "nvim-various-textobjs": { "branch": "main", "commit": "b43a13448c3c3a4fca027595f7b6fc3522758e00" },
   "nvim-vtsls": { "branch": "main", "commit": "45c6dfea9f83a126e9bfc5dd63430562b3f8af16" },
   "nvim-web-devicons": { "branch": "master", "commit": "aafa5c187a15701a7299a392b907ec15d9a7075f" },
-  "nvim-window-picker": { "branch": "main", "commit": "0031ae451fdbb928eafeb55ae7451232ebcc3438" },
+  "nvim-window-picker": { "branch": "main", "commit": "276879db5234185f22cd19ed8366bf62437667af" },
   "onenord.nvim": { "branch": "main", "commit": "af734ccc21847ce56830eed1f593ef320ffa27ff" },
   "oxocarbon.nvim": { "branch": "main", "commit": "004777819ba294423b638a35a75c9f0c7be758ed" },
   "peek.nvim": { "branch": "master", "commit": "5820d937d5414baea5f586dc2a3d912a74636e5b" },

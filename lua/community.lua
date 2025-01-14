@@ -40,6 +40,7 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.lean" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.toml" },
