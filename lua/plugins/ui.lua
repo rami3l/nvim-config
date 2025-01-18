@@ -15,7 +15,6 @@ return {
   -- Theming
   { "Shatur/neovim-ayu", lazy = true },
   { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
-  { "rmehri01/onenord.nvim", lazy = true },
   { "nyoom-engineering/oxocarbon.nvim", lazy = true },
   {
     "catppuccin/nvim",
@@ -23,6 +22,13 @@ return {
     lazy = true,
     opts = {
       background = { light = "latte", dark = "mocha" },
+    },
+  },
+  {
+    "rmehri01/onenord.nvim",
+    lazy = true,
+    opts = {
+      styles = { comments = "italic" },
     },
   },
 
