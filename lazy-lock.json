@@ -1,7 +1,7 @@
 {
   "AstroNvim": { "branch": "main", "commit": "e2c4d250730da01a94177f94fcc2797036cdb051" },
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
-  "SchemaStore.nvim": { "branch": "main", "commit": "b62efcb71077bfeb407dcd05fb0584e422131150" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "e1105b7b70032d99972791ead3e4f8e0eb0ba228" },
   "aerial.nvim": { "branch": "master", "commit": "1160fb7a15a34b03b7381d95d45560712b5f19d0" },
   "alpha-nvim": { "branch": "main", "commit": "de72250e054e5e691b9736ee30db72c65d560771" },
   "astrocommunity": { "branch": "main", "commit": "bac0a03e1f661600efa1e4c848416355d2ce1586" },
@@ -76,7 +76,7 @@
   "nvim-notify": { "branch": "master", "commit": "a3020c2cf4dfc4c4f390c4a21e84e35e46cf5d17" },
   "nvim-parinfer": { "branch": "master", "commit": "5ca09287ab3f4144f78ff7977fabc27466f71044" },
   "nvim-spider": { "branch": "main", "commit": "2b38e3e95e143313d78ca098eeecda7aebfce925" },
-  "nvim-surround": { "branch": "main", "commit": "9f0cb495f25bff32c936062d85046fbda0c43517" },
+  "nvim-surround": { "branch": "main", "commit": "ae298105122c87bbe0a36b1ad20b06d417c0433e" },
   "nvim-treesitter": { "branch": "master", "commit": "dc9bf52c1f8b9abae0c10e0192baea2e720472ef" },
   "nvim-treesitter-context": { "branch": "master", "commit": "bece284c5322ddf6946fa4bdc383a2bc033269d7" },
   "nvim-treesitter-endwise": { "branch": "master", "commit": "8b34305ffc28bd75a22f5a0a9928ee726a85c9a6" },

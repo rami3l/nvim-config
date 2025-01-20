@@ -25,7 +25,6 @@ return {
           options = {
             g = {
               ["conjure#log#wrap"] = true,
-              ["conjure#mapping#doc_word"] = false,
             },
           },
         },
