@@ -99,10 +99,16 @@ return {
   -- astrocommunity.markdown-and-latex.peek-nvim
   {
     "toppair/peek.nvim",
+    keys = {
+      { "<Leader>lp", "<CMD>PeekToggle<CR>", desc = "Toggle Preview", ft = "markdown" },
+    },
     config = function()
-      require("peek").setup { app = "browser" }
-      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+      local peek = require("peek")
+      local function peek_toggle() (peek.is_open() and peek.close or peek.open)() end
+      peek.setup { app = "browser" }
+      vim.api.nvim_create_user_command("PeekOpen", peek.open, {})
+      vim.api.nvim_create_user_command("PeekClose", peek.close, {})
+      vim.api.nvim_create_user_command("PeekToggle", peek_toggle, {})
     end,
   },
 
@@ -285,6 +291,9 @@ return {
   },
   {
     "chomosuke/typst-preview.nvim",
+    keys = {
+      { "<Leader>lp", "<CMD>TypstPreviewToggle<CR>", desc = "Toggle Preview", ft = "typst" },
+    },
     opts = {
       dependencies_bin = {
         websocat = "websocat",
