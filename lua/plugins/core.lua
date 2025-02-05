@@ -25,7 +25,6 @@ return {
     options = {
       -- Global vim options (`vim.opt`)
       opt = {
-        -- set to true or false etc.
         relativenumber = true,
         number = true,
         signcolumn = "yes",
@@ -35,6 +34,7 @@ return {
         spell = false,
         spelllang = "en,fr,cjk",
         spelloptions = "camel",
+        diffopt = "filler,internal,closeoff,algorithm:histogram,context:5,linematch:60",
       },
       -- Global vim variables (`vim.g`)
       g = {},
