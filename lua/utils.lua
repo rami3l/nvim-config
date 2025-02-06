@@ -16,4 +16,9 @@ function M.list_remove_all(dst, src)
   return dst
 end
 
+function M.config_path()
+  -- https://lazy.folke.io/developers#building
+  return vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h")
+end
+
 return M
