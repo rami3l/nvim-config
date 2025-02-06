@@ -121,13 +121,14 @@ return {
     dependencies = {
       -- Fixer la détection des mots non-ASCII.
       -- https://github.com/chrisgrieser/nvim-spider?tab=readme-ov-file#utf-8-support
-      {
-        "vhyrro/luarocks.nvim",
-        priority = 1000,
-        opts = function(_, opts)
-          opts.rocks = require("astrocore").list_insert_unique(opts.rocks, { "luautf8" })
-        end,
-      },
+      -- TODO: Re-enable this with `lazy.nvim`'s builtin `luarocks` support.
+      -- {
+      --   "vhyrro/luarocks.nvim",
+      --   priority = 1000,
+      --   opts = function(_, opts)
+      --     opts.rocks = require("astrocore").list_insert_unique(opts.rocks, { "luautf8" })
+      --   end,
+      -- },
     },
     opts = {
       skipInsignificantPunctuation = false,
