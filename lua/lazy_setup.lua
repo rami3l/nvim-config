@@ -16,4 +16,5 @@ require("lazy").setup({
       disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "tarPlugin" },
     },
   },
+  rocks = { hererocks = true },
 } --[[@as LazyConfig]])
