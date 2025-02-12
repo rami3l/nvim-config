@@ -31,6 +31,7 @@ return {
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
   { import = "astrocommunity.pack.clojure" },
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.fish" },
