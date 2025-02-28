@@ -6,6 +6,16 @@ return {
   opts = {
     defaults = {
       file_ignore_patterns = { ".git/" },
+      mappings = {
+        n = {
+          ["<M-u>"] = require("telescope.actions").results_scrolling_up,
+          ["<M-d>"] = require("telescope.actions").results_scrolling_down,
+        },
+        i = {
+          ["<M-u>"] = require("telescope.actions").results_scrolling_up,
+          ["<M-d>"] = require("telescope.actions").results_scrolling_down,
+        },
+      },
     },
     pickers = {
       find_files = { hidden = true },
