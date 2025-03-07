@@ -37,4 +37,25 @@ return {
       desc = "Find all files",
     },
   },
+  dependencies = {
+    {
+      "jmacadie/telescope-hierarchy.nvim",
+      keys = {
+        {
+          "<Leader>lc",
+          "<CMD>Telescope hierarchy outgoing_calls<CR>",
+          desc = "Search outgoing calls",
+        },
+        {
+          "<Leader>lC",
+          "<CMD>Telescope hierarchy incoming_calls<CR>",
+          desc = "Search incoming calls",
+        },
+      },
+      config = function(plugin, opts)
+        require("astronvim.plugins.configs.telescope")(plugin, opts)
+        require("telescope").load_extension("hierarchy")
+      end,
+    },
+  },
 }

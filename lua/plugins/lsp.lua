@@ -37,8 +37,8 @@ return {
         ga = { vim.lsp.buf.code_action, desc = "LSP code action" },
         ["<F2>"] = { vim.lsp.buf.rename, desc = "Rename current symbol" },
 
-        ["<Leader>lc"] = { vim.lsp.buf.outgoing_calls, desc = "Outgoing calls" },
-        ["<Leader>lC"] = { vim.lsp.buf.incoming_calls, desc = "Incoming calls" },
+        -- ["<Leader>lc"] = { vim.lsp.buf.outgoing_calls, desc = "Outgoing calls" },
+        -- ["<Leader>lC"] = { vim.lsp.buf.incoming_calls, desc = "Incoming calls" },
       },
 
       v = {
