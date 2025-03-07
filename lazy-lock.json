@@ -51,6 +51,7 @@
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "8b9363d83b5d779813cdd2819b8308651cec2a09" },
   "mason.nvim": { "branch": "main", "commit": "fc98833b6da5de5a9c5b1446ac541577059555be" },
   "mini.bufremove": { "branch": "main", "commit": "1ee294a97e091d3cf967974df622c0d887890dc2" },
+  "moonbit.nvim": { "branch": "main", "commit": "624e5a2a825d1a4c690e96aeda32a6ac6db743f6" },
   "neo-tree.nvim": { "branch": "main", "commit": "16854ed5559b940f69a6f7138906ebb22c15c553" },
   "neoconf.nvim": { "branch": "main", "commit": "7c4427112d75f866d630d3eef4c06c4e37b5d042" },
   "neogit": { "branch": "master", "commit": "0b756dd80c82da28fd7ed500eac642710ab21909" },
