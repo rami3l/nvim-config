@@ -40,16 +40,24 @@ return {
   dependencies = {
     {
       "jmacadie/telescope-hierarchy.nvim",
-      keys = {
+      dependencies = {
         {
-          "<Leader>lc",
-          "<CMD>Telescope hierarchy outgoing_calls<CR>",
-          desc = "Search outgoing calls",
-        },
-        {
-          "<Leader>lC",
-          "<CMD>Telescope hierarchy incoming_calls<CR>",
-          desc = "Search incoming calls",
+          "AstroNvim/astrolsp",
+          ---@type AstroLSPOpts
+          opts = {
+            mappings = {
+              n = {
+                ["<Leader>lc"] = {
+                  "<CMD>Telescope hierarchy outgoing_calls<CR>",
+                  desc = "Search outgoing calls",
+                },
+                ["<Leader>lC"] = {
+                  "<CMD>Telescope hierarchy incoming_calls<CR>",
+                  desc = "Search incoming calls",
+                },
+              },
+            },
+          },
         },
       },
       config = function(plugin, opts)
