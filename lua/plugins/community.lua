@@ -318,6 +318,18 @@ return {
     end,
   },
 
+  -- astrocommunity.search.grug-far-nvim
+  -- HACK: <https://github.com/MagicDuck/grug-far.nvim/pulls/372> has broken our keymap.
+  -- Curiously enough, if we enable `which-key` in `grug-far` then this issue disappears.
+  {
+    "folke/which-key.nvim",
+    optional = true,
+    opts = function(_, opts)
+      if not opts.disable then opts.disable = {} end
+      opts.disable.ft = require("../utils").list_remove_all(opts.disable.ft, { "grug-far" })
+    end,
+  },
+
   -- astrocommunity.test.neotest
   {
     "nvim-neotest/neotest",
