@@ -19,4 +19,40 @@ return {
         require("astrocore").list_insert_unique(opts.ensure_installed, { "rust_analyzer" })
     end,
   },
+
+  {
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
+    ---@diagnostic disable: missing-fields
+    opts = {
+      config = {
+        rust_analyzer = {
+          settings = {
+            -- https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/generated_config.adoc
+            ["rust-analyzer"] = {
+              check = { command = "clippy" },
+              completion = {
+                postfix = { enable = false },
+              },
+              imports = {
+                granularity = { enforce = true },
+                prefix = "self",
+              },
+              inlayHints = {
+                closureReturnTypeHints = { enable = "with_block" },
+                expressionAdjustmentHints = { enable = "reborrow", hideOutsideUnsafe = true },
+                lifetimeElisionHints = { enable = "skip_trivial", useParameterNames = true },
+                typeHints = { hideClosureInitialization = true },
+              },
+              procMacro = { enable = true },
+              rustfmt = { extraArgs = { "+nightly" } },
+              workspace = {
+                symbol = { search = { kind = "all_symbols", limit = 512 } },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 }
