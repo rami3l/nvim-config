@@ -5,20 +5,6 @@ return {
 
   -- This is a good place to do further customize the options set by the community plugins/packs
 
-  -- astrocommunity.completion.copilot-cmp
-  {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      copilot_model = "gpt-4o-copilot",
-      filetypes = {
-        yaml = true,
-        markdown = true,
-        gitcommit = true,
-        hgcommit = true,
-      },
-    },
-  },
-
   -- astrocommunity.diagnostics.trouble-nvim
   {
     "folke/trouble.nvim",

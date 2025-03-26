@@ -11,7 +11,6 @@ return {
   { import = "astrocommunity.code-runner.conjure" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
-  { import = "astrocommunity.completion.copilot-cmp" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
