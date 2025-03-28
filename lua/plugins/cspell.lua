@@ -4,10 +4,15 @@ return {
   lazy = true,
   dependencies = {
     {
-      "jay-babu/mason-null-ls.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
       opts = function(_, opts)
         opts.ensure_installed =
           require("astrocore").list_insert_unique(opts.ensure_installed, { "cspell" })
+      end,
+    },
+    {
+      "jay-babu/mason-null-ls.nvim",
+      opts = function(_, opts)
         local cspell_cfg = { config_file_preferred_name = ".cspell.json" }
         opts.handlers.cspell = function()
           require("null-ls").register {
