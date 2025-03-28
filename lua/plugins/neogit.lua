@@ -33,7 +33,6 @@ return {
       "NeogitRebasePopup--ignore-date",
     },
     integrations = {
-      telescope = require("astrocore").is_available("telescope.nvim"),
       diffview = require("astrocore").is_available("diffview.nvim"),
     },
   },
