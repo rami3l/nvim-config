@@ -5,6 +5,31 @@ return {
 
   -- This is a good place to do further customize the options set by the community plugins/packs
 
+  -- astrocommunity.completion.copilot*
+  {
+    "saghen/blink.cmp",
+    dependencies = {
+      {
+        "zbirenbaum/copilot.lua",
+        opts = {
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+        },
+      },
+      "giuxtaposition/blink-cmp-copilot",
+    },
+    opts = function(_, opts)
+      opts.sources.default =
+        require("astrocore").list_insert_unique(opts.sources.default, { "copilot" })
+      opts.sources.providers.copilot = {
+        name = "copilot",
+        module = "blink-cmp-copilot",
+        score_offset = 100,
+        async = true,
+      }
+    end,
+  },
+
   -- astrocommunity.diagnostics.trouble-nvim
   {
     "folke/trouble.nvim",
