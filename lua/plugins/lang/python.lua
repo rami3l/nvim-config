@@ -9,6 +9,7 @@ return {
       { "<Leader>lv", "<CMD>VenvSelect<CR>", desc = "Select Venv", ft = "python" },
     },
     dependencies = {
+      { "nvim-telescope/telescope.nvim", enabled = false },
       {
         "AstroNvim/astrocore",
         opts = function(_, opts) opts.mappings.n["<Leader>lv"] = false end,

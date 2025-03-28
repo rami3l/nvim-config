@@ -20,15 +20,6 @@ return {
     opts = { max_lines = 2 },
   },
 
-  -- astrocommunity.editing-support.todo-comments-nvim
-  {
-    "folke/todo-comments.nvim",
-    keys = {
-      { "g?", require("telescope").extensions["todo-comments"].todo, desc = "Search todos" },
-      { "<Leader>fT", require("telescope").extensions["todo-comments"].todo, desc = "Find todos" },
-    },
-  },
-
   -- astrocommunity.git.git-blame-nvim
   {
     "f-person/git-blame.nvim",
