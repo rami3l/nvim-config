@@ -19,7 +19,7 @@ return {
       { "<Leader>rx", "<CMD>ISwapWith<CR>", desc = "Exchange syntax node" },
       { "<Leader>rX", "<CMD>IMoveWith<CR>", desc = "Shift syntax node" },
     },
-    dependencies = {
+    specs = {
       {
         "AstroNvim/astrocore",
         opts = function(_, opts)

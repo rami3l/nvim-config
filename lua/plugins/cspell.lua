@@ -2,7 +2,7 @@
 return {
   "davidmh/cspell.nvim",
   lazy = true,
-  dependencies = {
+  specs = {
     {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       opts = function(_, opts)
@@ -10,6 +10,8 @@ return {
           require("astrocore").list_insert_unique(opts.ensure_installed, { "cspell" })
       end,
     },
+  },
+  dependencies = {
     {
       "jay-babu/mason-null-ls.nvim",
       opts = function(_, opts)

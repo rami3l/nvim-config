@@ -8,7 +8,7 @@ return {
     keys = {
       { "<Leader>lv", "<CMD>VenvSelect<CR>", desc = "Select Venv", ft = "python" },
     },
-    dependencies = {
+    specs = {
       { "nvim-telescope/telescope.nvim", enabled = false },
       {
         "AstroNvim/astrocore",

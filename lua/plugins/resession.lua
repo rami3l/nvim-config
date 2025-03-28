@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   "stevearc/resession.nvim",
-  dependencies = {
+  specs = {
     {
       "AstroNvim/astrocore",
       opts = function(_, opts)

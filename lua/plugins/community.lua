@@ -90,7 +90,7 @@ return {
   -- astrocommunity.motion.leap-nvim
   {
     "ggandor/leap.nvim",
-    dependencies = {
+    specs = {
       {
         "AstroNvim/astrocore",
         opts = function(_, opts)
