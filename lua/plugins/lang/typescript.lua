@@ -11,11 +11,11 @@ return {
     },
   },
   {
-    "jay-babu/mason-nvim-dap.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "js" })
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "js-debug-adapter" })
     end,
   },
   -- HACK: Works around https://github.com/vuki656/package-info.nvim/issues/164.
