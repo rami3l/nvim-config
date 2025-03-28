@@ -2,7 +2,7 @@ require("lazy").setup({
   {
     "AstroNvim/AstroNvim",
     -- Remove version tracking to elect for nightly AstroNvim
-    version = "^4",
+    version = "^5",
     import = "astronvim.plugins",
   },
   { import = "community" },
