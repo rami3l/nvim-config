@@ -2,29 +2,22 @@
 return {
   {
     "Olical/conjure",
-    dependencies = {
-      -- TODO: Migrate this to `blink.cmp`.
-      -- {
-      --   "PaterJason/cmp-conjure",
-      --   lazy = true,
-      --   config = function()
-      --     local cmp = require("cmp")
-      --     local config = cmp.get_config()
-      --     table.insert(config.sources, { name = "conjure" })
-      --     return cmp.setup(config)
-      --   end,
-      -- },
+    specs = {
       {
-        "AstroNvim/astrocore",
-        opts = {
-          options = {
-            g = {
-              ["conjure#log#wrap"] = true,
-              -- All these `mapping`s are prefixed by `<LocalLeader>`.
-              ["conjure#mapping#doc_word"] = "gk",
-            },
-          },
-        },
+        "Saghen/blink.cmp",
+        optional = true,
+        dependencies = { "PaterJason/cmp-conjure" },
+        specs = { { "Saghen/blink.compat", version = "*", lazy = true } },
+        opts = function(_, opts)
+          opts.sources.default =
+            require("astrocore").list_insert_unique(opts.sources.default, { "cmp-conjure" })
+          opts.sources.providers["cmp-conjure"] = {
+            name = "conjure",
+            module = "blink.compat.source",
+            score_offset = 100,
+            async = true,
+          }
+        end,
       },
       {
         "AstroNvim/astrocore",
@@ -41,6 +34,20 @@ return {
           m.n["<LocalLeader>v"] = { desc = "Conjure view" }
           m.n["<LocalLeader>x"] = { desc = "Conjure expand" }
         end,
+      },
+    },
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          options = {
+            g = {
+              ["conjure#log#wrap"] = true,
+              -- All these `mapping`s are prefixed by `<LocalLeader>`.
+              ["conjure#mapping#doc_word"] = "gk",
+            },
+          },
+        },
       },
     },
   },
