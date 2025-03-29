@@ -14,7 +14,11 @@ return {
       function() require("snacks.picker").lines() end,
       desc = "Find words in buffer",
     },
-    { "<Leader>?", function() require("snacks.picker").grep() end, desc = "Find words" },
+    {
+      "<Leader>?",
+      function() require("snacks.picker").grep { hidden = true } end,
+      desc = "Find words",
+    },
     {
       "<Leader>`",
       function() require("snacks.picker").files { hidden = true } end,
