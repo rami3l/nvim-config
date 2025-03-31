@@ -34,8 +34,8 @@ return {
   {
     "folke/trouble.nvim",
     keys = {
-      { "<leader>xr", "<CMD>Trouble lsp toggle<CR>", desc = "Trouble LSP References" },
-      { "<leader>xs", "<CMD>Trouble symbols toggle<CR>", desc = "Trouble LSP Symbols" },
+      { "<Leader>xr", "<CMD>Trouble lsp toggle<CR>", desc = "Trouble LSP References" },
+      { "<Leader>xs", "<CMD>Trouble symbols toggle<CR>", desc = "Trouble LSP Symbols" },
     },
   },
 
