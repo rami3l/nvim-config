@@ -1,14 +1,14 @@
--- https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md#configuration
----@type lspconfig.options.harper_ls
+-- https://writewithharper.com/docs/integrations/neovim#Optional-Configuration
 ---@diagnostic disable: missing-fields
 return {
   settings = {
     ["harper-ls"] = {
       linters = {
-        linking_verbs = true,
-        sentence_capitalization = false,
-        spell_check = false,
-        spelled_numbers = false,
+        LinkingVerbs = true,
+        SentenceCapitalization = false,
+        SpellCheck = false,
+        SpelledNumbers = false,
+        ToDoHyphen = false,
       },
     },
   },
