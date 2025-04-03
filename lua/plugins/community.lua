@@ -14,6 +14,12 @@ return {
         opts = {
           suggestion = { enabled = false },
           panel = { enabled = false },
+          filetypes = {
+            yaml = true,
+            markdown = true,
+            gitcommit = true,
+            hgcommit = true,
+          },
         },
       },
       "giuxtaposition/blink-cmp-copilot",
