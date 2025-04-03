@@ -11,16 +11,22 @@ return {
     dependencies = {
       {
         "zbirenbaum/copilot.lua",
-        opts = {
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-          filetypes = {
-            yaml = true,
-            markdown = true,
-            gitcommit = true,
-            hgcommit = true,
-          },
-        },
+        opts = function()
+          local force_enabled_fts = { "gitcommit", "hgcommit" }
+          local filetypes = { yaml = true, markdown = true }
+          for _, ft in ipairs(force_enabled_fts) do
+            filetypes[ft] = true
+          end
+          return {
+            should_attach = function()
+              return vim.list_contains(force_enabled_fts, vim.bo.filetype)
+                or (vim.bo.buflisted and vim.bo.buftype == "")
+            end,
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+            filetypes = filetypes,
+          }
+        end,
       },
       "giuxtaposition/blink-cmp-copilot",
     },
