@@ -17,6 +17,9 @@ return {
     diagnostics = {
       underline = true,
       severity_sort = true,
+      virtual_text = {
+        severity = { min = vim.diagnostic.severity.WARN },
+      },
     },
 
     -- Configure Neovim options
