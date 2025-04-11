@@ -1,4 +1,7 @@
-local light_theme, dark_theme = "astrojupiter", "catppuccin"
+local themes = {
+  light = "github-monochrome-rosepine-dawn",
+  dark = "ayu-mirage",
+}
 
 ---@type LazySpec
 return {
@@ -6,7 +9,7 @@ return {
     "AstroNvim/astroui",
     ---@type AstroUIOpts
     opts = {
-      colorscheme = dark_theme,
+      colorscheme = themes.dark,
       icons = require("plugins.ui.icons"),
       text_icons = require("plugins.ui.text_icons"),
     },
@@ -14,6 +17,7 @@ return {
 
   -- Theming
   { "Shatur/neovim-ayu", lazy = true },
+  { "idr4n/github-monochrome.nvim", lazy = true },
   { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
   { "nyoom-engineering/oxocarbon.nvim", lazy = true },
   {
@@ -35,16 +39,18 @@ return {
   {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
-    opts = {
-      set_light_mode = function()
-        vim.opt.background = "light"
-        vim.cmd.colorscheme(light_theme)
-      end,
-      set_dark_mode = function()
-        vim.opt.background = "dark"
-        vim.cmd.colorscheme(dark_theme)
-      end,
-    },
+    opts = function()
+      local function on_mode(mode)
+        return function()
+          vim.opt.background = mode
+          vim.cmd.colorscheme(themes[mode])
+        end
+      end
+      return {
+        set_light_mode = on_mode("light"),
+        set_dark_mode = on_mode("dark"),
+      }
+    end,
   },
 
   {
