@@ -4,10 +4,20 @@ return {
     "stevearc/conform.nvim",
     optional = true,
     opts = {
-      formatters_by_ft = {
-        javascript = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
-        typescript = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
-      },
+      formatters_by_ft = (function()
+        local prettier =
+          { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" }
+        return {
+          javascript = prettier,
+          javascriptreact = prettier,
+          typescript = prettier,
+          typescriptreact = prettier,
+          json = prettier,
+          jsonc = prettier,
+          json5 = prettier,
+          vue = prettier,
+        }
+      end)(),
     },
   },
   {
