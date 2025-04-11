@@ -12,8 +12,16 @@ return {
       {
         "zbirenbaum/copilot.lua",
         opts = function()
+          local function curr_file() return vim.fs.basename(vim.api.nvim_buf_get_name(0)) end
+          local filetypes = {
+            yaml = true,
+            markdown = true,
+            -- Disable for `.env` files.
+            sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
+            -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
+            conf = function() return vim.fs.dirname(curr_file()) ~= "kitty" end,
+          }
           local force_enabled_fts = { "gitcommit", "hgcommit" }
-          local filetypes = { yaml = true, markdown = true }
           for _, ft in ipairs(force_enabled_fts) do
             filetypes[ft] = true
           end
