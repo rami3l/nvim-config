@@ -8,10 +8,10 @@ return {
     features = {
       autoformat = true,
       codelens = true,
-
       inlay_hints = true,
       lsp_handlers = true,
       semantic_tokens = true,
+      signature_help = true,
     },
 
     formatting = {
