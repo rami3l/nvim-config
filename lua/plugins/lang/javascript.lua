@@ -28,9 +28,4 @@ return {
         require("astrocore").list_insert_unique(opts.ensure_installed, { "js-debug-adapter" })
     end,
   },
-  -- HACK: Works around https://github.com/vuki656/package-info.nvim/issues/164.
-  {
-    "vuki656/package-info.nvim",
-    enabled = false,
-  },
 }
