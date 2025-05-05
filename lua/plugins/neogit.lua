@@ -34,6 +34,7 @@ return {
     },
     integrations = {
       diffview = require("astrocore").is_available("diffview.nvim"),
+      snacks = require("astrocore").is_available("snacks.nvim"),
     },
   },
 }
