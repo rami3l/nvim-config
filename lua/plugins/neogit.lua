@@ -32,9 +32,5 @@ return {
       "NeogitRebasePopup--committer-date-is-author-date",
       "NeogitRebasePopup--ignore-date",
     },
-    integrations = {
-      diffview = require("astrocore").is_available("diffview.nvim"),
-      snacks = require("astrocore").is_available("snacks.nvim"),
-    },
   },
 }
