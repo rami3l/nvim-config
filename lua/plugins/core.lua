@@ -23,7 +23,7 @@ return {
     },
 
     -- Configure Neovim options
-    -- Default options that are always set: https://github.com/AstroNvim/AstroNvim/blob/main/lua/astronvim/options.lua
+    -- Default options that are always set: https://github.com/AstroNvim/AstroNvim/blob/main/lua/astronvim/plugins/_astrocore_options.lua
     options = {
       -- Global vim options (`vim.opt`)
       opt = {

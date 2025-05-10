@@ -1,6 +1,6 @@
 local themes = {
   light = "github-monochrome-rosepine-dawn",
-  dark = "ayu-mirage",
+  dark = "github-monochrome-rosepine",
 }
 
 ---@type LazySpec
