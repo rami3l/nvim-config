@@ -45,6 +45,21 @@ return {
       desc = "Close invisible buffers",
     },
 
+    ["<Leader>bz"] = {
+      function()
+        if vim.fn.exists("t:zoomed") == 1 and vim.t.zoomed == 1 then
+          vim.cmd("execute t:zoom_winrestcmd")
+          vim.t.zoomed = 0
+        else
+          vim.t.zoom_winrestcmd = vim.fn.winrestcmd()
+          vim.cmd("resize")
+          vim.cmd("vertical resize")
+          vim.t.zoomed = 1
+        end
+      end,
+      desc = "Zoom buffer",
+    },
+
     ["<Leader><Tab>"] = { desc = "󰌒 " .. "Tabs" },
     ["<Leader><Tab><Tab>"] = { "<CMD>tabnew<CR>", desc = "New tab" },
     ["<Leader><Tab>["] = { "<CMD>tabprevious<CR>", desc = "Previous tab" },
