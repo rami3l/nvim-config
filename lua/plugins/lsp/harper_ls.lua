@@ -5,6 +5,7 @@ return {
     ["harper-ls"] = {
       linters = {
         LinkingVerbs = true,
+        LongSentences = false,
         SentenceCapitalization = false,
         SpellCheck = false,
         SpelledNumbers = false,
