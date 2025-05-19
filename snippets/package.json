@@ -17,10 +17,6 @@
         "path": "./haskell.json"
       },
       {
-        "language": "lean",
-        "path": "./lean.json"
-      },
-      {
         "language": "markdown",
         "path": "./markdown.json"
       },
