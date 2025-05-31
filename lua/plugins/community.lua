@@ -19,7 +19,7 @@ return {
             -- Disable for `.env` files.
             sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
             -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
-            conf = function() return vim.fs.dirname(curr_file()) ~= "kitty" end,
+            conf = function() return vim.fs.dirname(curr_file()):match("kitty$") end,
           }
           local force_enabled_fts = { "gitcommit", "hgcommit" }
           for _, ft in ipairs(force_enabled_fts) do
