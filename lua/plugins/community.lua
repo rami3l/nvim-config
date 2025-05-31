@@ -36,7 +36,7 @@ return {
           }
         end,
       },
-      "giuxtaposition/blink-cmp-copilot",
+      { "giuxtaposition/blink-cmp-copilot", lazy = true },
     },
     opts = function(_, opts)
       opts.sources.default =

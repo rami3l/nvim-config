@@ -7,7 +7,7 @@ return {
         "Saghen/blink.cmp",
         optional = true,
         dependencies = { "PaterJason/cmp-conjure" },
-        specs = { { "Saghen/blink.compat", version = "*", lazy = true } },
+        specs = { { "Saghen/blink.compat", lazy = true } },
         opts = function(_, opts)
           opts.sources.default =
             require("astrocore").list_insert_unique(opts.sources.default, { "cmp-conjure" })
