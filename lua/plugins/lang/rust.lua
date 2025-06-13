@@ -32,7 +32,7 @@ return {
             ["rust-analyzer"] = {
               check = { command = "clippy" },
               completion = {
-                postfix = { enable = false },
+                postfix = { enable = true },
               },
               imports = {
                 granularity = { enforce = true },
