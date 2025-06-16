@@ -8,4 +8,21 @@ return {
       })
     end,
   },
+
+  {
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
+    ---@diagnostic disable: missing-fields
+    opts = {
+      config = {
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = { shadow = false },
+            },
+          },
+        },
+      },
+    },
+  },
 }
