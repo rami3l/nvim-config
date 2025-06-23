@@ -5,11 +5,11 @@
   },
   "co-authored by": {
     "prefix": "co",
-    "body": ["Co-authored-by: ${1:name} <${2:email}>", "$0"]
+    "body": ["Co-authored-by: ${1:rami3l} <${2:rami3l@outlook.com}>", "$0"]
   },
   "signed off by": {
     "prefix": "sign",
-    "body": ["Signed-off-by: ${1:name} <${2:email}>", "$0"]
+    "body": ["Signed-off-by: ${1:rami3l} <${2:rami3l@outlook.com}>", "$0"]
   },
   "on behalf of": {
     "prefix": "on",
