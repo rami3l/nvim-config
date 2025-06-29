@@ -11,4 +11,17 @@ return {
       return opts
     end,
   },
+
+  {
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
+    ---@diagnostic disable: missing-fields
+    opts = {
+      config = {
+        elixirls = {
+          cmd = { "elixir-ls" },
+        },
+      },
+    },
+  },
 }
