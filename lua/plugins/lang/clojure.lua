@@ -18,6 +18,17 @@ return {
     },
   },
   {
+    "dundalek/parpar.nvim",
+    dependencies = { "saghen/blink.cmp" },
+    opts = function()
+      vim.api.nvim_create_autocmd("User", {
+        desc = "Disable parpar.nvim on blink.cmp menu",
+        pattern = "BlinkCmpMenuPositionUpdate",
+        callback = function() vim.schedule(require("parpar").pause()) end,
+      })
+    end,
+  },
+  {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
