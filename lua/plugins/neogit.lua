@@ -25,6 +25,7 @@ return {
     },
     ignored_settings = {
       "NeogitCommitPopup--allow-empty",
+      "NeogitCommitPopup--reset-author",
       "NeogitCommitPopup--reuse-message",
       "NeogitPullPopup--rebase",
       "NeogitPushPopup--force",
