@@ -20,28 +20,33 @@ return {
         "zbirenbaum/copilot.lua",
         opts = function(_, opts)
           local function curr_file() return vim.fs.basename(vim.api.nvim_buf_get_name(0)) end
-          local filetypes = {
+          local fts = {
             yaml = true,
             markdown = true,
             -- Disable for `.env` files.
             sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
             -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
             conf = function() return vim.fs.dirname(curr_file()):match("kitty$") end,
+            -- Mark "force" for fts where we want to force enable Copilot even when the buffer is not listed.
+            -- This is useful for e.g. neogit commit message buffers.
+            gitcommit = "force",
           }
-          local force_enabled_fts = { "gitcommit", "hgcommit" }
-          for _, ft in ipairs(force_enabled_fts) do
-            filetypes[ft] = true
+          local force_fts = {}
+          for ft, v in pairs(fts) do
+            if v == "force" then
+              table.insert(force_fts, ft)
+              fts[ft] = true
+            end
           end
-          opts = vim.tbl_deep_extend("force", opts or {}, {
+          return vim.tbl_deep_extend("force", opts or {}, {
             should_attach = function()
-              return vim.list_contains(force_enabled_fts, vim.bo.filetype)
+              return vim.list_contains(force_fts, vim.bo.filetype)
                 or (vim.bo.buflisted and vim.bo.buftype == "")
             end,
             suggestion = { enabled = false },
             panel = { enabled = false },
-            filetypes = filetypes,
+            filetypes = fts,
           })
-          return opts
         end,
       },
       { "giuxtaposition/blink-cmp-copilot", lazy = true },
