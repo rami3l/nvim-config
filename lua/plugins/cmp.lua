@@ -64,32 +64,32 @@ return {
   },
 
   -- Enable Copilot NES
-  {
-    "zbirenbaum/copilot.lua",
-    dependencies = {
-      {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        opts = function(_, opts)
-          opts.ensure_installed = require("astrocore").list_insert_unique(
-            opts.ensure_installed,
-            { "copilot-language-server" }
-          )
-        end,
-      },
-      {
-        "copilotlsp-nvim/copilot-lsp",
-        init = function() vim.lsp.enable("copilot_ls") end,
-      },
-    },
-    opts = {
-      nes = {
-        enabled = true,
-        keymap = {
-          accept_and_goto = "<Tab>",
-          accept = false,
-          dismiss = "<Esc>",
-        },
-      },
-    },
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   dependencies = {
+  --     {
+  --       "WhoIsSethDaniel/mason-tool-installer.nvim",
+  --       opts = function(_, opts)
+  --         opts.ensure_installed = require("astrocore").list_insert_unique(
+  --           opts.ensure_installed,
+  --           { "copilot-language-server" }
+  --         )
+  --       end,
+  --     },
+  --     {
+  --       "copilotlsp-nvim/copilot-lsp",
+  --       init = function() vim.lsp.enable("copilot_ls") end,
+  --     },
+  --   },
+  --   opts = {
+  --     nes = {
+  --       enabled = true,
+  --       keymap = {
+  --         accept_and_goto = "<Tab>",
+  --         accept = false,
+  --         dismiss = "<Esc>",
+  --       },
+  --     },
+  --   },
+  -- },
 }
