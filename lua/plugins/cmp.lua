@@ -21,10 +21,6 @@ for _, v in ipairs(fts.copilot_force) do
   fts.copilot[v] = true
 end
 
-local function should_enable_copilot(ft)
-  return not require("copilot.client.filetypes").is_ft_disabled(ft, fts.copilot)
-end
-
 ---@type LazySpec
 return {
   {
@@ -72,32 +68,53 @@ return {
   },
 
   -- Enable Copilot NES
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   dependencies = {
-  --     {
-  --       "WhoIsSethDaniel/mason-tool-installer.nvim",
-  --       opts = function(_, opts)
-  --         opts.ensure_installed = require("astrocore").list_insert_unique(
-  --           opts.ensure_installed,
-  --           { "copilot-language-server" }
-  --         )
-  --       end,
-  --     },
-  --     {
-  --       "copilotlsp-nvim/copilot-lsp",
-  --       init = function() vim.lsp.enable("copilot_ls") end,
-  --     },
-  --   },
-  --   opts = {
-  --     nes = {
-  --       enabled = true,
-  --       keymap = {
-  --         accept_and_goto = "<Tab>",
-  --         accept = false,
-  --         dismiss = "<Esc>",
-  --       },
-  --     },
-  --   },
-  -- },
+  {
+    "zbirenbaum/copilot.lua",
+    dependencies = {
+      {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        opts = function(_, opts)
+          opts.ensure_installed = require("astrocore").list_insert_unique(
+            opts.ensure_installed,
+            { "copilot-language-server" }
+          )
+        end,
+      },
+      {
+        "AstroNvim/astrolsp",
+        ---@type AstroLSPOpts
+        ---@diagnostic disable: missing-fields
+        opts = {
+          config = {
+            copilot_ls = {
+              get_language_id = function(_, ft)
+                return require("copilot.client.filetypes").language_for_file_type(ft)
+              end,
+              root_dir = function(bufnr, on_dir)
+                local ft = vim.bo[bufnr].filetype
+                if require("copilot.client.filetypes").is_ft_disabled(ft, fts.copilot) then
+                  return
+                end
+                on_dir(vim.uv.cwd())
+              end,
+            },
+          },
+        },
+      },
+      {
+        "copilotlsp-nvim/copilot-lsp",
+        init = function() vim.lsp.enable("copilot_ls") end,
+      },
+    },
+    opts = {
+      nes = {
+        enabled = true,
+        keymap = {
+          accept_and_goto = "<Tab>",
+          accept = false,
+          dismiss = "<Esc>",
+        },
+      },
+    },
+  },
 }
