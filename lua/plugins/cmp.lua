@@ -1,24 +1,25 @@
-local function curr_file() return vim.fs.basename(vim.api.nvim_buf_get_name(0)) end
+local fts
+do
+  local function curr_file() return vim.fs.basename(vim.api.nvim_buf_get_name(0)) end
+  fts = {
+    copilot = {
+      yaml = true,
+      markdown = true,
+      -- Disable for `.env` files.
+      sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
+      -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
+      conf = function() return vim.fs.dirname(curr_file()):match("kitty$") end,
+    },
 
-local fts = {
-  copilot = {
-    yaml = true,
-    markdown = true,
-    -- Disable for `.env` files.
-    sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
-    -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
-    conf = function() return vim.fs.dirname(curr_file()):match("kitty$") end,
-    gitcommit = "force",
-  },
-
-  -- List of fts where we want to force enable Copilot even when the buffer
-  -- is not listed. This is useful for e.g. neogit commit message buffers.
-  copilot_force = {
-    "gitcommit",
-  },
-}
-for _, v in ipairs(fts.copilot_force) do
-  fts.copilot[v] = true
+    -- List of fts where we want to force enable Copilot even when the buffer
+    -- is not listed. This is useful for e.g. neogit commit message buffers.
+    copilot_force = {
+      "gitcommit",
+    },
+  }
+  for _, v in ipairs(fts.copilot_force) do
+    fts.copilot[v] = true
+  end
 end
 
 ---@type LazySpec
@@ -104,6 +105,7 @@ return {
       {
         "copilotlsp-nvim/copilot-lsp",
         init = function() vim.lsp.enable("copilot_ls") end,
+        opts = { nes = { move_count_threshold = 1 } },
       },
     },
     opts = {
