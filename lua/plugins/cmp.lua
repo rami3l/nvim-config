@@ -1,6 +1,6 @@
 local fts
 do
-  local function curr_file() return vim.fs.basename(vim.api.nvim_buf_get_name(0)) end
+  local function curr_file() return vim.api.nvim_buf_get_name(0) end
   fts = {
     copilot = {
       yaml = true,
