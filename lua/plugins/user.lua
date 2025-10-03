@@ -8,7 +8,7 @@ return {
   -- UX enhancements
   {
     "chrisgrieser/nvim-various-textobjs",
-    event = "User Astrofile",
+    event = "User AstroFile",
     opts = { keymaps = { useDefaults = true } },
   },
 
@@ -33,7 +33,7 @@ return {
 
   {
     "keaising/im-select.nvim",
-    event = "User Astrofile",
+    event = "User AstroFile",
     opts = function(_, opts)
       if vim.fn.has("macunix") == 1 then
         opts.default_im_select = "com.apple.keylayout.US"
