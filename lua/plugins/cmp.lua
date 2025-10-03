@@ -70,52 +70,21 @@ return {
 
   -- Enable Copilot NES
   {
-    "zbirenbaum/copilot.lua",
-    dependencies = {
-      {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        opts = function(_, opts)
-          opts.ensure_installed = require("astrocore").list_insert_unique(
-            opts.ensure_installed,
-            { "copilot-language-server" }
-          )
-        end,
-      },
-      {
-        "AstroNvim/astrolsp",
-        ---@type AstroLSPOpts
-        ---@diagnostic disable: missing-fields
-        opts = {
-          config = {
-            copilot_ls = {
-              get_language_id = function(_, ft)
-                return require("copilot.client.filetypes").language_for_file_type(ft)
-              end,
-              root_dir = function(bufnr, on_dir)
-                local ft = vim.bo[bufnr].filetype
-                if require("copilot.client.filetypes").is_ft_disabled(ft, fts.copilot) then
-                  return
-                end
-                on_dir(vim.uv.cwd())
-              end,
-            },
-          },
-        },
-      },
-      {
-        "copilotlsp-nvim/copilot-lsp",
-        init = function() vim.lsp.enable("copilot_ls") end,
-        opts = { nes = { move_count_threshold = 1 } },
-      },
-    },
+    "folke/sidekick.nvim",
+    event = "User AstroFile",
     opts = {
-      nes = {
-        enabled = true,
-        keymap = {
-          accept_and_goto = "<Tab>",
-          accept = false,
-          dismiss = "<Esc>",
-        },
+      cli = { mux = { backend = "zellij", enabled = true } },
+    },
+    keys = {
+      {
+        "<Tab>",
+        -- Try to execute the first of the following that applies:
+        -- * Jump to the next NES location.
+        -- * Apply the current NES.
+        -- * Fall back on regular `<Tab>`.
+        function() return require("sidekick").nes_jump_or_apply() and nil or "<Tab>" end,
+        expr = true,
+        desc = "Goto/Apply Next Edit Suggestion",
       },
     },
   },
