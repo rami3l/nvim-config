@@ -1,27 +1,3 @@
-local fts
-do
-  local function curr_file() return vim.api.nvim_buf_get_name(0) end
-  fts = {
-    copilot = {
-      yaml = true,
-      markdown = true,
-      -- Disable for `.env` files.
-      sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
-      -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
-      conf = function() return vim.fs.dirname(curr_file()):match("kitty$") end,
-    },
-
-    -- List of fts where we want to force enable Copilot even when the buffer
-    -- is not listed. This is useful for e.g. neogit commit message buffers.
-    copilot_force = {
-      "gitcommit",
-    },
-  }
-  for _, v in ipairs(fts.copilot_force) do
-    fts.copilot[v] = true
-  end
-end
-
 ---@type LazySpec
 return {
   {
@@ -43,6 +19,27 @@ return {
       {
         "zbirenbaum/copilot.lua",
         opts = function(_, opts)
+          local function curr_file() return vim.api.nvim_buf_get_name(0) end
+          local fts = {
+            copilot = {
+              yaml = true,
+              markdown = true,
+              -- Disable for `.env` files.
+              sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
+              -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
+              conf = function() return vim.fs.dirname(curr_file()):match("kitty$") end,
+            },
+
+            -- List of fts where we want to force enable Copilot even when the buffer
+            -- is not listed. This is useful for e.g. neogit commit message buffers.
+            copilot_force = {
+              "gitcommit",
+            },
+          }
+          for _, v in ipairs(fts.copilot_force) do
+            fts.copilot[v] = true
+          end
+
           return vim.tbl_deep_extend("force", opts or {}, {
             should_attach = function()
               return vim.list_contains(fts.copilot_force, vim.bo.filetype)
@@ -68,7 +65,7 @@ return {
     end,
   },
 
-  -- Enable Copilot NES
+  -- Copilot NES
   {
     "folke/sidekick.nvim",
     event = "User AstroFile",
