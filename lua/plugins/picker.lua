@@ -29,33 +29,15 @@ return {
       function() require("snacks.picker").files { hidden = true, ignored = true } end,
       desc = "Find all files",
     },
+    {
+      "<Leader>lc",
+      function() require("snacks.picker").lsp_outgoing_calls() end,
+      desc = "Find outgoing calls",
+    },
+    {
+      "<Leader>lC",
+      function() require("snacks.picker").lsp_incoming_calls() end,
+      desc = "Find incoming calls",
+    },
   },
 }
--- TODO: Find hierarchy UI replacement for `snacks`.
--- {
---   "jmacadie/telescope-hierarchy.nvim",
---   dependencies = {
---     {
---       "AstroNvim/astrolsp",
---       ---@type AstroLSPOpts
---       opts = {
---         mappings = {
---           n = {
---             ["<Leader>lc"] = {
---               "<CMD>Telescope hierarchy outgoing_calls<CR>",
---               desc = "Search outgoing calls",
---             },
---             ["<Leader>lC"] = {
---               "<CMD>Telescope hierarchy incoming_calls<CR>",
---               desc = "Search incoming calls",
---             },
---           },
---         },
---       },
---     },
---   },
---   config = function(plugin, opts)
---     require("astronvim.plugins.configs.telescope")(plugin, opts)
---     require("telescope").load_extension("hierarchy")
---   end,
--- },
