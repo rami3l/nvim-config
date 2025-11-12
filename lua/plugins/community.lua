@@ -52,9 +52,10 @@ return {
   {
     "chrisgrieser/nvim-spider",
     dependencies = {
+      -- FIXME: `b` is no longer working with newer versions of `luautf8`. Disabling UTF-8 support for now.
       -- Fixer la détection des mots non-ASCII.
       -- https://github.com/chrisgrieser/nvim-spider?tab=readme-ov-file#utf-8-support
-      { "rami3l/nvim-spider-utf8", build = "rockspec" },
+      -- { "rami3l/nvim-spider-utf8", build = "rockspec" },
     },
     opts = {
       skipInsignificantPunctuation = false,
