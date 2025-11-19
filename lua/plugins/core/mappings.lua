@@ -13,6 +13,18 @@ local function visible_bufs(tabpage)
   return buf_set
 end
 
+local function window_zoom_toggle()
+  if vim.fn.exists("t:zoomed") == 1 and vim.t.zoomed == 1 then
+    vim.cmd("execute t:zoom_winrestcmd")
+    vim.t.zoomed = 0
+  else
+    vim.t.zoom_winrestcmd = vim.fn.winrestcmd()
+    vim.cmd("resize")
+    vim.cmd("vertical resize")
+    vim.t.zoomed = 1
+  end
+end
+
 ---@type AstroCoreMappings
 return {
   -- The first key is the mode, the second key is the lefthand side of the map.
@@ -45,20 +57,8 @@ return {
       desc = "Close invisible buffers",
     },
 
-    ["<Leader>bz"] = {
-      function()
-        if vim.fn.exists("t:zoomed") == 1 and vim.t.zoomed == 1 then
-          vim.cmd("execute t:zoom_winrestcmd")
-          vim.t.zoomed = 0
-        else
-          vim.t.zoom_winrestcmd = vim.fn.winrestcmd()
-          vim.cmd("resize")
-          vim.cmd("vertical resize")
-          vim.t.zoomed = 1
-        end
-      end,
-      desc = "Zoom buffer",
-    },
+    ["<C-w>z"] = { window_zoom_toggle, desc = "Zoom window" },
+    ["<C-w><C-z>"] = { window_zoom_toggle, desc = "Zoom window" },
 
     ["<Leader><Tab>"] = { desc = "󰌒 " .. "Tabs" },
     ["<Leader><Tab><Tab>"] = { "<CMD>tabnew<CR>", desc = "New tab" },
