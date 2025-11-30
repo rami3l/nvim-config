@@ -48,6 +48,38 @@ return {
     end,
   },
 
+  -- astrocommunity.motion.flash-nvim
+  {
+    "folke/flash.nvim",
+    specs = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          local m = opts.mappings
+
+          local jump = { function() require("flash").jump() end, desc = "Flash" }
+          local treesitter = {
+            function() require("flash").treesitter() end,
+            desc = "Flash Treesitter",
+          }
+          local from_window = {
+            function() require("flash").jump { search = { multi_window = true } } end,
+            desc = "Flash from window",
+          }
+
+          m.n.s, m.x.x, m.o.x = jump, jump, jump
+          m.n.S, m.x.X, m.o.X = treesitter, treesitter, treesitter
+          m.n.gs, m.x.gs, m.o.gs = from_window, from_window, from_window
+
+          -- The following default keybindings conflict with `nvim-surround`,
+          -- so they have to be disabled:
+          m.x.s, m.o.s = false, false
+          m.x.S, m.o.S = false, false
+        end,
+      },
+    },
+  },
+
   -- astrocommunity.motion.nvim-spider
   {
     "chrisgrieser/nvim-spider",
@@ -59,31 +91,6 @@ return {
     },
     opts = {
       skipInsignificantPunctuation = false,
-    },
-  },
-
-  -- astrocommunity.motion.leap-nvim
-  {
-    "ggandor/leap.nvim",
-    specs = {
-      {
-        "AstroNvim/astrocore",
-        opts = function(_, opts)
-          local m = opts.mappings
-          local forward = { "<Plug>(leap-forward)", desc = "Leap forward" }
-          local backward = { "<Plug>(leap-backward)", desc = "Leap backward" }
-          local from_window = { "<Plug>(leap-from-window)", desc = "Leap from window" }
-
-          m.n.s, m.x.x, m.o.x = forward, forward, forward
-          m.n.S, m.x.X, m.o.X = backward, backward, backward
-          m.n.gs, m.x.gs, m.o.gs = from_window, from_window, from_window
-
-          -- The following default keybindings conflict with `nvim-surround`,
-          -- so they have to be disabled:
-          m.x.s, m.o.s = false, false
-          m.x.S, m.o.S = false, false
-        end,
-      },
     },
   },
 

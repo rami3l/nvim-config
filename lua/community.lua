@@ -25,7 +25,7 @@ return {
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
-  { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
