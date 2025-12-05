@@ -26,8 +26,6 @@ return {
               markdown = true,
               -- Disable for `.env` files.
               sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
-              -- HACK: Disable for kitty config files to prevent Copilot LSP errors.
-              conf = function() return vim.fs.dirname(curr_file()):match("kitty$") end,
             },
 
             -- List of fts where we want to force enable Copilot even when the buffer
