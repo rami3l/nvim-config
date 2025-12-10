@@ -99,11 +99,6 @@ return {
     "nvim-neotest/neotest",
     keys = {
       {
-        "<Leader>Te",
-        function() require("neotest").summary.toggle() end,
-        desc = "Toggle summary",
-      },
-      {
         "<Leader>To",
         function() require("neotest").output.open { enter = true } end,
         desc = "Show output",
