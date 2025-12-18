@@ -18,7 +18,6 @@
   "conjure": { "branch": "main", "commit": "f92b09ede8e88d6e24231001940008ced62f9304" },
   "copilot.lua": { "branch": "master", "commit": "508d8b00390ff3046323f61187a57069910c6e17" },
   "crates.nvim": { "branch": "main", "commit": "ac9fa498a9edb96dc3056724ff69d5f40b898453" },
-  "cspell.nvim": { "branch": "main", "commit": "07d75238648ef99c0c5c05f4cfd83093d0a01dd4" },
   "deno-nvim": { "branch": "master", "commit": "5c1ef9762f916033bd3b9b37878384cae24ddb4e" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
