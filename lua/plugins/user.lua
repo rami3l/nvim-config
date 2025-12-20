@@ -9,7 +9,15 @@ return {
   {
     "chrisgrieser/nvim-various-textobjs",
     event = "User AstroFile",
-    opts = { keymaps = { useDefaults = true } },
+    opts = {
+      keymaps = {
+        useDefaults = true,
+        -- NOTE: Avoids conflicts with Vim's "format" functionality.
+        -- It seems that `gw` is preferred over `gq` now.
+        -- See: <https://www.douglasdrumond.tech/post/2024-11-04-g-format>
+        disabledDefaults = { "gw", "gW" },
+      },
+    },
   },
 
   {
