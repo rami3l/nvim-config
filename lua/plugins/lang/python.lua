@@ -6,7 +6,7 @@ return {
       name = { "venv", ".venv" },
     },
     keys = {
-      { "<Leader>lv", "<CMD>VenvSelect<CR>", desc = "Select Venv", ft = "python" },
+      { "<Leader>lv", "<Cmd>VenvSelect<Cr>", desc = "Select Venv", ft = "python" },
     },
     specs = {
       { "nvim-telescope/telescope.nvim", enabled = false },

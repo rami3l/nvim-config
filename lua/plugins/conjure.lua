@@ -26,7 +26,7 @@ return {
           m.n["<LocalLeader>c"] = { desc = "Conjure connect" }
           m.n["<LocalLeader>e"] = { desc = "Conjure eval" }
           m.n["<LocalLeader>g"] = { desc = "Conjure goto" }
-          m.n["<LocalLeader>k"] = { "<CMD>ConjureDocWord<CR>", desc = "Conjure doc" }
+          m.n["<LocalLeader>k"] = { "<Cmd>ConjureDocWord<Cr>", desc = "Conjure doc" }
           m.n["<LocalLeader>l"] = { desc = "Conjure log" }
           m.n["<LocalLeader>r"] = { desc = "Conjure reset" }
           m.n["<LocalLeader>s"] = { desc = "Conjure session" }

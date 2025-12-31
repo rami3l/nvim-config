@@ -24,8 +24,8 @@ return {
     "mizlan/iswap.nvim",
     event = "VeryLazy",
     keys = {
-      { "<Leader>rx", "<CMD>ISwapWith<CR>", desc = "Exchange syntax node" },
-      { "<Leader>rX", "<CMD>IMoveWith<CR>", desc = "Shift syntax node" },
+      { "<Leader>rx", "<Cmd>ISwapWith<Cr>", desc = "Exchange syntax node" },
+      { "<Leader>rX", "<Cmd>IMoveWith<Cr>", desc = "Shift syntax node" },
     },
     specs = {
       {

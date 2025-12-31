@@ -12,7 +12,7 @@ return {
   {
     "chomosuke/typst-preview.nvim",
     keys = {
-      { "<Leader>lp", "<CMD>TypstPreviewToggle<CR>", desc = "Toggle Preview", ft = "typst" },
+      { "<Leader>lp", "<Cmd>TypstPreviewToggle<Cr>", desc = "Toggle Preview", ft = "typst" },
     },
     opts = {
       dependencies_bin = {

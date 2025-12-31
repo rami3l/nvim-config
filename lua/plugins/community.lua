@@ -9,8 +9,8 @@ return {
   {
     "folke/trouble.nvim",
     keys = {
-      { "<Leader>xr", "<CMD>Trouble lsp toggle<CR>", desc = "Trouble LSP References" },
-      { "<Leader>xs", "<CMD>Trouble symbols toggle<CR>", desc = "Trouble LSP Symbols" },
+      { "<Leader>xr", "<Cmd>Trouble lsp toggle<Cr>", desc = "Trouble LSP References" },
+      { "<Leader>xs", "<Cmd>Trouble symbols toggle<Cr>", desc = "Trouble LSP Symbols" },
     },
   },
 
@@ -36,7 +36,7 @@ return {
   {
     "toppair/peek.nvim",
     keys = {
-      { "<Leader>lp", "<CMD>PeekToggle<CR>", desc = "Toggle Preview", ft = "markdown" },
+      { "<Leader>lp", "<Cmd>PeekToggle<Cr>", desc = "Toggle Preview", ft = "markdown" },
     },
     config = function()
       local peek = require("peek")
