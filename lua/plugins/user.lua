@@ -22,6 +22,8 @@ return {
 
   {
     "mizlan/iswap.nvim",
+    -- TODO: Re-enable after <https://github.com/mizlan/iswap.nvim/issues/92> is closed.
+    enabled = false,
     event = "VeryLazy",
     keys = {
       { "<Leader>rx", "<Cmd>ISwapWith<Cr>", desc = "Exchange syntax node" },
