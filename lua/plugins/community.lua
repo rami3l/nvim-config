@@ -32,22 +32,6 @@ return {
     },
   },
 
-  -- astrocommunity.markdown-and-latex.peek-nvim
-  {
-    "toppair/peek.nvim",
-    keys = {
-      { "<Leader>lp", "<Cmd>PeekToggle<Cr>", desc = "Toggle Preview", ft = "markdown" },
-    },
-    config = function()
-      local peek = require("peek")
-      local function peek_toggle() (peek.is_open() and peek.close or peek.open)() end
-      peek.setup { app = "browser" }
-      vim.api.nvim_create_user_command("PeekOpen", peek.open, {})
-      vim.api.nvim_create_user_command("PeekClose", peek.close, {})
-      vim.api.nvim_create_user_command("PeekToggle", peek_toggle, {})
-    end,
-  },
-
   -- astrocommunity.motion.flash-nvim
   {
     "folke/flash.nvim",
@@ -113,6 +97,38 @@ return {
         "<Leader>Td",
         function() require("neotest").run.run { suite = false, strategy = "dap" } end,
         desc = "Debug nearest",
+      },
+    },
+  },
+
+  -- astrocommunity.utility.live-preview
+  {
+    "brianhuster/live-preview.nvim",
+    specs = {
+      {
+        "AstroNvim/astrocore",
+        optional = true,
+        opts = function(_, opts)
+          -- Disable the default mappings from the pack.
+          local n = opts.mappings.n
+          local prefix = "<Leader>P"
+          n[prefix], n[prefix .. "s"], n[prefix .. "c"], n[prefix .. "p"] =
+            false, false, false, false
+        end,
+      },
+    },
+    keys = {
+      {
+        "<Leader>lp",
+        function()
+          -- HACK: Double `<Cr>` is used to dismiss the `print()` notification.
+          -- Maybe the use of proper notification API in the plugin would be better.
+          return require("livepreview").is_running() and "<Cmd>LivePreview close<Cr><Cr>"
+            or "<Cmd>LivePreview start<Cr><Cr>"
+        end,
+        expr = true,
+        ft = { "markdown", "markdown.mdx", "html", "asciidoc", "svg" },
+        desc = "Toggle Preview",
       },
     },
   },
