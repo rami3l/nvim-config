@@ -24,7 +24,6 @@ return {
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
-  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.motion.nvim-surround" },
@@ -51,4 +50,5 @@ return {
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.utility.live-preview" },
 }
