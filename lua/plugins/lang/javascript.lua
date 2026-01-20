@@ -10,11 +10,12 @@ return {
         return {
           javascript = prettier,
           javascriptreact = prettier,
+          json = prettier,
+          json5 = prettier,
+          jsonc = prettier,
+          markdown = prettier,
           typescript = prettier,
           typescriptreact = prettier,
-          json = prettier,
-          jsonc = prettier,
-          json5 = prettier,
           vue = prettier,
         }
       end)(),
