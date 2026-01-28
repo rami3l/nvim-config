@@ -1,6 +1,6 @@
 local themes = {
   light = "github-monochrome-rosepine-dawn",
-  dark = "kanagawa",
+  dark = "catppuccin",
 }
 
 ---@type LazySpec
@@ -48,11 +48,12 @@ return {
 
   { "idr4n/github-monochrome.nvim", lazy = true },
   {
-    "rebelot/kanagawa.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = true,
     opts = {
-      dimInactive = true,
-      background = { light = "lotus", dark = "wave" },
+      auto_integrations = true,
+      background = { light = "latte", dark = "mocha" },
     },
   },
 
@@ -60,12 +61,11 @@ return {
   -- { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
   -- { "nyoom-engineering/oxocarbon.nvim", lazy = true },
   -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
+  --   "rebelot/kanagawa.nvim",
   --   lazy = true,
   --   opts = {
-  --     auto_integrations = true,
-  --     background = { light = "latte", dark = "mocha" },
+  --     dimInactive = true,
+  --     background = { light = "lotus", dark = "wave" },
   --   },
   -- },
   -- {
