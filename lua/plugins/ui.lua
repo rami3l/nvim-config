@@ -1,5 +1,5 @@
 local themes = {
-  light = "github-monochrome-rosepine-dawn",
+  light = "astrojupiter",
   dark = "catppuccin",
 }
 
@@ -46,7 +46,6 @@ return {
     end,
   },
 
-  { "idr4n/github-monochrome.nvim", lazy = true },
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -57,6 +56,7 @@ return {
     },
   },
 
+  -- { "idr4n/github-monochrome.nvim", lazy = true },
   -- { "Shatur/neovim-ayu", lazy = true },
   -- { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
   -- { "nyoom-engineering/oxocarbon.nvim", lazy = true },
