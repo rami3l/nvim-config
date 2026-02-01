@@ -2,6 +2,8 @@
 return {
   {
     "saghen/blink.cmp",
+    ---@module "blink.cmp"
+    ---@type blink.cmp.Config
     opts = {
       cmdline = {
         keymap = {
@@ -51,9 +53,15 @@ return {
       },
       { "giuxtaposition/blink-cmp-copilot", lazy = true },
     },
+    ---@module "blink.cmp"
+    ---@param opts blink.cmp.Config
     opts = function(_, opts)
-      opts.sources.default =
-        require("astrocore").list_insert_unique(opts.sources.default, { "copilot" })
+      do
+        local default_sources = opts.sources.default
+        if type(default_sources) == "function" then default_sources = default_sources() end
+        opts.sources.default =
+          require("astrocore").list_insert_unique(default_sources, { "copilot" })
+      end
       opts.sources.providers.copilot = {
         name = "copilot",
         module = "blink-cmp-copilot",
@@ -67,7 +75,10 @@ return {
   {
     "folke/sidekick.nvim",
     event = "User AstroFile",
+    ---@module "sidekick"
+    ---@class sidekick.Config
     opts = {
+      nes = { debounce = 500 },
       cli = { mux = { backend = "zellij", enabled = true } },
     },
     keys = {
