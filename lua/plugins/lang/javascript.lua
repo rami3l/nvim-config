@@ -8,6 +8,8 @@ return {
         local prettier =
           { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" }
         return {
+          css = prettier,
+          html = prettier,
           javascript = prettier,
           javascriptreact = prettier,
           json = prettier,
