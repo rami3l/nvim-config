@@ -7,6 +7,40 @@ return {
 
   -- UX enhancements
   {
+    "HawkinsT/pathfinder.nvim",
+    keys = {
+      { "gf", function() require("pathfinder").gf() end, desc = "Pathfinder this file" },
+      { "gF", function() require("pathfinder").gF() end, desc = "Pathfinder this file/line" },
+      { "gx", function() require("pathfinder").gx() end, desc = "Pathfinder this URL" },
+      {
+        "<LocalLeader>gf",
+        function() require("pathfinder").select_file() end,
+        desc = "Pathfinder file from picker",
+      },
+      {
+        "<LocalLeader>gF",
+        function() require("pathfinder").select_file_line() end,
+        desc = "Pathfinder file/line from picker",
+      },
+      {
+        "<LocalLeader>gx",
+        function() require("pathfinder").select_url() end,
+        desc = "Pathfinder URL from picker",
+      },
+      {
+        "<LocalLeader>gh",
+        function() require("pathfinder").hover_description() end,
+        desc = "Pathfinder hover description",
+      },
+    },
+    opts = {
+      remap_default_keys = false,
+      -- NOTE: This also makes it usable in `ToggleTerm`.
+      pick_from_all_windows = false,
+    },
+  },
+
+  {
     "chrisgrieser/nvim-various-textobjs",
     event = "User AstroFile",
     opts = {
