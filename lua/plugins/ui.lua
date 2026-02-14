@@ -1,6 +1,6 @@
 local themes = {
   light = "astrojupiter",
-  dark = "catppuccin",
+  dark = "ayu-mirage",
 }
 
 ---@type LazySpec
@@ -46,20 +46,20 @@ return {
     end,
   },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = true,
-    opts = {
-      auto_integrations = true,
-      background = { light = "latte", dark = "mocha" },
-    },
-  },
+  { "Shatur/neovim-ayu", lazy = true },
 
   -- { "idr4n/github-monochrome.nvim", lazy = true },
-  -- { "Shatur/neovim-ayu", lazy = true },
   -- { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
   -- { "nyoom-engineering/oxocarbon.nvim", lazy = true },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   lazy = true,
+  --   opts = {
+  --     auto_integrations = true,
+  --     background = { light = "latte", dark = "mocha" },
+  --   },
+  -- },
   -- {
   --   "rebelot/kanagawa.nvim",
   --   lazy = true,
