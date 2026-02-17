@@ -97,5 +97,6 @@
   "undotree": { "branch": "master", "commit": "d8f99084d98c32f651860eb0baaf89759f91debc" },
   "venv-selector.nvim": { "branch": "main", "commit": "5b738baf1ea8aac6ab1cf10f42aaeb495fce0c73" },
   "visual-whitespace.nvim": { "branch": "main", "commit": "2eefcbcbe294ea6610868755db7ddb8f92f68a1c" },
+  "vscode.nvim": { "branch": "main", "commit": "aa1102a7e15195c9cca22730b09224a7f7745ba8" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }

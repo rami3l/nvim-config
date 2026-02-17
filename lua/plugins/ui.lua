@@ -1,5 +1,5 @@
 local themes = {
-  light = "astrojupiter",
+  light = "vscode",
   dark = "ayu-mirage",
 }
 
@@ -46,6 +46,7 @@ return {
     end,
   },
 
+  { "Mofiqul/vscode.nvim", lazy = true },
   { "Shatur/neovim-ayu", lazy = true },
 
   -- { "idr4n/github-monochrome.nvim", lazy = true },
