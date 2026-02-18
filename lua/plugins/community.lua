@@ -67,6 +67,9 @@ return {
   -- astrocommunity.motion.nvim-spider
   {
     "chrisgrieser/nvim-spider",
+    specs = {
+      { "vhyrro/luarocks.nvim", enabled = false },
+    },
     opts = { skipInsignificantPunctuation = false },
   },
 
