@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   ---@module "mason"
   ---@type MasonSettings
   opts = {
