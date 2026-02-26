@@ -78,20 +78,8 @@ return {
     ---@module "sidekick"
     ---@class sidekick.Config
     opts = {
-      nes = { debounce = 500 },
+      nes = { enabled = false },
       cli = { mux = { backend = "zellij", enabled = true } },
-    },
-    keys = {
-      {
-        "<Tab>",
-        -- Try to execute the first of the following that applies:
-        -- * Jump to the next NES location.
-        -- * Apply the current NES.
-        -- * Fall back on regular `<Tab>`.
-        function() return require("sidekick").nes_jump_or_apply() and nil or "<Tab>" end,
-        expr = true,
-        desc = "Goto/Apply Next Edit Suggestion",
-      },
     },
   },
 }
