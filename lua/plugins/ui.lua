@@ -1,6 +1,6 @@
 local themes = {
   light = "kanagawa",
-  dark = "ayu-mirage",
+  dark = "kanagawa",
 }
 
 ---@type LazySpec
@@ -46,8 +46,6 @@ return {
     end,
   },
 
-  { "Shatur/neovim-ayu", lazy = true },
-
   {
     "rebelot/kanagawa.nvim",
     lazy = true,
@@ -57,6 +55,7 @@ return {
     },
   },
 
+  -- { "Shatur/neovim-ayu", lazy = true },
   -- { "idr4n/github-monochrome.nvim", lazy = true },
   -- { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
   -- { "nyoom-engineering/oxocarbon.nvim", lazy = true },
