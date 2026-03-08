@@ -19,6 +19,7 @@ return {
           typescript = prettier,
           typescriptreact = prettier,
           vue = prettier,
+          yaml = prettier,
         }
       end)(),
     },
