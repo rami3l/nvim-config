@@ -5,8 +5,13 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = (function()
-        local prettier =
-          { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" }
+        local prettier = {
+          "prettierd",
+          "prettier",
+          "oxfmt",
+          stop_after_first = true,
+          lsp_format = "fallback",
+        }
         return {
           css = prettier,
           html = prettier,
@@ -28,8 +33,10 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     optional = true,
     opts = function(_, opts)
-      opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "js-debug-adapter" })
+      opts.ensure_installed = require("astrocore").list_insert_unique(
+        opts.ensure_installed,
+        { "oxfmt", "js-debug-adapter" }
+      )
     end,
   },
 }
