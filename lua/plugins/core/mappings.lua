@@ -46,7 +46,15 @@ return {
 
     ["<Leader>W"] = { "<Cmd>noautocmd w<Cr>", desc = "Save w/o autocmds" },
 
+    ["<Leader>b<Tab>"] = {
+      function() require("astrocore.buffer").prev() end,
+      desc = "Last active buffer",
+    },
     ["<Leader>bc"] = {
+      function() require("astrocore.buffer").close() end,
+      desc = "Close buffer",
+    },
+    ["<Leader>bC"] = {
       function()
         local buffer = require("astrocore.buffer")
         local visibles = visible_bufs()
@@ -56,17 +64,19 @@ return {
       end,
       desc = "Close invisible buffers",
     },
+    ["<Leader>bp"] = false,
 
     ["<C-w>z"] = { window_zoom_toggle, desc = "Zoom window" },
     ["<C-w><C-z>"] = { window_zoom_toggle, desc = "Zoom window" },
 
     ["<Leader><Tab>"] = { desc = "󰌒 " .. "Tabs" },
-    ["<Leader><Tab><Tab>"] = { "<Cmd>tabnew<Cr>", desc = "New tab" },
+    ["<Leader><Tab><Tab>"] = { "g<Tab>", desc = "Last active tab" },
     ["<Leader><Tab>["] = { "<Cmd>tabprevious<Cr>", desc = "Previous tab" },
     ["<Leader><Tab>]"] = { "<Cmd>tabnext<Cr>", desc = "Next tab" },
+    ["<Leader><Tab>{"] = { "<Cmd>tabfirst<Cr>", desc = "First tab" },
+    ["<Leader><Tab>}"] = { "<Cmd>tablast<Cr>", desc = "Last tab" },
     ["<Leader><Tab>c"] = { "<Cmd>tabclose<Cr>", desc = "Close tab" },
-    ["<Leader><Tab>f"] = { "<Cmd>tabfirst<Cr>", desc = "First tab" },
-    ["<Leader><Tab>l"] = { "<Cmd>tablast<Cr>", desc = "Last tab" },
+    ["<Leader><Tab>n"] = { "<Cmd>tabnew<Cr>", desc = "New tab" },
     ["<Leader><Tab>o"] = { "<Cmd>tabonly<Cr>", desc = "Close other tabs" },
   },
 
