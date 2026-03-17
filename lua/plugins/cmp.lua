@@ -14,6 +14,16 @@ return {
     },
   },
 
+  -- Disable telemetry for `copilot` language server.
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      server_opts_overrides = {
+        settings = { telemetry = { telemetryLevel = "off" } },
+      },
+    },
+  },
+
   -- Integrate Copilot with `blink.cmp`
   {
     "saghen/blink.cmp",
