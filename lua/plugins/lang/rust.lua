@@ -1,6 +1,17 @@
 ---@type LazySpec
 return {
-  -- Ported from https://github.com/AstroNvim/astrocommunity/blob/58639523ef0913005194235ebb66dc84e6b6ee05/lua/astrocommunity/pack/rust/init.lua.
+  -- TODO: This is a temporary workaround until either rustaceanvim works
+  -- again with AstroNvim.
+  -- Ported from <https://github.com/AstroNvim/astrocommunity/blob/58639523ef0913005194235ebb66dc84e6b6ee05/lua/astrocommunity/pack/rust/init.lua>.
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if opts.ensure_installed ~= "all" then
+        opts.ensure_installed =
+          require("astrocore").list_insert_unique(opts.ensure_installed, { "rust" })
+      end
+    end,
+  },
   {
     "vxpm/ferris.nvim",
     lazy = true,
@@ -18,6 +29,19 @@ return {
           end
         end,
       })
+    end,
+  },
+  -- HACK: `neotest-rust` is no longer maintained, consider finding a way out.
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = { "rouge8/neotest-rust" },
+    opts = function(_, opts)
+      if not opts.adapters then opts.adapters = {} end
+      table.insert(
+        opts.adapters,
+        require("neotest-rust")(require("astrocore").plugin_opts("neotest-rust"))
+      )
     end,
   },
   {
@@ -49,8 +73,10 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = function(_, opts)
-      opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "rust-analyzer" })
+      opts.ensure_installed = require("astrocore").list_insert_unique(
+        opts.ensure_installed,
+        { "rust-analyzer", "codelldb" }
+      )
     end,
   },
 
