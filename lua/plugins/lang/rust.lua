@@ -1,66 +1,16 @@
 ---@type LazySpec
 return {
-  -- TODO: This is a temporary workaround until either rustaceanvim works
-  -- again with AstroNvim.
-  -- Ported from <https://github.com/AstroNvim/astrocommunity/blob/58639523ef0913005194235ebb66dc84e6b6ee05/lua/astrocommunity/pack/rust/init.lua>.
   {
-    "nvim-treesitter/nvim-treesitter",
+    "mrcjkb/rustaceanvim",
     opts = function(_, opts)
-      if opts.ensure_installed ~= "all" then
-        opts.ensure_installed =
-          require("astrocore").list_insert_unique(opts.ensure_installed, { "rust" })
-      end
+      opts.server.load_vscode_settings = true
+      -- HACK: Prevent `rustaceanvim` from inheriting `root_dir` from
+      -- `nvim-lspconfig` because they have incompatible signatures. Also,
+      -- `rustaceanvim`'s default implementation is good enough so we are not
+      -- considering overridding for now.
+      opts.server.root_dir = nil
     end,
   },
-  {
-    "vxpm/ferris.nvim",
-    lazy = true,
-    init = function()
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("lazy_ferris", { clear = true }),
-        desc = "Lazy load Ferris",
-        once = true,
-        callback = function(args)
-          if
-            vim.lsp.get_client_by_id(args.data.client_id).name == "rust_analyzer"
-            and require("ferris.private.config").opts.create_commands
-          then
-            require("ferris").create_commands(args.buf)
-          end
-        end,
-      })
-    end,
-  },
-  -- HACK: `neotest-rust` is no longer maintained, consider finding a way out.
-  {
-    "nvim-neotest/neotest",
-    optional = true,
-    dependencies = { "rouge8/neotest-rust" },
-    opts = function(_, opts)
-      if not opts.adapters then opts.adapters = {} end
-      table.insert(
-        opts.adapters,
-        require("neotest-rust")(require("astrocore").plugin_opts("neotest-rust"))
-      )
-    end,
-  },
-  {
-    "Saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-    opts = {
-      completion = {
-        crates = { enabled = true },
-      },
-      lsp = {
-        enabled = true,
-        on_attach = function(...) require("astrolsp").on_attach(...) end,
-        actions = true,
-        completion = true,
-        hover = true,
-      },
-    },
-  },
-
   {
     "Olical/conjure",
     dependencies = {
@@ -73,33 +23,11 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(
-        opts.ensure_installed,
-        { "rust-analyzer", "codelldb" }
-      )
+      opts.ensure_installed =
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "rust-analyzer" })
     end,
   },
 
-  {
-    "AstroNvim/astrolsp",
-    dependencies = {
-      { "mrjones2014/codesettings.nvim", opts = {} },
-    },
-    ---@type AstroLSPOpts
-    ---@diagnostic disable: missing-fields
-    opts = {
-      config = {
-        rust_analyzer = {
-          before_init = function(_, cfg)
-            require("codesettings")
-              .loader()
-              :root_dir(cfg.root_dir)
-              :with_local_settings(cfg.name, cfg)
-          end,
-        },
-      },
-    },
-  },
   {
     "AstroNvim/astrolsp",
     ---@type AstroLSPOpts
@@ -108,7 +36,7 @@ return {
       config = {
         rust_analyzer = {
           settings = {
-            -- https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/generated_config.adoc
+            -- https://rust-analyzer.github.io/book/configuration.html
             ["rust-analyzer"] = {
               check = { command = "clippy" },
               completion = {
