@@ -61,7 +61,7 @@ return {
           })
         end,
       },
-      { "giuxtaposition/blink-cmp-copilot", lazy = true },
+      { "fang2hou/blink-copilot", lazy = true, opts = { max_completions = 2 } },
     },
     ---@module "blink.cmp"
     ---@param opts blink.cmp.Config
@@ -74,7 +74,7 @@ return {
       end
       opts.sources.providers.copilot = {
         name = "copilot",
-        module = "blink-cmp-copilot",
+        module = "blink-copilot",
         score_offset = 100,
         async = true,
       }

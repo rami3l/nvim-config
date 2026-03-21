@@ -9,7 +9,7 @@
   "astrotheme": { "branch": "main", "commit": "4ed9d1110e62b8965cd35ba9419237057bb41550" },
   "astroui": { "branch": "v4", "commit": "0d66fa91d252b5a453c2d3c4f4c8706193a99f2f" },
   "auto-dark-mode.nvim": { "branch": "master", "commit": "e300259ec777a40b4b9e3c8e6ade203e78d15881" },
-  "blink-cmp-copilot": { "branch": "main", "commit": "439cff78780c033aa23cf061d7315314b347e3c1" },
+  "blink-copilot": { "branch": "main", "commit": "7ad8209b2f880a2840c94cdcd80ab4dc511d4f39" },
   "blink.cmp": { "branch": "main", "commit": "451168851e8e2466bc97ee3e026c3dcb9141ce07" },
   "blink.compat": { "branch": "main", "commit": "1454f14a8d855a578ceeba77c62538fa1459a67c" },
   "cmp-conjure": { "branch": "master", "commit": "8c9a88efedc0e5bf3165baa6af8a407afe29daf6" },
