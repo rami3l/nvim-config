@@ -1,10 +1,5 @@
 require("lazy").setup({
-  {
-    "AstroNvim/AstroNvim",
-    -- TODO: Remove this when AstroNvim v6 is officially released
-    branch = "v6",
-    import = "astronvim.plugins",
-  },
+  { "AstroNvim/AstroNvim", import = "astronvim.plugins" },
   { import = "community" },
   { import = "plugins" },
 } --[[@as LazySpec]], {
