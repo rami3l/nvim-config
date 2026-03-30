@@ -8,7 +8,7 @@ return {
       large_buf = { size = 1024 * 100, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
+      diagnostics = { virtual_text = true, virtual_lines = true }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -18,6 +18,11 @@ return {
       underline = true,
       severity_sort = true,
       virtual_text = {
+        current_line = false,
+        severity = { min = vim.diagnostic.severity.WARN },
+      },
+      virtual_lines = {
+        current_line = true,
         severity = { min = vim.diagnostic.severity.WARN },
       },
     },
