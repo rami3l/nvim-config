@@ -31,13 +31,11 @@ return {
       {
         "zbirenbaum/copilot.lua",
         opts = function(_, opts)
-          local function curr_file() return vim.api.nvim_buf_get_name(0) end
           local fts = {
             copilot = {
               yaml = true,
               markdown = true,
-              -- Disable for `.env` files.
-              sh = function() return not string.match(vim.fs.basename(curr_file()), "^%.env.*") end,
+              env = false,
             },
 
             -- List of fts where we want to force enable Copilot even when the buffer
