@@ -2,7 +2,7 @@
 return {
   {
     "mrcjkb/rustaceanvim",
-    version = "^8",
+    version = vim.fn.has("nvim-0.12") == 1 and "^9" or "^8",
     dependencies = { "mrjones2014/codesettings.nvim" },
     opts = function(_, opts)
       -- HACK: Prevent `rustaceanvim` from inheriting `root_dir` from
