@@ -1,9 +1,9 @@
 ---@type table<string, string>
 return {
-  BufferClose = "󰅖",
+  BufferClose = "x",
   FileModified = "*",
   FoldClosed = ">",
   FoldOpened = "v",
   Selected = "*",
-  TabClose = "󰅖",
+  TabClose = "x",
 }
