@@ -4,11 +4,7 @@
 
 ---@type LazySpec
 return {
-  {
-    "AstroNvim/astrocommunity",
-    -- TODO: Remove this when AstroNvim v6 is officially released
-    branch = "v6",
-  },
+  { "AstroNvim/astrocommunity" },
 
   -- AstroCommunity modules
   { import = "astrocommunity.code-runner.conjure" },
