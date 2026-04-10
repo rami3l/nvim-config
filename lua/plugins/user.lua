@@ -11,7 +11,7 @@ return {
     keys = {
       { "gf", function() require("pathfinder").gf() end, desc = "Pathfinder this file" },
       { "gF", function() require("pathfinder").gF() end, desc = "Pathfinder this file/line" },
-      { "gx", function() require("pathfinder").gx() end, desc = "Pathfinder this URL" },
+      -- { "gx", function() require("pathfinder").gx() end, desc = "Pathfinder this URL" },
       {
         "<LocalLeader>gf",
         function() require("pathfinder").select_file() end,
