@@ -2,32 +2,7 @@
 return {
   {
     "mrcjkb/rustaceanvim",
-    version = vim.fn.has("nvim-0.12") == 1 and "^9" or "^8",
     dependencies = { "mrjones2014/codesettings.nvim" },
-    opts = function(_, opts)
-      ---@type table | (fun(project_root:string|nil, default_settings: table|nil):table)
-      opts.server.settings = function(project_root, default_settings)
-        local astrolsp_opts = vim.lsp.config["rust_analyzer"] or {}
-        local astrolsp_settings = astrolsp_opts.settings or {}
-
-        local merge_table =
-          require("astrocore").extend_tbl(default_settings or {}, astrolsp_settings)
-
-        -- Merge the final settings from `rustaceanvim`, and then `codesettings` if available.
-        local settings =
-          require("rustaceanvim.config.server").load_rust_analyzer_settings(project_root, {
-            settings_file_pattern = "rust-analyzer.json",
-            default_settings = merge_table,
-          })
-
-        local codesettings_avail, codesettings = pcall(require, "codesettings")
-        if codesettings_avail then
-          settings =
-            codesettings.with_local_settings("rust-analyzer", { settings = settings }).settings
-        end
-        return settings
-      end
-    end,
   },
   {
     "Olical/conjure",
