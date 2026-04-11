@@ -5,12 +5,6 @@ return {
     version = vim.fn.has("nvim-0.12") == 1 and "^9" or "^8",
     dependencies = { "mrjones2014/codesettings.nvim" },
     opts = function(_, opts)
-      -- HACK: Prevent `rustaceanvim` from inheriting `root_dir` from
-      -- `nvim-lspconfig` because they have incompatible signatures. Also,
-      -- `rustaceanvim`'s default implementation is good enough so we are not
-      -- considering overridding for now.
-      opts.server.root_dir = nil
-
       ---@type table | (fun(project_root:string|nil, default_settings: table|nil):table)
       opts.server.settings = function(project_root, default_settings)
         local astrolsp_opts = vim.lsp.config["rust_analyzer"] or {}
@@ -25,13 +19,6 @@ return {
             settings_file_pattern = "rust-analyzer.json",
             default_settings = merge_table,
           })
-
-        -- HACK: Redirect `files.excludeDirs` override in the astrocommunity pack.
-        if settings["rust-analyzer"] and settings["rust-analyzer"].files then
-          settings["rust-analyzer"].files.exclude = settings["rust-analyzer"].files.excludeDirs
-            or {}
-          settings["rust-analyzer"].files.excludeDirs = nil
-        end
 
         local codesettings_avail, codesettings = pcall(require, "codesettings")
         if codesettings_avail then
