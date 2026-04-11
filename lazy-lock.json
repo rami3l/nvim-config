@@ -3,7 +3,7 @@
   "FixCursorHold.nvim": { "branch": "master", "commit": "1900f89dc17c603eec29960f57c00bd9ae696495" },
   "LuaSnip": { "branch": "master", "commit": "a62e1083a3cfe8b6b206e7d3d33a51091df25357" },
   "aerial.nvim": { "branch": "master", "commit": "645d108a5242ec7b378cbe643eb6d04d4223f034" },
-  "astrocommunity": { "branch": "main", "commit": "4521b6c0f95ab06f7ea72ba922f2dffe5b7f3553" },
+  "astrocommunity": { "branch": "main", "commit": "c55e6c12ea20b97cc8b31a103ba212f03754e162" },
   "astrocore": { "branch": "main", "commit": "a9e8285d30984dfd4edb96c7e772d463c84eba30" },
   "astrolsp": { "branch": "main", "commit": "ebc1676127b3bfbd46e3e26589b104853cac3730" },
   "astrotheme": { "branch": "main", "commit": "4ed9d1110e62b8965cd35ba9419237057bb41550" },
