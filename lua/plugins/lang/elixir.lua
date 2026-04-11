@@ -15,15 +15,13 @@ return {
   },
 
   {
-    "AstroNvim/astrolsp",
-    ---@type AstroLSPOpts
-    ---@diagnostic disable: missing-fields
-    opts = {
-      config = {
-        elixirls = {
-          cmd = { "elixir-ls" },
-        },
-      },
-    },
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    optional = true,
+    opts = function(_, opts)
+      opts.ensure_installed =
+        require("utils").list_remove_all(opts.ensure_installed, { "elixirls" })
+      opts.ensure_installed =
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "expert" })
+    end,
   },
 }
