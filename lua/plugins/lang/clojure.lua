@@ -5,15 +5,19 @@ return {
     dependencies = {
       {
         "AstroNvim/astrocore",
-        opts = {
-          options = {
-            g = {
-              ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = true,
-              ["conjure#client#clojure#nrepl#connection#auto_repl#hidden"] = true,
-              ["conjure#client#clojure#nrepl#connection#auto_repl#cmd"] = "lein repl",
+        opts = function(_, opts)
+          return vim.tbl_deep_extend("force", opts or {}, {
+            options = {
+              g = {
+                ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = true,
+                ["conjure#client#clojure#nrepl#connection#auto_repl#hidden"] = true,
+                ["conjure#client#clojure#nrepl#connection#auto_repl#cmd"] = "lein repl",
+                -- HACK: Support "rich comments" by replacing comment blocks with do blocks.
+                ["conjure#eval#gsubs"] = { ["do-comment"] = { "^%(comment[%s%c]", "(do " } },
+              },
             },
-          },
-        },
+          })
+        end,
       },
     },
   },
