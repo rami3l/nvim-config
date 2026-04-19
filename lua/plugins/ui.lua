@@ -1,5 +1,5 @@
 local themes = {
-  light = "kanagawa",
+  light = "astrojupiter",
   dark = "ayu-mirage",
 }
 
@@ -47,14 +47,6 @@ return {
   },
 
   { "Shatur/neovim-ayu", lazy = true },
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = true,
-    opts = {
-      dimInactive = true,
-      background = { light = "lotus", dark = "dragon" },
-    },
-  },
 
   -- { "nyoom-engineering/oxocarbon.nvim", lazy = true },
   -- { "idr4n/github-monochrome.nvim", lazy = true },
@@ -66,6 +58,14 @@ return {
   --   opts = {
   --     auto_integrations = true,
   --     background = { light = "latte", dark = "mocha" },
+  --   },
+  -- },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = true,
+  --   opts = {
+  --     dimInactive = true,
+  --     background = { light = "lotus", dark = "dragon" },
   --   },
   -- },
   -- {
