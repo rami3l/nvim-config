@@ -78,16 +78,4 @@ return {
       }
     end,
   },
-
-  -- Copilot NES
-  {
-    "folke/sidekick.nvim",
-    event = "User AstroFile",
-    ---@module "sidekick"
-    ---@class sidekick.Config
-    opts = {
-      nes = { enabled = false },
-      cli = { mux = { backend = "zellij", enabled = true } },
-    },
-  },
 }
