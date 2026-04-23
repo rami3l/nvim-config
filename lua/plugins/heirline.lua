@@ -61,7 +61,7 @@ return {
         mode_text = { padding = { left = 1, right = 1 } },
       },
       toggleterm_status(),
-      status.component.git_branch(),
+      -- status.component.git_branch(),
       status.component.git_diff(),
       status.component.diagnostics(),
       status.component.fill(),

@@ -8,7 +8,8 @@
       {
         "language": [
           "gitcommit",
-          "NeogitCommitMessage"
+          "NeogitCommitMessage",
+          "NeojjCommitMessage"
         ],
         "path": "./gitcommit.json"
       },
