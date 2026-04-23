@@ -22,7 +22,7 @@ return {
       {
         "AstroNvim/astroui",
         ---@type AstroUIOpts
-        opts = { highlights = { init = { VisualNonText = { global_link = "Visual" } } } },
+        opts = { highlights = { init = { VisualNonText = { link_global = "Visual" } } } },
       },
     },
     config = true,
