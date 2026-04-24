@@ -13,6 +13,7 @@ return {
           lsp_format = "fallback",
         }
         return {
+          astro = prettier,
           css = prettier,
           html = prettier,
           javascript = prettier,
@@ -21,6 +22,8 @@ return {
           json5 = prettier,
           jsonc = prettier,
           markdown = prettier,
+          ["markdown.mdx"] = prettier,
+          svelte = prettier,
           typescript = prettier,
           typescriptreact = prettier,
           vue = prettier,
