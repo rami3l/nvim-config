@@ -1,11 +1,6 @@
 ---@type LazySpec
 return {
   "NicholasZolton/neojj",
-
-  -- HACK: Use my fork until the `squash` UI fix is merged.
-  url = "https://github.com/rami3l/neojj",
-  branch = "fix/squash-pty",
-
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
