@@ -42,6 +42,7 @@ return {
             -- is not listed. This is useful for e.g. neogit commit message buffers.
             copilot_force = {
               "gitcommit",
+              "jjcommit",
             },
           }
           for _, v in ipairs(fts.copilot_force) do
