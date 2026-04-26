@@ -10,7 +10,7 @@ return {
   opts = {
     use_per_project_settings = false,
     graph_style = "unicode",
-    -- disable_hint = true,
+    disable_hint = true,
     disable_signs = true,
     sections = {
       recent = { folded = false },
