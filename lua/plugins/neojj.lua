@@ -28,6 +28,9 @@ return {
     ignored_settings = {
       "NeojjBookmarkPopup--allow-backwards",
       "NeojjCommitPopup--interactive",
+      "NeojjPushPopup--deleted",
+      "NeojjPushPopup--dry-run",
+      "NeojjPushPopup--remote",
       "NeojjSquashPopup--interactive",
     },
   },
