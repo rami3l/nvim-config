@@ -37,7 +37,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.python.base" },
-  { import = "astrocommunity.pack.python.basedpyright" },
+  { import = "astrocommunity.pack.python.pyrefly" },
   { import = "astrocommunity.pack.python.ruff" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.svelte" },

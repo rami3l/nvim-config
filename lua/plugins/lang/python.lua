@@ -23,15 +23,12 @@ return {
     ---@diagnostic disable: missing-fields
     opts = {
       config = {
-        basedpyright = {
+        pyrefly = {
           settings = {
-            -- https://github.com/DetachHead/basedpyright/blob/main/docs/configuration/language-server-settings.md
-            basedpyright = {
-              analysis = {
-                diagnosticMode = "workspace",
-                typeCheckingMode = "strict",
-              },
-            },
+            -- https://pyrefly.org/en/docs/IDE/#customization
+            python = { pyrefly = {
+              typeCheckingMode = "strict",
+            } },
           },
         },
       },
