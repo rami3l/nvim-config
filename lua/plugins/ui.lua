@@ -1,6 +1,6 @@
 local themes = {
   light = "astrojupiter",
-  dark = "ayu-mirage",
+  dark = "kanagawa",
 }
 
 ---@type LazySpec
@@ -46,8 +46,16 @@ return {
     end,
   },
 
-  { "Shatur/neovim-ayu", lazy = true },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    opts = {
+      dimInactive = true,
+      background = { light = "lotus", dark = "dragon" },
+    },
+  },
 
+  -- { "Shatur/neovim-ayu", lazy = true },
   -- { "nyoom-engineering/oxocarbon.nvim", lazy = true },
   -- { "idr4n/github-monochrome.nvim", lazy = true },
   -- { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
@@ -58,14 +66,6 @@ return {
   --   opts = {
   --     auto_integrations = true,
   --     background = { light = "latte", dark = "mocha" },
-  --   },
-  -- },
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = true,
-  --   opts = {
-  --     dimInactive = true,
-  --     background = { light = "lotus", dark = "dragon" },
   --   },
   -- },
   -- {
