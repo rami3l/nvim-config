@@ -46,7 +46,6 @@ return {
   { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.quickfix.quicker-nvim" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
   { import = "astrocommunity.recipes.vscode-icons" },
