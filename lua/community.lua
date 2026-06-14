@@ -28,6 +28,7 @@ return {
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.clojure" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.diff-keybindings" },
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.fish" },
