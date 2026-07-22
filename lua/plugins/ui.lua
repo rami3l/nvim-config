@@ -1,5 +1,5 @@
 local themes = {
-  light = "astrojupiter",
+  light = "kanagawa",
   dark = "ayu-mirage",
 }
 
@@ -47,18 +47,18 @@ return {
   },
 
   { "Shatur/neovim-ayu", lazy = true },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    opts = {
+      dimInactive = true,
+      background = { light = "lotus", dark = "dragon" },
+    },
+  },
 
   -- { "nyoom-engineering/oxocarbon.nvim", lazy = true },
   -- { "idr4n/github-monochrome.nvim", lazy = true },
   -- { "mcchrish/zenbones.nvim", lazy = true, dependencies = { "rktjmp/lush.nvim" } },
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = true,
-  --   opts = {
-  --     dimInactive = true,
-  --     background = { light = "lotus", dark = "dragon" },
-  --   },
-  -- },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
