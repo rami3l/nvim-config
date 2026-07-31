@@ -14,12 +14,25 @@ return {
     },
   },
 
-  -- Disable telemetry for `copilot` language server.
+  -- Install the `copilot` language server and disable telemetry.
   {
-    "zbirenbaum/copilot.lua",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(
+        opts.ensure_installed,
+        { "copilot-language-server" }
+      )
+    end,
+  },
+  {
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
+    ---@diagnostic disable: missing-fields
     opts = {
-      server_opts_overrides = {
-        settings = { telemetry = { telemetryLevel = "off" } },
+      config = {
+        copilot = {
+          settings = { telemetry = { telemetryLevel = "off" } },
+        },
       },
     },
   },
@@ -28,38 +41,6 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = {
-      {
-        "zbirenbaum/copilot.lua",
-        opts = function(_, opts)
-          local fts = {
-            copilot = {
-              yaml = true,
-              markdown = true,
-              env = false,
-            },
-
-            -- List of fts where we want to force enable Copilot even when the buffer
-            -- is not listed. This is useful for e.g. neogit commit message buffers.
-            copilot_force = {
-              "gitcommit",
-              "jjdescription",
-            },
-          }
-          for _, v in ipairs(fts.copilot_force) do
-            fts.copilot[v] = true
-          end
-
-          return vim.tbl_deep_extend("force", opts or {}, {
-            should_attach = function()
-              return vim.list_contains(fts.copilot_force, vim.bo.filetype)
-                or (vim.bo.buflisted and vim.bo.buftype == "")
-            end,
-            suggestion = { enabled = false },
-            panel = { enabled = false },
-            filetypes = fts.copilot,
-          })
-        end,
-      },
       { "fang2hou/blink-copilot", lazy = true, opts = { max_completions = 2 } },
     },
     ---@module "blink.cmp"
