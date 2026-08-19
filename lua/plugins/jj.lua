@@ -7,7 +7,7 @@ return {
     opts = function(_, opts)
       if vim.fn.executable("jjui") == 1 then
         opts.mappings.n["<Leader>gm"] = {
-          function() require("astrocore").toggle_term_cmd { cmd = "jjui", direction = "tab" } end,
+          function() require("astrocore").toggle_term_cmd { cmd = "jjui", direction = "float" } end,
           desc = "JJUI dispatch",
         }
       end
