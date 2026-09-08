@@ -2,6 +2,19 @@
 return {
   { "avm99963/vim-jjdescription", lazy = false },
   {
+    "julienvincent/hunk.nvim",
+    cmd = { "DiffEditor" },
+    opts = {
+      keys = {
+        global = {
+          accept = { "<LocalLeader>Q", "<LocalLeader>hq" },
+          focus_tree = { "<LocalLeader>he" },
+        },
+      },
+    },
+  },
+
+  {
     "AstroNvim/astrocore",
     ---@param opts AstroCoreOpts
     opts = function(_, opts)
