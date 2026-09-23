@@ -5,6 +5,7 @@ require("lazy").setup({
 } --[[@as LazySpec]], {
   -- https://github.com/folke/lazy.nvim#%EF%B8%8F-configuration
   install = { colorscheme = { "astrodark", "habamax" } },
+  concurrency = vim.uv.available_parallelism() * 2,
   performance = {
     rtp = {
       -- customize default disabled vim plugins
