@@ -5,7 +5,7 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "nil", "alejandra" })
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "alejandra" })
     end,
   },
 
@@ -15,9 +15,9 @@ return {
     ---@diagnostic disable: missing-fields
     opts = {
       config = {
-        ["nil_ls"] = {
+        nixd = {
           settings = {
-            ["nil"] = { formatting = {
+            nixd = { formatting = {
               command = { "alejandra" },
             } },
           },
