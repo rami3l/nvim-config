@@ -15,6 +15,9 @@ return {
       { "<Leader>lp", "<Cmd>TypstPreviewToggle<Cr>", desc = "Toggle Preview", ft = "typst" },
     },
     opts = {
+      -- HACK: Disable partial rendering to avoid the last page from being
+      -- composited over the top of the document.
+      partial_rendering = false,
       dependencies_bin = {
         websocat = "websocat",
       },
