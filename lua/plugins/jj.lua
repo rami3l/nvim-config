@@ -18,6 +18,9 @@ return {
     "AstroNvim/astrocore",
     ---@param opts AstroCoreOpts
     opts = function(_, opts)
+      opts.sessions.ignore.filetypes =
+        require("astrocore").list_insert_unique(opts.sessions.ignore.filetypes, { "jjdescription" })
+
       if vim.fn.executable("jjui") == 1 then
         opts.mappings.n["<Leader>gm"] = {
           function() require("astrocore").toggle_term_cmd { cmd = "jjui", direction = "float" } end,
