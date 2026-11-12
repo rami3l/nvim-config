@@ -77,7 +77,9 @@ return {
     "keaising/im-select.nvim",
     event = "User AstroFile",
     opts = function(_, opts)
-      if vim.fn.has("macunix") == 1 then
+      if vim.fn.has("linux") == 1 then
+        opts.default_im_select = "keyboard-us-mac"
+      elseif vim.fn.has("macunix") == 1 then
         opts.default_im_select = "com.apple.keylayout.US"
         if vim.fn.executable("macism") == 1 then opts.default_command = "macism" end
       end
