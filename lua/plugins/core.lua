@@ -39,7 +39,7 @@ return {
         termguicolors = true, -- enable rich text
         clipboard = "", -- set to "unnamedplus" to link to the system clipboard
         spell = false,
-        spelllang = "en,fr,cjk",
+        spelllang = "en",
         spelloptions = "camel",
         diffopt = "filler,internal,closeoff,algorithm:histogram,context:5,linematch:60",
       },
